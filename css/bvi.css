@@ -1,0 +1,829 @@
+/*!
+ * Button visually impaired v1.0.8
+ */
+
+
+
+
+  html body .bvi-body[data-bvi-color='blackAndWhite'] {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%); }
+
+  
+  html body .bvi-body[data-bvi-color='blackAndWhiteInvert'],
+  html body .bvi-body[data-bvi-color='blackAndWhiteInvert'] img,
+  html body .bvi-body[data-bvi-color='blackAndWhiteInvert'] embed,
+  html body .bvi-body[data-bvi-color='blackAndWhiteInvert'] video
+   {
+    -webkit-filter: grayscale(100%) invert(100%);
+    -moz-filter: grayscale(100%) invert(100%);
+    -ms-filter: grayscale(100%) invert(100%);
+    -o-filter: grayscale(100%) invert(100%);
+    filter: grayscale(100%) invert(100%); }
+  
+
+
+
+  html body .bvi-body[data-bvi-size='40'] *:not([class*="icon-"]) {
+    font-size: 40px; }
+    html body .bvi-body[data-bvi-size='40'] * h1,
+    html body .bvi-body[data-bvi-size='40'] * h1 * {
+      font-size: 47px; }
+    html body .bvi-body[data-bvi-size='40'] * h2,
+    html body .bvi-body[data-bvi-size='40'] * h2 * {
+      font-size: 46px; }
+    html body .bvi-body[data-bvi-size='40'] * h3,
+    html body .bvi-body[data-bvi-size='40'] * h3 * {
+      font-size: 45px; }
+    html body .bvi-body[data-bvi-size='40'] * h4,
+    html body .bvi-body[data-bvi-size='40'] * h4 * {
+      font-size: 44px; }
+    html body .bvi-body[data-bvi-size='40'] * h5,
+    html body .bvi-body[data-bvi-size='40'] * h5 * {
+      font-size: 43px; }
+    html body .bvi-body[data-bvi-size='40'] * h6,
+    html body .bvi-body[data-bvi-size='40'] * h6 * {
+      font-size: 42px; }
+  html body .bvi-body[data-bvi-size='39'] *:not([class*="icon-"]) {
+    font-size: 39px; }
+    html body .bvi-body[data-bvi-size='39'] * h1,
+    html body .bvi-body[data-bvi-size='39'] * h1 * {
+      font-size: 46px; }
+    html body .bvi-body[data-bvi-size='39'] * h2,
+    html body .bvi-body[data-bvi-size='39'] * h2 * {
+      font-size: 45px; }
+    html body .bvi-body[data-bvi-size='39'] * h3,
+    html body .bvi-body[data-bvi-size='39'] * h3 * {
+      font-size: 44px; }
+    html body .bvi-body[data-bvi-size='39'] * h4,
+    html body .bvi-body[data-bvi-size='39'] * h4 * {
+      font-size: 43px; }
+    html body .bvi-body[data-bvi-size='39'] * h5,
+    html body .bvi-body[data-bvi-size='39'] * h5 * {
+      font-size: 42px; }
+    html body .bvi-body[data-bvi-size='39'] * h6,
+    html body .bvi-body[data-bvi-size='39'] * h6 * {
+      font-size: 41px; }
+  html body .bvi-body[data-bvi-size='38'] *:not([class*="icon-"]) {
+    font-size: 38px; }
+    html body .bvi-body[data-bvi-size='38'] * h1,
+    html body .bvi-body[data-bvi-size='38'] * h1 * {
+      font-size: 45px; }
+    html body .bvi-body[data-bvi-size='38'] * h2,
+    html body .bvi-body[data-bvi-size='38'] * h2 * {
+      font-size: 44px; }
+    html body .bvi-body[data-bvi-size='38'] * h3,
+    html body .bvi-body[data-bvi-size='38'] * h3 * {
+      font-size: 43px; }
+    html body .bvi-body[data-bvi-size='38'] * h4,
+    html body .bvi-body[data-bvi-size='38'] * h4 * {
+      font-size: 42px; }
+    html body .bvi-body[data-bvi-size='38'] * h5,
+    html body .bvi-body[data-bvi-size='38'] * h5 * {
+      font-size: 41px; }
+    html body .bvi-body[data-bvi-size='38'] * h6,
+    html body .bvi-body[data-bvi-size='38'] * h6 * {
+      font-size: 40px; }
+  html body .bvi-body[data-bvi-size='37'] *:not([class*="icon-"]) {
+    font-size: 37px; }
+    html body .bvi-body[data-bvi-size='37'] * h1,
+    html body .bvi-body[data-bvi-size='37'] * h1 * {
+      font-size: 44px; }
+    html body .bvi-body[data-bvi-size='37'] * h2,
+    html body .bvi-body[data-bvi-size='37'] * h2 * {
+      font-size: 43px; }
+    html body .bvi-body[data-bvi-size='37'] * h3,
+    html body .bvi-body[data-bvi-size='37'] * h3 * {
+      font-size: 42px; }
+    html body .bvi-body[data-bvi-size='37'] * h4,
+    html body .bvi-body[data-bvi-size='37'] * h4 * {
+      font-size: 41px; }
+    html body .bvi-body[data-bvi-size='37'] * h5,
+    html body .bvi-body[data-bvi-size='37'] * h5 * {
+      font-size: 40px; }
+    html body .bvi-body[data-bvi-size='37'] * h6,
+    html body .bvi-body[data-bvi-size='37'] * h6 * {
+      font-size: 39px; }
+  html body .bvi-body[data-bvi-size='36'] *:not([class*="icon-"]) {
+    font-size: 36px; }
+    html body .bvi-body[data-bvi-size='36'] * h1,
+    html body .bvi-body[data-bvi-size='36'] * h1 * {
+      font-size: 43px; }
+    html body .bvi-body[data-bvi-size='36'] * h2,
+    html body .bvi-body[data-bvi-size='36'] * h2 * {
+      font-size: 42px; }
+    html body .bvi-body[data-bvi-size='36'] * h3,
+    html body .bvi-body[data-bvi-size='36'] * h3 * {
+      font-size: 41px; }
+    html body .bvi-body[data-bvi-size='36'] * h4,
+    html body .bvi-body[data-bvi-size='36'] * h4 * {
+      font-size: 40px; }
+    html body .bvi-body[data-bvi-size='36'] * h5,
+    html body .bvi-body[data-bvi-size='36'] * h5 * {
+      font-size: 39px; }
+    html body .bvi-body[data-bvi-size='36'] * h6,
+    html body .bvi-body[data-bvi-size='36'] * h6 * {
+      font-size: 38px; }
+  html body .bvi-body[data-bvi-size='35'] *:not([class*="icon-"]) {
+    font-size: 35px; }
+    html body .bvi-body[data-bvi-size='35'] * h1,
+    html body .bvi-body[data-bvi-size='35'] * h1 * {
+      font-size: 42px; }
+    html body .bvi-body[data-bvi-size='35'] * h2,
+    html body .bvi-body[data-bvi-size='35'] * h2 * {
+      font-size: 41px; }
+    html body .bvi-body[data-bvi-size='35'] * h3,
+    html body .bvi-body[data-bvi-size='35'] * h3 * {
+      font-size: 40px; }
+    html body .bvi-body[data-bvi-size='35'] * h4,
+    html body .bvi-body[data-bvi-size='35'] * h4 * {
+      font-size: 39px; }
+    html body .bvi-body[data-bvi-size='35'] * h5,
+    html body .bvi-body[data-bvi-size='35'] * h5 * {
+      font-size: 38px; }
+    html body .bvi-body[data-bvi-size='35'] * h6,
+    html body .bvi-body[data-bvi-size='35'] * h6 * {
+      font-size: 37px; }
+  html body .bvi-body[data-bvi-size='34'] *:not([class*="icon-"]) {
+    font-size: 34px; }
+    html body .bvi-body[data-bvi-size='34'] * h1,
+    html body .bvi-body[data-bvi-size='34'] * h1 * {
+      font-size: 41px; }
+    html body .bvi-body[data-bvi-size='34'] * h2,
+    html body .bvi-body[data-bvi-size='34'] * h2 * {
+      font-size: 40px; }
+    html body .bvi-body[data-bvi-size='34'] * h3,
+    html body .bvi-body[data-bvi-size='34'] * h3 * {
+      font-size: 39px; }
+    html body .bvi-body[data-bvi-size='34'] * h4,
+    html body .bvi-body[data-bvi-size='34'] * h4 * {
+      font-size: 38px; }
+    html body .bvi-body[data-bvi-size='34'] * h5,
+    html body .bvi-body[data-bvi-size='34'] * h5 * {
+      font-size: 37px; }
+    html body .bvi-body[data-bvi-size='34'] * h6,
+    html body .bvi-body[data-bvi-size='34'] * h6 * {
+      font-size: 36px; }
+  html body .bvi-body[data-bvi-size='33'] *:not([class*="icon-"]) {
+    font-size: 33px; }
+    html body .bvi-body[data-bvi-size='33'] * h1,
+    html body .bvi-body[data-bvi-size='33'] * h1 * {
+      font-size: 40px; }
+    html body .bvi-body[data-bvi-size='33'] * h2,
+    html body .bvi-body[data-bvi-size='33'] * h2 * {
+      font-size: 39px; }
+    html body .bvi-body[data-bvi-size='33'] * h3,
+    html body .bvi-body[data-bvi-size='33'] * h3 * {
+      font-size: 38px; }
+    html body .bvi-body[data-bvi-size='33'] * h4,
+    html body .bvi-body[data-bvi-size='33'] * h4 * {
+      font-size: 37px; }
+    html body .bvi-body[data-bvi-size='33'] * h5,
+    html body .bvi-body[data-bvi-size='33'] * h5 * {
+      font-size: 36px; }
+    html body .bvi-body[data-bvi-size='33'] * h6,
+    html body .bvi-body[data-bvi-size='33'] * h6 * {
+      font-size: 35px; }
+  html body .bvi-body[data-bvi-size='32'] *:not([class*="icon-"]) {
+    font-size: 32px; }
+    html body .bvi-body[data-bvi-size='32'] * h1,
+    html body .bvi-body[data-bvi-size='32'] * h1 * {
+      font-size: 39px; }
+    html body .bvi-body[data-bvi-size='32'] * h2,
+    html body .bvi-body[data-bvi-size='32'] * h2 * {
+      font-size: 38px; }
+    html body .bvi-body[data-bvi-size='32'] * h3,
+    html body .bvi-body[data-bvi-size='32'] * h3 * {
+      font-size: 37px; }
+    html body .bvi-body[data-bvi-size='32'] * h4,
+    html body .bvi-body[data-bvi-size='32'] * h4 * {
+      font-size: 36px; }
+    html body .bvi-body[data-bvi-size='32'] * h5,
+    html body .bvi-body[data-bvi-size='32'] * h5 * {
+      font-size: 35px; }
+    html body .bvi-body[data-bvi-size='32'] * h6,
+    html body .bvi-body[data-bvi-size='32'] * h6 * {
+      font-size: 34px; }
+  html body .bvi-body[data-bvi-size='31'] *:not([class*="icon-"]) {
+    font-size: 31px; }
+    html body .bvi-body[data-bvi-size='31'] * h1,
+    html body .bvi-body[data-bvi-size='31'] * h1 * {
+      font-size: 38px; }
+    html body .bvi-body[data-bvi-size='31'] * h2,
+    html body .bvi-body[data-bvi-size='31'] * h2 * {
+      font-size: 37px; }
+    html body .bvi-body[data-bvi-size='31'] * h3,
+    html body .bvi-body[data-bvi-size='31'] * h3 * {
+      font-size: 36px; }
+    html body .bvi-body[data-bvi-size='31'] * h4,
+    html body .bvi-body[data-bvi-size='31'] * h4 * {
+      font-size: 35px; }
+    html body .bvi-body[data-bvi-size='31'] * h5,
+    html body .bvi-body[data-bvi-size='31'] * h5 * {
+      font-size: 34px; }
+    html body .bvi-body[data-bvi-size='31'] * h6,
+    html body .bvi-body[data-bvi-size='31'] * h6 * {
+      font-size: 33px; }
+  html body .bvi-body[data-bvi-size='30'] *:not([class*="icon-"]) {
+    font-size: 30px; }
+    html body .bvi-body[data-bvi-size='30'] * h1,
+    html body .bvi-body[data-bvi-size='30'] * h1 * {
+      font-size: 37px; }
+    html body .bvi-body[data-bvi-size='30'] * h2,
+    html body .bvi-body[data-bvi-size='30'] * h2 * {
+      font-size: 36px; }
+    html body .bvi-body[data-bvi-size='30'] * h3,
+    html body .bvi-body[data-bvi-size='30'] * h3 * {
+      font-size: 35px; }
+    html body .bvi-body[data-bvi-size='30'] * h4,
+    html body .bvi-body[data-bvi-size='30'] * h4 * {
+      font-size: 34px; }
+    html body .bvi-body[data-bvi-size='30'] * h5,
+    html body .bvi-body[data-bvi-size='30'] * h5 * {
+      font-size: 33px; }
+    html body .bvi-body[data-bvi-size='30'] * h6,
+    html body .bvi-body[data-bvi-size='30'] * h6 * {
+      font-size: 32px; }
+  html body .bvi-body[data-bvi-size='29'] *:not([class*="icon-"]) {
+    font-size: 29px; }
+    html body .bvi-body[data-bvi-size='29'] * h1,
+    html body .bvi-body[data-bvi-size='29'] * h1 * {
+      font-size: 36px; }
+    html body .bvi-body[data-bvi-size='29'] * h2,
+    html body .bvi-body[data-bvi-size='29'] * h2 * {
+      font-size: 35px; }
+    html body .bvi-body[data-bvi-size='29'] * h3,
+    html body .bvi-body[data-bvi-size='29'] * h3 * {
+      font-size: 34px; }
+    html body .bvi-body[data-bvi-size='29'] * h4,
+    html body .bvi-body[data-bvi-size='29'] * h4 * {
+      font-size: 33px; }
+    html body .bvi-body[data-bvi-size='29'] * h5,
+    html body .bvi-body[data-bvi-size='29'] * h5 * {
+      font-size: 32px; }
+    html body .bvi-body[data-bvi-size='29'] * h6,
+    html body .bvi-body[data-bvi-size='29'] * h6 * {
+      font-size: 31px; }
+  html body .bvi-body[data-bvi-size='28'] *:not([class*="icon-"]) {
+    font-size: 28px; }
+    html body .bvi-body[data-bvi-size='28'] * h1,
+    html body .bvi-body[data-bvi-size='28'] * h1 * {
+      font-size: 35px; }
+    html body .bvi-body[data-bvi-size='28'] * h2,
+    html body .bvi-body[data-bvi-size='28'] * h2 * {
+      font-size: 34px; }
+    html body .bvi-body[data-bvi-size='28'] * h3,
+    html body .bvi-body[data-bvi-size='28'] * h3 * {
+      font-size: 33px; }
+    html body .bvi-body[data-bvi-size='28'] * h4,
+    html body .bvi-body[data-bvi-size='28'] * h4 * {
+      font-size: 32px; }
+    html body .bvi-body[data-bvi-size='28'] * h5,
+    html body .bvi-body[data-bvi-size='28'] * h5 * {
+      font-size: 31px; }
+    html body .bvi-body[data-bvi-size='28'] * h6,
+    html body .bvi-body[data-bvi-size='28'] * h6 * {
+      font-size: 30px; }
+  html body .bvi-body[data-bvi-size='27'] *:not([class*="icon-"]) {
+    font-size: 27px; }
+    html body .bvi-body[data-bvi-size='27'] * h1,
+    html body .bvi-body[data-bvi-size='27'] * h1 * {
+      font-size: 34px; }
+    html body .bvi-body[data-bvi-size='27'] * h2,
+    html body .bvi-body[data-bvi-size='27'] * h2 * {
+      font-size: 33px; }
+    html body .bvi-body[data-bvi-size='27'] * h3,
+    html body .bvi-body[data-bvi-size='27'] * h3 * {
+      font-size: 32px; }
+    html body .bvi-body[data-bvi-size='27'] * h4,
+    html body .bvi-body[data-bvi-size='27'] * h4 * {
+      font-size: 31px; }
+    html body .bvi-body[data-bvi-size='27'] * h5,
+    html body .bvi-body[data-bvi-size='27'] * h5 * {
+      font-size: 30px; }
+    html body .bvi-body[data-bvi-size='27'] * h6,
+    html body .bvi-body[data-bvi-size='27'] * h6 * {
+      font-size: 29px; }
+  html body .bvi-body[data-bvi-size='26'] *:not([class*="icon-"]) {
+    font-size: 26px; }
+    html body .bvi-body[data-bvi-size='26'] * h1,
+    html body .bvi-body[data-bvi-size='26'] * h1 * {
+      font-size: 33px; }
+    html body .bvi-body[data-bvi-size='26'] * h2,
+    html body .bvi-body[data-bvi-size='26'] * h2 * {
+      font-size: 32px; }
+    html body .bvi-body[data-bvi-size='26'] * h3,
+    html body .bvi-body[data-bvi-size='26'] * h3 * {
+      font-size: 31px; }
+    html body .bvi-body[data-bvi-size='26'] * h4,
+    html body .bvi-body[data-bvi-size='26'] * h4 * {
+      font-size: 30px; }
+    html body .bvi-body[data-bvi-size='26'] * h5,
+    html body .bvi-body[data-bvi-size='26'] * h5 * {
+      font-size: 29px; }
+    html body .bvi-body[data-bvi-size='26'] * h6,
+    html body .bvi-body[data-bvi-size='26'] * h6 * {
+      font-size: 28px; }
+  html body .bvi-body[data-bvi-size='25'] *:not([class*="icon-"]) {
+    font-size: 25px; }
+    html body .bvi-body[data-bvi-size='25'] * h1,
+    html body .bvi-body[data-bvi-size='25'] * h1 * {
+      font-size: 32px; }
+    html body .bvi-body[data-bvi-size='25'] * h2,
+    html body .bvi-body[data-bvi-size='25'] * h2 * {
+      font-size: 31px; }
+    html body .bvi-body[data-bvi-size='25'] * h3,
+    html body .bvi-body[data-bvi-size='25'] * h3 * {
+      font-size: 30px; }
+    html body .bvi-body[data-bvi-size='25'] * h4,
+    html body .bvi-body[data-bvi-size='25'] * h4 * {
+      font-size: 29px; }
+    html body .bvi-body[data-bvi-size='25'] * h5,
+    html body .bvi-body[data-bvi-size='25'] * h5 * {
+      font-size: 28px; }
+    html body .bvi-body[data-bvi-size='25'] * h6,
+    html body .bvi-body[data-bvi-size='25'] * h6 * {
+      font-size: 27px; }
+  html body .bvi-body[data-bvi-size='24'] *:not([class*="icon-"]) {
+    font-size: 24px; }
+    html body .bvi-body[data-bvi-size='24'] * h1,
+    html body .bvi-body[data-bvi-size='24'] * h1 * {
+      font-size: 31px; }
+    html body .bvi-body[data-bvi-size='24'] * h2,
+    html body .bvi-body[data-bvi-size='24'] * h2 * {
+      font-size: 30px; }
+    html body .bvi-body[data-bvi-size='24'] * h3,
+    html body .bvi-body[data-bvi-size='24'] * h3 * {
+      font-size: 29px; }
+    html body .bvi-body[data-bvi-size='24'] * h4,
+    html body .bvi-body[data-bvi-size='24'] * h4 * {
+      font-size: 28px; }
+    html body .bvi-body[data-bvi-size='24'] * h5,
+    html body .bvi-body[data-bvi-size='24'] * h5 * {
+      font-size: 27px; }
+    html body .bvi-body[data-bvi-size='24'] * h6,
+    html body .bvi-body[data-bvi-size='24'] * h6 * {
+      font-size: 26px; }
+  html body .bvi-body[data-bvi-size='23'] *:not([class*="icon-"]) {
+    font-size: 23px; }
+    html body .bvi-body[data-bvi-size='23'] * h1,
+    html body .bvi-body[data-bvi-size='23'] * h1 * {
+      font-size: 30px; }
+    html body .bvi-body[data-bvi-size='23'] * h2,
+    html body .bvi-body[data-bvi-size='23'] * h2 * {
+      font-size: 29px; }
+    html body .bvi-body[data-bvi-size='23'] * h3,
+    html body .bvi-body[data-bvi-size='23'] * h3 * {
+      font-size: 28px; }
+    html body .bvi-body[data-bvi-size='23'] * h4,
+    html body .bvi-body[data-bvi-size='23'] * h4 * {
+      font-size: 27px; }
+    html body .bvi-body[data-bvi-size='23'] * h5,
+    html body .bvi-body[data-bvi-size='23'] * h5 * {
+      font-size: 26px; }
+    html body .bvi-body[data-bvi-size='23'] * h6,
+    html body .bvi-body[data-bvi-size='23'] * h6 * {
+      font-size: 25px; }
+  html body .bvi-body[data-bvi-size='22'] *:not([class*="icon-"]) {
+    font-size: 22px; }
+    html body .bvi-body[data-bvi-size='22'] * h1,
+    html body .bvi-body[data-bvi-size='22'] * h1 * {
+      font-size: 29px; }
+    html body .bvi-body[data-bvi-size='22'] * h2,
+    html body .bvi-body[data-bvi-size='22'] * h2 * {
+      font-size: 28px; }
+    html body .bvi-body[data-bvi-size='22'] * h3,
+    html body .bvi-body[data-bvi-size='22'] * h3 * {
+      font-size: 27px; }
+    html body .bvi-body[data-bvi-size='22'] * h4,
+    html body .bvi-body[data-bvi-size='22'] * h4 * {
+      font-size: 26px; }
+    html body .bvi-body[data-bvi-size='22'] * h5,
+    html body .bvi-body[data-bvi-size='22'] * h5 * {
+      font-size: 25px; }
+    html body .bvi-body[data-bvi-size='22'] * h6,
+    html body .bvi-body[data-bvi-size='22'] * h6 * {
+      font-size: 24px; }
+  html body .bvi-body[data-bvi-size='21'] *:not([class*="icon-"]) {
+    font-size: 21px; }
+    html body .bvi-body[data-bvi-size='21'] * h1,
+    html body .bvi-body[data-bvi-size='21'] * h1 * {
+      font-size: 28px; }
+    html body .bvi-body[data-bvi-size='21'] * h2,
+    html body .bvi-body[data-bvi-size='21'] * h2 * {
+      font-size: 27px; }
+    html body .bvi-body[data-bvi-size='21'] * h3,
+    html body .bvi-body[data-bvi-size='21'] * h3 * {
+      font-size: 26px; }
+    html body .bvi-body[data-bvi-size='21'] * h4,
+    html body .bvi-body[data-bvi-size='21'] * h4 * {
+      font-size: 25px; }
+    html body .bvi-body[data-bvi-size='21'] * h5,
+    html body .bvi-body[data-bvi-size='21'] * h5 * {
+      font-size: 24px; }
+    html body .bvi-body[data-bvi-size='21'] * h6,
+    html body .bvi-body[data-bvi-size='21'] * h6 * {
+      font-size: 23px; }
+  html body .bvi-body[data-bvi-size='20'] *:not([class*="icon-"]) {
+    font-size: 20px; }
+    html body .bvi-body[data-bvi-size='20'] * h1,
+    html body .bvi-body[data-bvi-size='20'] * h1 * {
+      font-size: 27px; }
+    html body .bvi-body[data-bvi-size='20'] * h2,
+    html body .bvi-body[data-bvi-size='20'] * h2 * {
+      font-size: 26px; }
+    html body .bvi-body[data-bvi-size='20'] * h3,
+    html body .bvi-body[data-bvi-size='20'] * h3 * {
+      font-size: 25px; }
+    html body .bvi-body[data-bvi-size='20'] * h4,
+    html body .bvi-body[data-bvi-size='20'] * h4 * {
+      font-size: 24px; }
+    html body .bvi-body[data-bvi-size='20'] * h5,
+    html body .bvi-body[data-bvi-size='20'] * h5 * {
+      font-size: 23px; }
+    html body .bvi-body[data-bvi-size='20'] * h6,
+    html body .bvi-body[data-bvi-size='20'] * h6 * {
+      font-size: 22px; }
+  html body .bvi-body[data-bvi-size='19'] *:not([class*="icon-"]) {
+    font-size: 19px; }
+    html body .bvi-body[data-bvi-size='19'] * h1,
+    html body .bvi-body[data-bvi-size='19'] * h1 * {
+      font-size: 26px; }
+    html body .bvi-body[data-bvi-size='19'] * h2,
+    html body .bvi-body[data-bvi-size='19'] * h2 * {
+      font-size: 25px; }
+    html body .bvi-body[data-bvi-size='19'] * h3,
+    html body .bvi-body[data-bvi-size='19'] * h3 * {
+      font-size: 24px; }
+    html body .bvi-body[data-bvi-size='19'] * h4,
+    html body .bvi-body[data-bvi-size='19'] * h4 * {
+      font-size: 23px; }
+    html body .bvi-body[data-bvi-size='19'] * h5,
+    html body .bvi-body[data-bvi-size='19'] * h5 * {
+      font-size: 22px; }
+    html body .bvi-body[data-bvi-size='19'] * h6,
+    html body .bvi-body[data-bvi-size='19'] * h6 * {
+      font-size: 21px; }
+  html body .bvi-body[data-bvi-size='18'] *:not([class*="icon-"]) {
+    font-size: 18px; }
+    html body .bvi-body[data-bvi-size='18'] * h1,
+    html body .bvi-body[data-bvi-size='18'] * h1 * {
+      font-size: 25px; }
+    html body .bvi-body[data-bvi-size='18'] * h2,
+    html body .bvi-body[data-bvi-size='18'] * h2 * {
+      font-size: 24px; }
+    html body .bvi-body[data-bvi-size='18'] * h3,
+    html body .bvi-body[data-bvi-size='18'] * h3 * {
+      font-size: 23px; }
+    html body .bvi-body[data-bvi-size='18'] * h4,
+    html body .bvi-body[data-bvi-size='18'] * h4 * {
+      font-size: 22px; }
+    html body .bvi-body[data-bvi-size='18'] * h5,
+    html body .bvi-body[data-bvi-size='18'] * h5 * {
+      font-size: 21px; }
+    html body .bvi-body[data-bvi-size='18'] * h6,
+    html body .bvi-body[data-bvi-size='18'] * h6 * {
+      font-size: 20px; }
+  html body .bvi-body[data-bvi-size='17'] *:not([class*="icon-"]) {
+    font-size: 17px; }
+    html body .bvi-body[data-bvi-size='17'] * h1,
+    html body .bvi-body[data-bvi-size='17'] * h1 * {
+      font-size: 24px; }
+    html body .bvi-body[data-bvi-size='17'] * h2,
+    html body .bvi-body[data-bvi-size='17'] * h2 * {
+      font-size: 23px; }
+    html body .bvi-body[data-bvi-size='17'] * h3,
+    html body .bvi-body[data-bvi-size='17'] * h3 * {
+      font-size: 22px; }
+    html body .bvi-body[data-bvi-size='17'] * h4,
+    html body .bvi-body[data-bvi-size='17'] * h4 * {
+      font-size: 21px; }
+    html body .bvi-body[data-bvi-size='17'] * h5,
+    html body .bvi-body[data-bvi-size='17'] * h5 * {
+      font-size: 20px; }
+    html body .bvi-body[data-bvi-size='17'] * h6,
+    html body .bvi-body[data-bvi-size='17'] * h6 * {
+      font-size: 19px; }
+  html body .bvi-body[data-bvi-size='16'] *:not([class*="icon-"]) {
+    font-size: 16px; }
+    html body .bvi-body[data-bvi-size='16'] * h1,
+    html body .bvi-body[data-bvi-size='16'] * h1 * {
+      font-size: 23px; }
+    html body .bvi-body[data-bvi-size='16'] * h2,
+    html body .bvi-body[data-bvi-size='16'] * h2 * {
+      font-size: 22px; }
+    html body .bvi-body[data-bvi-size='16'] * h3,
+    html body .bvi-body[data-bvi-size='16'] * h3 * {
+      font-size: 21px; }
+    html body .bvi-body[data-bvi-size='16'] * h4,
+    html body .bvi-body[data-bvi-size='16'] * h4 * {
+      font-size: 20px; }
+    html body .bvi-body[data-bvi-size='16'] * h5,
+    html body .bvi-body[data-bvi-size='16'] * h5 * {
+      font-size: 19px; }
+    html body .bvi-body[data-bvi-size='16'] * h6,
+    html body .bvi-body[data-bvi-size='16'] * h6 * {
+      font-size: 18px; }
+  html body .bvi-body[data-bvi-size='15'] *:not([class*="icon-"]) {
+    font-size: 15px; }
+    html body .bvi-body[data-bvi-size='15'] * h1,
+    html body .bvi-body[data-bvi-size='15'] * h1 * {
+      font-size: 22px; }
+    html body .bvi-body[data-bvi-size='15'] * h2,
+    html body .bvi-body[data-bvi-size='15'] * h2 * {
+      font-size: 21px; }
+    html body .bvi-body[data-bvi-size='15'] * h3,
+    html body .bvi-body[data-bvi-size='15'] * h3 * {
+      font-size: 20px; }
+    html body .bvi-body[data-bvi-size='15'] * h4,
+    html body .bvi-body[data-bvi-size='15'] * h4 * {
+      font-size: 19px; }
+    html body .bvi-body[data-bvi-size='15'] * h5,
+    html body .bvi-body[data-bvi-size='15'] * h5 * {
+      font-size: 18px; }
+    html body .bvi-body[data-bvi-size='15'] * h6,
+    html body .bvi-body[data-bvi-size='15'] * h6 * {
+      font-size: 17px; }
+  html body .bvi-body[data-bvi-size='14'] *:not([class*="icon-"]) {
+    font-size: 14px; }
+    html body .bvi-body[data-bvi-size='14'] * h1,
+    html body .bvi-body[data-bvi-size='14'] * h1 * {
+      font-size: 21px; }
+    html body .bvi-body[data-bvi-size='14'] * h2,
+    html body .bvi-body[data-bvi-size='14'] * h2 * {
+      font-size: 20px; }
+    html body .bvi-body[data-bvi-size='14'] * h3,
+    html body .bvi-body[data-bvi-size='14'] * h3 * {
+      font-size: 19px; }
+    html body .bvi-body[data-bvi-size='14'] * h4,
+    html body .bvi-body[data-bvi-size='14'] * h4 * {
+      font-size: 18px; }
+    html body .bvi-body[data-bvi-size='14'] * h5,
+    html body .bvi-body[data-bvi-size='14'] * h5 * {
+      font-size: 17px; }
+    html body .bvi-body[data-bvi-size='14'] * h6,
+    html body .bvi-body[data-bvi-size='14'] * h6 * {
+      font-size: 16px; }
+  html body .bvi-body[data-bvi-size='13'] *:not([class*="icon-"]) {
+    font-size: 13px; }
+    html body .bvi-body[data-bvi-size='13'] * h1,
+    html body .bvi-body[data-bvi-size='13'] * h1 * {
+      font-size: 20px; }
+    html body .bvi-body[data-bvi-size='13'] * h2,
+    html body .bvi-body[data-bvi-size='13'] * h2 * {
+      font-size: 19px; }
+    html body .bvi-body[data-bvi-size='13'] * h3,
+    html body .bvi-body[data-bvi-size='13'] * h3 * {
+      font-size: 18px; }
+    html body .bvi-body[data-bvi-size='13'] * h4,
+    html body .bvi-body[data-bvi-size='13'] * h4 * {
+      font-size: 17px; }
+    html body .bvi-body[data-bvi-size='13'] * h5,
+    html body .bvi-body[data-bvi-size='13'] * h5 * {
+      font-size: 16px; }
+    html body .bvi-body[data-bvi-size='13'] * h6,
+    html body .bvi-body[data-bvi-size='13'] * h6 * {
+      font-size: 15px; }
+  html body .bvi-body[data-bvi-size='12'] *:not([class*="icon-"]) {
+    font-size: 12px; }
+    html body .bvi-body[data-bvi-size='12'] * h1,
+    html body .bvi-body[data-bvi-size='12'] * h1 * {
+      font-size: 19px; }
+    html body .bvi-body[data-bvi-size='12'] * h2,
+    html body .bvi-body[data-bvi-size='12'] * h2 * {
+      font-size: 18px; }
+    html body .bvi-body[data-bvi-size='12'] * h3,
+    html body .bvi-body[data-bvi-size='12'] * h3 * {
+      font-size: 17px; }
+    html body .bvi-body[data-bvi-size='12'] * h4,
+    html body .bvi-body[data-bvi-size='12'] * h4 * {
+      font-size: 16px; }
+    html body .bvi-body[data-bvi-size='12'] * h5,
+    html body .bvi-body[data-bvi-size='12'] * h5 * {
+      font-size: 15px; }
+    html body .bvi-body[data-bvi-size='12'] * h6,
+    html body .bvi-body[data-bvi-size='12'] * h6 * {
+      font-size: 14px; }
+  html body .bvi-body[data-bvi-size='11'] *:not([class*="icon-"]) {
+    font-size: 11px; }
+    html body .bvi-body[data-bvi-size='11'] * h1,
+    html body .bvi-body[data-bvi-size='11'] * h1 * {
+      font-size: 18px; }
+    html body .bvi-body[data-bvi-size='11'] * h2,
+    html body .bvi-body[data-bvi-size='11'] * h2 * {
+      font-size: 17px; }
+    html body .bvi-body[data-bvi-size='11'] * h3,
+    html body .bvi-body[data-bvi-size='11'] * h3 * {
+      font-size: 16px; }
+    html body .bvi-body[data-bvi-size='11'] * h4,
+    html body .bvi-body[data-bvi-size='11'] * h4 * {
+      font-size: 15px; }
+    html body .bvi-body[data-bvi-size='11'] * h5,
+    html body .bvi-body[data-bvi-size='11'] * h5 * {
+      font-size: 14px; }
+    html body .bvi-body[data-bvi-size='11'] * h6,
+    html body .bvi-body[data-bvi-size='11'] * h6 * {
+      font-size: 13px; }
+  html body .bvi-body[data-bvi-size='10'] *:not([class*="icon-"]) {
+    font-size: 10px; }
+    html body .bvi-body[data-bvi-size='10'] * h1,
+    html body .bvi-body[data-bvi-size='10'] * h1 * {
+      font-size: 17px; }
+    html body .bvi-body[data-bvi-size='10'] * h2,
+    html body .bvi-body[data-bvi-size='10'] * h2 * {
+      font-size: 16px; }
+    html body .bvi-body[data-bvi-size='10'] * h3,
+    html body .bvi-body[data-bvi-size='10'] * h3 * {
+      font-size: 15px; }
+    html body .bvi-body[data-bvi-size='10'] * h4,
+    html body .bvi-body[data-bvi-size='10'] * h4 * {
+      font-size: 14px; }
+    html body .bvi-body[data-bvi-size='10'] * h5,
+    html body .bvi-body[data-bvi-size='10'] * h5 * {
+      font-size: 13px; }
+    html body .bvi-body[data-bvi-size='10'] * h6,
+    html body .bvi-body[data-bvi-size='10'] * h6 * {
+      font-size: 12px; }
+  html body .bvi-body[data-bvi-size='9'] *:not([class*="icon-"]) {
+    font-size: 9px; }
+    html body .bvi-body[data-bvi-size='9'] * h1,
+    html body .bvi-body[data-bvi-size='9'] * h1 * {
+      font-size: 16px; }
+    html body .bvi-body[data-bvi-size='9'] * h2,
+    html body .bvi-body[data-bvi-size='9'] * h2 * {
+      font-size: 15px; }
+    html body .bvi-body[data-bvi-size='9'] * h3,
+    html body .bvi-body[data-bvi-size='9'] * h3 * {
+      font-size: 14px; }
+    html body .bvi-body[data-bvi-size='9'] * h4,
+    html body .bvi-body[data-bvi-size='9'] * h4 * {
+      font-size: 13px; }
+    html body .bvi-body[data-bvi-size='9'] * h5,
+    html body .bvi-body[data-bvi-size='9'] * h5 * {
+      font-size: 12px; }
+    html body .bvi-body[data-bvi-size='9'] * h6,
+    html body .bvi-body[data-bvi-size='9'] * h6 * {
+      font-size: 11px; }
+  html body .bvi-body[data-bvi-size='8'] *:not([class*="icon-"]) {
+    font-size: 8px; }
+    html body .bvi-body[data-bvi-size='8'] * h1,
+    html body .bvi-body[data-bvi-size='8'] * h1 * {
+      font-size: 15px; }
+    html body .bvi-body[data-bvi-size='8'] * h2,
+    html body .bvi-body[data-bvi-size='8'] * h2 * {
+      font-size: 14px; }
+    html body .bvi-body[data-bvi-size='8'] * h3,
+    html body .bvi-body[data-bvi-size='8'] * h3 * {
+      font-size: 13px; }
+    html body .bvi-body[data-bvi-size='8'] * h4,
+    html body .bvi-body[data-bvi-size='8'] * h4 * {
+      font-size: 12px; }
+    html body .bvi-body[data-bvi-size='8'] * h5,
+    html body .bvi-body[data-bvi-size='8'] * h5 * {
+      font-size: 11px; }
+    html body .bvi-body[data-bvi-size='8'] * h6,
+    html body .bvi-body[data-bvi-size='8'] * h6 * {
+      font-size: 10px; }
+  html body .bvi-body[data-bvi-size='7'] *:not([class*="icon-"]) {
+    font-size: 7px; }
+    html body .bvi-body[data-bvi-size='7'] * h1,
+    html body .bvi-body[data-bvi-size='7'] * h1 * {
+      font-size: 14px; }
+    html body .bvi-body[data-bvi-size='7'] * h2,
+    html body .bvi-body[data-bvi-size='7'] * h2 * {
+      font-size: 13px; }
+    html body .bvi-body[data-bvi-size='7'] * h3,
+    html body .bvi-body[data-bvi-size='7'] * h3 * {
+      font-size: 12px; }
+    html body .bvi-body[data-bvi-size='7'] * h4,
+    html body .bvi-body[data-bvi-size='7'] * h4 * {
+      font-size: 11px; }
+    html body .bvi-body[data-bvi-size='7'] * h5,
+    html body .bvi-body[data-bvi-size='7'] * h5 * {
+      font-size: 10px; }
+    html body .bvi-body[data-bvi-size='7'] * h6,
+    html body .bvi-body[data-bvi-size='7'] * h6 * {
+      font-size: 9px; }
+  html body .bvi-body[data-bvi-size='6'] *:not([class*="icon-"]) {
+    font-size: 6px; }
+    html body .bvi-body[data-bvi-size='6'] * h1,
+    html body .bvi-body[data-bvi-size='6'] * h1 * {
+      font-size: 13px; }
+    html body .bvi-body[data-bvi-size='6'] * h2,
+    html body .bvi-body[data-bvi-size='6'] * h2 * {
+      font-size: 12px; }
+    html body .bvi-body[data-bvi-size='6'] * h3,
+    html body .bvi-body[data-bvi-size='6'] * h3 * {
+      font-size: 11px; }
+    html body .bvi-body[data-bvi-size='6'] * h4,
+    html body .bvi-body[data-bvi-size='6'] * h4 * {
+      font-size: 10px; }
+    html body .bvi-body[data-bvi-size='6'] * h5,
+    html body .bvi-body[data-bvi-size='6'] * h5 * {
+      font-size: 9px; }
+    html body .bvi-body[data-bvi-size='6'] * h6,
+    html body .bvi-body[data-bvi-size='6'] * h6 * {
+      font-size: 8px; }
+  html body .bvi-body[data-bvi-size='5'] *:not([class*="icon-"]) {
+    font-size: 5px; }
+    html body .bvi-body[data-bvi-size='5'] * h1,
+    html body .bvi-body[data-bvi-size='5'] * h1 * {
+      font-size: 12px; }
+    html body .bvi-body[data-bvi-size='5'] * h2,
+    html body .bvi-body[data-bvi-size='5'] * h2 * {
+      font-size: 11px; }
+    html body .bvi-body[data-bvi-size='5'] * h3,
+    html body .bvi-body[data-bvi-size='5'] * h3 * {
+      font-size: 10px; }
+    html body .bvi-body[data-bvi-size='5'] * h4,
+    html body .bvi-body[data-bvi-size='5'] * h4 * {
+      font-size: 9px; }
+    html body .bvi-body[data-bvi-size='5'] * h5,
+    html body .bvi-body[data-bvi-size='5'] * h5 * {
+      font-size: 8px; }
+    html body .bvi-body[data-bvi-size='5'] * h6,
+    html body .bvi-body[data-bvi-size='5'] * h6 * {
+      font-size: 7px; }
+  html body .bvi-body[data-bvi-size='4'] *:not([class*="icon-"]) {
+    font-size: 4px; }
+    html body .bvi-body[data-bvi-size='4'] * h1,
+    html body .bvi-body[data-bvi-size='4'] * h1 * {
+      font-size: 11px; }
+    html body .bvi-body[data-bvi-size='4'] * h2,
+    html body .bvi-body[data-bvi-size='4'] * h2 * {
+      font-size: 10px; }
+    html body .bvi-body[data-bvi-size='4'] * h3,
+    html body .bvi-body[data-bvi-size='4'] * h3 * {
+      font-size: 9px; }
+    html body .bvi-body[data-bvi-size='4'] * h4,
+    html body .bvi-body[data-bvi-size='4'] * h4 * {
+      font-size: 8px; }
+    html body .bvi-body[data-bvi-size='4'] * h5,
+    html body .bvi-body[data-bvi-size='4'] * h5 * {
+      font-size: 7px; }
+    html body .bvi-body[data-bvi-size='4'] * h6,
+    html body .bvi-body[data-bvi-size='4'] * h6 * {
+      font-size: 6px; }
+  html body .bvi-body[data-bvi-size='3'] *:not([class*="icon-"]) {
+    font-size: 3px; }
+    html body .bvi-body[data-bvi-size='3'] * h1,
+    html body .bvi-body[data-bvi-size='3'] * h1 * {
+      font-size: 10px; }
+    html body .bvi-body[data-bvi-size='3'] * h2,
+    html body .bvi-body[data-bvi-size='3'] * h2 * {
+      font-size: 9px; }
+    html body .bvi-body[data-bvi-size='3'] * h3,
+    html body .bvi-body[data-bvi-size='3'] * h3 * {
+      font-size: 8px; }
+    html body .bvi-body[data-bvi-size='3'] * h4,
+    html body .bvi-body[data-bvi-size='3'] * h4 * {
+      font-size: 7px; }
+    html body .bvi-body[data-bvi-size='3'] * h5,
+    html body .bvi-body[data-bvi-size='3'] * h5 * {
+      font-size: 6px; }
+    html body .bvi-body[data-bvi-size='3'] * h6,
+    html body .bvi-body[data-bvi-size='3'] * h6 * {
+      font-size: 5px; }
+  html body .bvi-body[data-bvi-size='2'] *:not([class*="icon-"]) {
+    font-size: 2px; }
+    html body .bvi-body[data-bvi-size='2'] * h1,
+    html body .bvi-body[data-bvi-size='2'] * h1 * {
+      font-size: 9px; }
+    html body .bvi-body[data-bvi-size='2'] * h2,
+    html body .bvi-body[data-bvi-size='2'] * h2 * {
+      font-size: 8px; }
+    html body .bvi-body[data-bvi-size='2'] * h3,
+    html body .bvi-body[data-bvi-size='2'] * h3 * {
+      font-size: 7px; }
+    html body .bvi-body[data-bvi-size='2'] * h4,
+    html body .bvi-body[data-bvi-size='2'] * h4 * {
+      font-size: 6px; }
+    html body .bvi-body[data-bvi-size='2'] * h5,
+    html body .bvi-body[data-bvi-size='2'] * h5 * {
+      font-size: 5px; }
+    html body .bvi-body[data-bvi-size='2'] * h6,
+    html body .bvi-body[data-bvi-size='2'] * h6 * {
+      font-size: 4px; }
+  html body .bvi-body[data-bvi-size='1'] *:not([class*="icon-"]) {
+    font-size: 1px; }
+    html body .bvi-body[data-bvi-size='1'] * h1,
+    html body .bvi-body[data-bvi-size='1'] * h1 * {
+      font-size: 8px; }
+    html body .bvi-body[data-bvi-size='1'] * h2,
+    html body .bvi-body[data-bvi-size='1'] * h2 * {
+      font-size: 7px; }
+    html body .bvi-body[data-bvi-size='1'] * h3,
+    html body .bvi-body[data-bvi-size='1'] * h3 * {
+      font-size: 6px; }
+    html body .bvi-body[data-bvi-size='1'] * h4,
+    html body .bvi-body[data-bvi-size='1'] * h4 * {
+      font-size: 5px; }
+    html body .bvi-body[data-bvi-size='1'] * h5,
+    html body .bvi-body[data-bvi-size='1'] * h5 * {
+      font-size: 4px; }
+    html body .bvi-body[data-bvi-size='1'] * h6,
+    html body .bvi-body[data-bvi-size='1'] * h6 * {
+      font-size: 3px; }

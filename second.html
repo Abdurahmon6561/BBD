@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Финансовая Инфраструктура — Light Banking Hero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       1. SYSTEM VARIABLES & BASE RESET
+       ========================================================================== */
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-surface: #F8FAFC;
+      --bg-surface-elevated: #FFFFFF;
+      --bg-control: #F1F5F9;
+      --bg-control-hover: #E2E8F0;
+
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+
+      --accent-primary: #0F172A;
+      --accent-primary-hover: #1E293B;
+      --accent-blue: #2563EB;
+      --accent-green: #10B981;
+
+      --border-subtle: #E2E8F0;
+      --border-focus: #CBD5E1;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+      --shadow-card: 0 20px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.01);
+      
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       2. HERO CONTAINER & GRID
+       ========================================================================== */
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 32px;
+      width: 100%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       3. LEFT COLUMN: TYPOGRAPHY & ACTIONS
+       ========================================================================== */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      width: fit-content;
+      margin-bottom: 24px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-green);
+      border-radius: 50%;
+    }
+
+    .hero-headline {
+      font-size: 52px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+      border: 1px solid transparent;
+      outline: none;
+    }
+
+    .btn-primary {
+      background-color: var(--accent-primary);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-control);
+      border-color: var(--border-focus);
+      transform: translateY(-2px);
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-value {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       4. RIGHT COLUMN: MINIMAL WIDGET & CHART
+       ========================================================================== */
+    .widget-card {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .widget-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .widget-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .currency-selector {
+      display: flex;
+      background-color: var(--bg-control);
+      padding: 3px;
+      border-radius: var(--radius-sm);
+      gap: 2px;
+    }
+
+    .currency-btn {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .currency-btn.active {
+      background: #FFFFFF;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Calculator Input Area */
+    .calc-box {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition-smooth);
+    }
+
+    .calc-box:focus-within {
+      border-color: var(--border-focus);
+      background-color: #FFFFFF;
+    }
+
+    .calc-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calc-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .calc-input {
+      border: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      outline: none;
+      width: 100%;
+    }
+
+    .calc-tag {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-control);
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    /* Chart Area */
+    .chart-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .chart-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .rate-display {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .rate-change {
+      font-size: 13px;
+      color: var(--accent-green);
+      font-weight: 600;
+    }
+
+    .chart-canvas-wrapper {
+      position: relative;
+      width: 100%;
+      height: 120px;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ==========================================================================
+       5. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .hero-headline {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-container {
+        padding: 32px 20px;
+      }
+      .hero-headline {
+        font-size: 32px;
+      }
+      .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .stats-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="hero-container">
+    <div class="hero-grid">
+      
+      <!-- Left Column: Primary Pitch -->
+      <section class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Европейская лицензия № 4820
+        </div>
+
+        <h1 class="hero-headline">
+          Надёжность финансовой инфраструктуры
+        </h1>
+
+        <p class="hero-subtitle">
+          Прямой доступ к институциональной ликвидности, депозитарным сервисам и международным расчетам в единой прозрачной экосистеме.
+        </p>
+
+        <div class="cta-group">
+          <a href="#open-account" class="btn btn-primary">Открыть счёт</a>
+          <a href="#custody" class="btn btn-secondary">Услуги депозитария</a>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-value">€14.2B</span>
+            <span class="stat-label">Активы под custody</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">99.99%</span>
+            <span class="stat-label">Доступность core-систем</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">T+0</span>
+            <span class="stat-label">Скорость расчетов</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Minimal Visual Interactive Widget -->
+      <aside class="widget-card" aria-label="Калькулятор валют и динамика курса">
+        <div class="widget-header">
+          <span class="widget-title">Конвертация и динамика</span>
+          <div class="currency-selector" role="tablist">
+            <button class="currency-btn active" data-currency="USD" onclick="setCurrency('USD')">USD</button>
+            <button class="currency-btn" data-currency="EUR" onclick="setCurrency('EUR')">EUR</button>
+            <button class="currency-btn" data-currency="RUB" onclick="setCurrency('RUB')">RUB</button>
+          </div>
+        </div>
+
+        <div class="calc-box">
+          <div class="calc-info">
+            <label for="amount-input" class="calc-label">Сумма операции</label>
+            <input type="text" id="amount-input" class="calc-input" value="100 000" oninput="handleInput(this)">
+          </div>
+          <span class="calc-tag" id="currency-tag">USD</span>
+        </div>
+
+        <div class="chart-container">
+          <div class="chart-meta">
+            <span class="rate-display" id="rate-text">1 USD = 0.9214 EUR</span>
+            <span class="rate-change">+0.24% за 24ч</span>
+          </div>
+          <div class="chart-canvas-wrapper">
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <script>
+    /* ==========================================================================
+       LIGHTWEIGHT JS: CALCULATOR STATE & SMOOTH CANVAS DRAWING
+       ========================================================================== */
+
+    // Market Mock Data
+    const marketData = {
+      USD: { rateText: "1 USD = 0.9214 EUR", change: "+0.24%", points: [40, 42, 38, 48, 45, 55, 52, 60, 58, 65, 70] },
+      EUR: { rateText: "1 EUR = 1.0852 USD", change: "-0.12%", points: [60, 58, 62, 54, 56, 50, 52, 45, 48, 42, 40] },
+      RUB: { rateText: "1 RUB = 0.0108 USD", change: "+0.05%", points: [45, 46, 48, 47, 50, 52, 51, 55, 54, 58, 60] }
+    };
+
+    let currentCurrency = 'USD';
+
+    // Format currency input with clear space delimiters
+    function handleInput(input) {
+      let rawValue = input.value.replace(/\D/g, '');
+      if (rawValue) {
+        input.value = Number(rawValue).toLocaleString('ru-RU');
+      } else {
+        input.value = '';
+      }
+    }
+
+    // Switch Currency Tab UI and Chart Data
+    function setCurrency(currency) {
+      currentCurrency = currency;
+      
+      // Update Tab UI
+      document.querySelectorAll('.currency-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.currency === currency);
+      });
+
+      // Update Label
+      document.getElementById('currency-tag').textContent = currency;
+
+      // Update Rates Display
+      const data = marketData[currency];
+      document.getElementById('rate-text').textContent = data.rateText;
+      
+      const changeEl = document.querySelector('.rate-change');
+      changeEl.textContent = data.change;
+      if(data.change.startsWith('-')) {
+        changeEl.style.color = '#EF4444';
+      } else {
+        changeEl.style.color = '#10B981';
+      }
+
+      // Re-render smooth line
+      drawChart(data.points);
+    }
+
+    // Smooth Canvas Line Render Engine
+    function drawChart(points) {
+      const canvas = document.getElementById('lineChart');
+      const ctx = canvas.getContext('2d');
+      
+      // Handle High DPI displays naturally
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const width = rect.width;
+      const height = rect.height;
+
+      ctx.clearRect(0, 0, width, height);
+
+      // Interpolate Smooth Bézier Curve
+      const stepX = width / (points.length - 1);
+      
+      // Create Gradient Fill below line
+      const gradient = ctx.createLinearGradient(0, 0, 0, height);
+      gradient.addColorStop(0, 'rgba(37, 99, 235, 0.08)');
+      gradient.addColorStop(1, 'rgba(37, 99, 235, 0.0)');
+
+      ctx.beginPath();
+      ctx.moveTo(0, height - points[0]);
+
+      for (let i = 0; i < points.length - 1; i++) {
+        const x1 = i * stepX;
+        const y1 = height - points[i];
+        const x2 = (i + 1) * stepX;
+        const y2 = height - points[i + 1];
+        
+        const midX = (x1 + x2) / 2;
+        ctx.bezierCurveTo(midX, y1, midX, y2, x2, y2);
+      }
+
+      // Stroke Line
+      ctx.strokeStyle = '#2563EB';
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
+
+      // Fill Area
+      ctx.lineTo(width, height);
+      ctx.lineTo(0, height);
+      ctx.closePath();
+      ctx.fillStyle = gradient;
+      ctx.fill();
+    }
+
+    // Initialize Chart on load & Window Resize
+    window.addEventListener('DOMContentLoaded', () => {
+      drawChart(marketData.USD.points);
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        drawChart(marketData[currentCurrency].points);
+      }, 100);
+    });
+  </script>
+</body>
+</html>

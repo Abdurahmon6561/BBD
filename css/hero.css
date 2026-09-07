@@ -1,0 +1,504 @@
+/* =====================================================================
+   BBD — HERO
+
+   One statement, three layers: the footage in video/bg-hero.mp4, a scrim
+   that buys the copy its contrast back, and the type. The generated
+   guilloche plate that used to turn on the right is gone — two moving
+   grounds behind one headline is one too many, and the video is the
+   stronger of the two.
+   ===================================================================== */
+
+.hero {
+    --ink:   #FFFFFF;
+    --muted: rgba(226,236,255,.72);
+    /* .46 measured 4.7:1 on the old near-black ground; on the lighter
+       navy it fell to 3.7:1, which the 10px caps it sets cannot carry */
+    --faint: rgba(226,236,255,.58);
+    --rule:  rgba(255,255,255,.16);
+    --cyan:  #4FC3F7;
+
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 100vh;
+
+    /* Grid rather than flex, purely so .hero__inner can size itself.
+       As a flex item its `width: calc(100% - 80px)` resolved against an
+       indefinite main size and silently fell back to fit-content: at
+       414px the column came out 240px wide instead of 384px, which is
+       what was squeezing the headline into a wrap. A grid item resolves
+       percentages against its grid area, which is definite.
+       align-content replaces align-items for the same vertical centring. */
+    display: grid;
+    align-content: center;
+    /* The base used to be #060B18 -> #08111F -> #050A14: a near-black
+       that read as charcoal rather than as this institution's blue, and
+       it no longer matched the bands below it. It now comes off the same
+       --navy-* scale as every other dark surface on the page (defined on
+       :root in index.html; custom properties resolve regardless of which
+       sheet declares them, so the scale stays in one place). */
+    background:
+        radial-gradient(1200px 700px at 78% 44%, rgba(46,86,164,.42), transparent 62%),
+        radial-gradient(900px 600px at 6% 8%, rgba(0,140,205,.18), transparent 60%),
+        linear-gradient(170deg,
+            var(--navy-800, #16244f) 0%,
+            var(--navy-700, #1b2c5e) 52%,
+            var(--navy-900, #111e44) 100%);
+    color: var(--ink);
+    font-family: var(--sans);
+}
+
+/* ---------------------------------------------------------------------
+   THE GROUND — video/bg-hero.mp4
+
+   z-index -2 puts it above .hero's own gradient, which stays underneath
+   as the fallback while the first frame decodes and permanently if the
+   file never loads, and below the copy scrim at -1.
+   --------------------------------------------------------------------- */
+.hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.hero__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Was .55 with saturate(.7), which read as fog over the footage —
+       most of what the file actually shows was being thrown away. With
+       the engraving gone there is nothing left for it to compete with,
+       so it now plays close to full strength and the contrast the copy
+       needs is bought by the two scrims instead, which cost nothing to
+       composite because they never move. */
+    opacity: .92;
+    filter: saturate(1.02) contrast(1.04);
+}
+
+/* The tint: even, and light. It only has to stop the brightest frames
+   from washing out the hairline rule along the foot and the ticks — the
+   headline gets its contrast from .hero::before, which is weighted to
+   the left where the copy actually is. The bottom is carried a little
+   deeper so the band below meets a dark edge rather than a bright one. */
+.hero__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg,
+            rgba(9, 18, 46, .34) 0%,
+            rgba(9, 18, 46, .20) 46%,
+            rgba(9, 18, 46, .58) 100%);
+}
+
+/* Off screen there is nothing to decode for; js/hero.js pauses it too. */
+.hero.is-gone .hero__media {
+    visibility: hidden;
+}
+
+/* The copy scrim.
+
+   The headline is white and the footage underneath it is not reliably
+   dark, so the left third of the hero is carried down to near the band
+   colour and released to nothing by 66%. It is deliberately a fixed
+   gradient rather than a mask on the video: it is composited once and
+   never again, where a mask has to be re-composited every frame the
+   footage advances.
+
+   Slightly stronger than it was, since the video behind it is now
+   playing at .92 instead of .55 — this is where that contrast is paid
+   for, and it is paid on the left only, so the right-hand side of the
+   frame keeps the footage at full strength. */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        95deg,
+        var(--navy-800) 0%,
+        rgba(22, 36, 79, .94) 28%,
+        rgba(22, 36, 79, .70) 44%,
+        rgba(22, 36, 79, .24) 56%,
+        transparent 66%);
+}
+
+/* a single hairline along the foot, like the rule on a certificate */
+.hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.14) 22%, rgba(255,255,255,.14) 78%, transparent);
+}
+
+/* ---------------------------------------------------------------------
+   SHELL
+   --------------------------------------------------------------------- */
+.hero__inner {
+    position: relative;
+
+    /* Exactly .container's box at every breakpoint - 80 / 50 / 40 / 30 -
+       and no horizontal padding.
+
+       The 15px that used to sit here was meant to match .container's own
+       padding, but .container has none: it is a width plus auto margins.
+       So the 15px was pure extra inset and the hero copy began 15px
+       inboard of the logo and nav above it, at every screen size. */
+    width: min(1440px, calc(100% - 80px));
+    margin: 0 auto;
+    padding: 168px 0 120px;
+}
+
+.hero__copy {
+    max-width: 760px;
+}
+
+/* ---------------------------------------------------------------------
+   KICKER
+   --------------------------------------------------------------------- */
+.hero__kicker {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0 0 34px;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--faint);
+}
+
+.hero__kicker::before {
+    content: "";
+    width: 64px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--cyan), rgba(79,195,247,.15));
+}
+
+/* ---------------------------------------------------------------------
+   STATEMENT
+   --------------------------------------------------------------------- */
+.hero__title {
+    margin: 0 0 30px;
+    /* Sized to the longest line the slides actually contain rather than
+       to the shortest. At the old clamp(44px, 6vw, 92px) the two engraved
+       lines - "о фондовом рынке" and "о своих инвестициях" - wrapped onto
+       a second line from 1280px up, and a wrapped outline line reads as a
+       mistake. 72px is where the longest of them still clears the 760px
+       copy column. */
+    font-size: clamp(30px, 4.6vw, 72px);
+    /* 600 read a shade light at this size for an institution whose whole
+       claim is solidity */
+    font-weight: 700;
+    line-height: 1.0;
+    /* -.042em is tight enough to close up Cyrillic sidebearings - the
+       stems of и, н and п start to touch at the large end of the clamp */
+    letter-spacing: -.032em;
+    color: var(--ink);
+}
+
+.hero__title span {
+    display: block;
+}
+
+/* the engraved word: outline only, the way a denomination is cut into
+   a certificate rather than printed on it */
+.hero__title .is-engraved {
+    color: rgba(255,255,255,.30);
+}
+
+@supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
+    .hero__title .is-engraved {
+        color: transparent;
+        -webkit-text-stroke: 1.2px rgba(255,255,255,.62);
+        text-stroke: 1.2px rgba(255,255,255,.62);
+    }
+}
+
+.hero__subtitle {
+    max-width: 44ch;
+    margin: 0 0 44px;
+    font-size: clamp(16.5px, 1.25vw, 19px);
+    line-height: 1.62;
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------
+   THE STAGE — four slides in one cell
+
+   Every slide occupies the same grid area, so the stage takes the height
+   of the tallest one and nothing below it moves as they change. Only the
+   copy rotates: the two calls to action underneath stay put, because a
+   CTA that changes out from under a reader is a CTA nobody clicks.
+
+   `visibility` carries the hidden state as well as opacity — it takes an
+   inactive slide out of the accessibility tree and out of the tab order,
+   which opacity alone does not do.
+   --------------------------------------------------------------------- */
+.hero__stage {
+    display: grid;
+}
+
+.hero__slide {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 16px, 0);
+    transition:
+        opacity .62s cubic-bezier(.22,.61,.36,1),
+        transform .62s cubic-bezier(.22,.61,.36,1),
+        visibility .62s;
+}
+
+.hero__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+/* ---------------------------------------------------------------------
+   SLIDE TICKS — four rules, the active one filled
+   --------------------------------------------------------------------- */
+.hero__ticks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 52px;
+}
+
+.hero__tick {
+    width: 34px;
+    height: 3px;
+    padding: 0;
+    border: 0;
+    border-radius: 3px;
+    background: rgba(255,255,255,.22);
+    cursor: pointer;
+    transition:
+        background-color .32s ease,
+        width .32s cubic-bezier(.22,.61,.36,1);
+}
+
+/* the hit area is the 3px rule plus a transparent collar, so the control
+   is a comfortable target without drawing a 24px box on the page */
+.hero__tick::before {
+    content: "";
+    position: absolute;
+    inset: -11px -4px;
+}
+
+.hero__tick {
+    position: relative;
+}
+
+.hero__tick:hover {
+    background: rgba(255,255,255,.44);
+}
+
+.hero__tick.is-on {
+    width: 52px;
+    background: var(--cyan);
+}
+
+/* ---------------------------------------------------------------------
+   ACTIONS
+   --------------------------------------------------------------------- */
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 36px;
+}
+
+.hero__btn {
+    display: inline-flex;
+    align-items: center;
+    height: 58px;
+    padding: 0 38px;
+    /* 3px left this reading as a hard-cornered slab under a header made
+       entirely of pills - the nav capsule, the three tool buttons, the
+       language switch and the Telegram button are all fully rounded, so
+       these are too. */
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #060B18;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+    transition:
+        transform .3s cubic-bezier(.22,.61,.36,1),
+        box-shadow .3s ease,
+        background-color .3s ease;
+}
+
+.hero__btn:hover {
+    color: #060B18;
+    background: #EAF2FF;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px -18px rgba(180,214,255,.85);
+}
+
+.hero__link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.hero__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 27px;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .36s cubic-bezier(.22,.61,.36,1);
+}
+
+.hero__link:hover {
+    color: var(--ink);
+}
+
+.hero__link:hover::after {
+    transform: scaleX(1);
+}
+
+.hero__link-arrow {
+    width: 7px;
+    height: 7px;
+    border-top: 1.6px solid currentColor;
+    border-right: 1.6px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .3s ease;
+}
+
+.hero__link:hover .hero__link-arrow {
+    transform: rotate(45deg) translate(3px, -3px);
+}
+
+/* The four company figures used to sit here, set like the entries on a
+   certificate. They are the same four the about panel carries, so the
+   hero no longer repeats them and their rules have gone with them. */
+
+/* the imprint line, bottom-right — a certificate always carries one */
+.hero__imprint {
+    position: absolute;
+    right: 15px;
+    bottom: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(226,236,255,.34);
+}
+
+.hero__imprint::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: var(--rule);
+}
+
+/* ---------------------------------------------------------------------
+   ENTRANCE
+   --------------------------------------------------------------------- */
+.hero__fade {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: heroFade .9s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+.hero__fade--1 { animation-delay: .12s; }
+.hero__fade--2 { animation-delay: .24s; }
+.hero__fade--3 { animation-delay: .36s; }
+.hero__fade--4 { animation-delay: .48s; }
+.hero__fade--5 { animation-delay: .68s; }
+.hero__fade--6 { animation-delay: .90s; }
+
+@keyframes heroFade {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------------------- */
+@media (max-width: 1150px) {
+    .hero__inner {
+        width: min(100% - 50px, 1440px);
+        padding: 156px 0 112px;
+    }
+}
+
+/* .container steps to 40px here, so this has to as well or the copy
+   drifts back out of line with the header */
+@media (max-width: 1040px) {
+    .hero__inner { width: min(100% - 40px, 1440px); }
+}
+
+@media (max-width: 900px) {
+    .hero {
+        min-height: 0;
+    }
+    .hero__inner   { padding: 146px 0 104px; }
+    .hero__copy    { max-width: 100%; }
+    .hero__subtitle{ max-width: 56ch; margin-bottom: 40px; }
+    .hero__imprint { position: static; margin-top: 44px; }
+    .hero__ticks   { margin-top: 40px; }
+}
+
+@media (max-width: 700px) {
+    .hero__inner {
+        width: calc(100% - 30px);
+        padding: 128px 0 88px;
+    }
+    .hero__kicker { margin-bottom: 30px; letter-spacing: .18em; }
+    .hero__kicker::before { width: 34px; }
+    .hero__btn    { width: 100%; justify-content: center; }
+    .hero__ticks  { margin-top: 34px; }
+}
+
+@media (max-width: 430px) {
+    /* 30px is the clamp floor; the column is 384px at 414 and 330px at
+       360, and the longest outlined line needs 306px of that */
+    .hero__title { font-size: 30px; letter-spacing: -.022em; }
+}
+
+/* ---------------------------------------------------------------------
+   REDUCED MOTION
+   --------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    /* Nothing to do for the video here. js/hero.js drops its autoplay
+       attribute under this same query, so it never plays and what stays
+       on screen is its poster: the same frame, holding still. The layer
+       is deliberately not hidden — a still hero is the point of reduced
+       motion, not an empty one. */
+    .hero__fade {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}

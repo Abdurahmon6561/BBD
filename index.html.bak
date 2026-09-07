@@ -1,0 +1,2469 @@
+﻿<!DOCTYPE html><html lang="ru"><head>	  																		
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="csrf-token" content="wdHtgloLgI1WTlZW9DNIHqAzlLSyYRm2D31f9dlL">
+<meta name="description" content="Р”РµРїРѕР·РёС‚Р°СЂРёРё, РџРѕСЃСЂРµРґРЅРёС‡РµСЃРєРёРµ СѓСЃР»СѓРіРё РїСЂРё РєСѓРїР»Рµ-РїСЂРѕРґР°Р¶Рµ С‚РѕРІР°СЂРѕРІ, С†РµРЅРЅС‹С… Р±СѓРјР°Рі, РІР°Р»СЋС‚С‹ Рё СЃРґР°С‡Р° РІ РЅР°РµРј Р±РµР· РІС‹СЂР°Р¶РµРЅРЅРѕР№ СЃРїРµС†РёР°Р»РёР·Р°С†РёРё, Р¦РµРЅРЅС‹Рµ Р±СѓРјР°РіРё, Р¤РёРЅР°РЅСЃРѕРІС‹Рµ РѕСЂРіР°РЅРёР·Р°С†РёРё">
+<meta name="keywords" content="Р”РµРїРѕР·РёС‚Р°СЂРёРё, РџРѕСЃСЂРµРґРЅРёС‡РµСЃРєРёРµ СѓСЃР»СѓРіРё РїСЂРё РєСѓРїР»Рµ-РїСЂРѕРґР°Р¶Рµ С‚РѕРІР°СЂРѕРІ, С†РµРЅРЅС‹С… Р±СѓРјР°Рі, РІР°Р»СЋС‚С‹ Рё СЃРґР°С‡Р° РІ РЅР°РµРј Р±РµР· РІС‹СЂР°Р¶РµРЅРЅРѕР№ СЃРїРµС†РёР°Р»РёР·Р°С†РёРё, Р¦РµРЅРЅС‹Рµ Р±СѓРјР°РіРё, Р¤РёРЅР°РЅСЃРѕРІС‹Рµ РѕСЂРіР°РЅРёР·Р°С†РёРё">
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<title>Birinchi Banklararo Depozitariy - РџРµСЂРІС‹Р№ РњРµР¶Р±Р°РЅРєРѕРІСЃРєРёР№ Р”РµРїРѕР·РёС‚Р°СЂРёР№</title>
+<link rel="stylesheet" href="css/bvi.css" type="text/css">
+<link rel="stylesheet" href="css/bvi-font.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&family=Space+Mono:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.min.css">
+<link rel="stylesheet" href="css/modern-design.css">
+
+    <style>
+        /* =====================================================
+           ROOT (from second.html)
+        ===================================================== */
+        :root {
+            --primary: #263f87;
+            --primary-dark: #17285f;
+            --blue: #4e76e8;
+            --white: #ffffff;
+            --text: #172033;
+            --gray: #667085;
+            --top-bg: rgba(7, 16, 34, 0.82);
+            --main-bg: rgba(7, 16, 34, 0.72);
+            --border: rgba(255, 255, 255, 0.14);
+        }
+
+        /* =====================================================
+           ICON FONT (icomoon) - from second.html
+        ===================================================== */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot');
+            src: url('fonts/icomoon.eot#iefix') format('embedded-opentype'),
+                 url('fonts/icomoon.ttf') format('truetype'),
+                 url('fonts/icomoon.woff') format('woff'),
+                 url('images/icomoon.svg#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+            font-family: 'icomoon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-facebook:before { content: "\e904"; }
+        .icon-in:before { content: "\e905"; }
+        .icon-instagram:before { content: "\e906"; }
+        .icon-telegram:before { content: "\e90c"; }
+        .icon-search:before { content: "\e90a"; }
+        .icon-eye:before { content: "\e902"; }
+
+        /* =====================================================
+           CONTAINER - from second.html
+        ===================================================== */
+        .container {
+            width: min(1440px, calc(100% - 80px));
+            margin: 0 auto;
+        }
+
+        /* =====================================================
+           TOP HEADER - from second.html
+        ===================================================== */
+        .top-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 62px;
+            z-index: 100;
+            color: white;
+            background: var(--top-bg);
+            border-top: 1px solid rgba(255,255,255,.10);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+            transition: .3s ease;
+        }
+
+        .top-header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-socials {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .top-social {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,.42);
+            border-radius: 50%;
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            transition: .25s ease;
+        }
+
+        .top-social:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .top-tools {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .top-tools button {
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .search-icon {
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            opacity: .9;
+            transition: .25s ease;
+        }
+
+        .search-icon:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .eye-icon {
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            opacity: .9;
+            transition: .25s ease;
+        }
+
+        .eye-icon:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        /* =====================================================
+           MAIN HEADER - from second.html
+        ===================================================== */
+        .main-header {
+            position: absolute;
+            top: 62px;
+            left: 0;
+            width: 100%;
+            height: 102px;
+            z-index: 100;
+            color: white;
+            background: var(--main-bg);
+            border-bottom: 1px solid rgba(255,255,255,.10);
+            backdrop-filter: blur(12px);
+            transition: .3s ease;
+        }
+
+        .main-header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 61px;
+            height: 61px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(255,255,255,.85);
+        }
+
+        .logo-icon::before {
+            content: "";
+            width: 26px;
+            height: 36px;
+            background: white;
+            border-radius: 1px 16px 16px 1px;
+        }
+
+        .logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 27px;
+            height: 36px;
+            left: 12px;
+            background: rgba(255,255,255,.85);
+            clip-path: polygon(
+                0 0,
+                55% 0,
+                55% 100%,
+                0 100%
+            );
+        }
+
+        .logo-text {
+            font-size: 17px;
+            line-height: 1.08;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            display: block;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 31px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-nav a {
+            position: relative;
+            color: rgba(255,255,255,.84);
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: .25s ease;
+        }
+
+        .main-nav a:hover {
+            color: white;
+        }
+
+        .main-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -13px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: .25s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-caret {
+            width: 6px;
+            height: 6px;
+            flex-shrink: 0;
+            margin-top: -3px;
+            border-right: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform 0.25s ease;
+        }
+
+        .nav-item:hover .nav-link .nav-caret {
+            transform: rotate(225deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 12px 0;
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px) scale(0.95);
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 100;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .dropdown-menu::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 20px;
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transform: rotate(45deg);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 400;
+            transition: all 0.25s ease;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(39, 59, 137, 0.05);
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: linear-gradient(90deg, rgba(39, 59, 137, 0.05), rgba(0, 162, 224, 0.05));
+            color: #00a2e0;
+            padding-left: 25px;
+        }
+
+        .dropdown-menu a::after {
+            content: none;
+        }
+
+        .language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 42px;
+            padding: 0 16px;
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.20);
+            border-radius: 8px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .language:hover {
+            background: rgba(255,255,255,.20);
+        }
+
+        .flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 2px;
+            background: url("images/ru-flag.svg") center/contain no-repeat;
+        }
+
+        /* =====================================================
+           HERO SLIDER - from second.html
+        ===================================================== */
+        .hero-slider {
+            height: 100vh;
+            min-height: 720px;
+            overflow: hidden;
+            background: #101010;
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.04);
+            transition:
+                opacity .8s ease,
+                transform 1.2s ease,
+                visibility .8s ease;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .slide:nth-child(1) {
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(5,15,35,.82) 0%,
+                    rgba(5,15,35,.50) 48%,
+                    rgba(5,15,35,.22) 100%
+                ),
+                url("images/1590128317.jpg");
+        }
+
+        .slide:nth-child(2) {
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(5,15,35,.82) 0%,
+                    rgba(5,15,35,.48) 50%,
+                    rgba(5,15,35,.20) 100%
+                ),
+                url("images/main-image.png");
+        }
+
+        .slide:nth-child(3) {
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(5,15,35,.82) 0%,
+                    rgba(5,15,35,.50) 50%,
+                    rgba(5,15,35,.20) 100%
+                ),
+                url("images/1590126345.jpg");
+        }
+
+        .slide-content {
+            width: min(1440px, calc(100% - 80px));
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            padding-top: 155px;
+            color: white;
+        }
+
+        .hero-text {
+            max-width: 680px;
+        }
+
+        .hero-title {
+            font-size: clamp(46px, 4.3vw, 70px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            max-width: 620px;
+            font-size: clamp(16px, 1.3vw, 21px);
+            line-height: 1.45;
+            color: rgba(255,255,255,.84);
+            font-weight: 500;
+        }
+
+        .slider-controls {
+            position: absolute;
+            z-index: 20;
+            bottom: 42px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            padding: 0;
+            border: 1px solid white;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.15);
+        }
+
+        .slider-arrow {
+            position: absolute;
+            z-index: 20;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 52px;
+            height: 52px;
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 50%;
+            background: rgba(0,0,0,.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            opacity: 0;
+            transition: .3s ease;
+        }
+
+        .hero-slider:hover .slider-arrow {
+            opacity: 1;
+        }
+
+        .slider-arrow:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .prev {
+            left: 35px;
+        }
+
+        .next {
+            right: 35px;
+        }
+
+        .slide-counter {
+            position: absolute;
+            z-index: 20;
+            bottom: 38px;
+            right: 45px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .current-slide {
+            font-size: 20px;
+        }
+
+        .total-slides {
+            opacity: .55;
+        }
+
+        /* =====================================================
+           SCROLLED HEADER - from second.html
+        ===================================================== */
+        .top-header.scrolled {
+            position: fixed;
+            height: 54px;
+            background: rgba(12,25,55,.97);
+            backdrop-filter: blur(18px);
+            box-shadow:
+                0 8px 30px rgba(0,0,0,.16);
+        }
+
+        .main-header.scrolled {
+            position: fixed;
+            top: 54px;
+            height: 76px;
+            background: rgba(23,40,95,.97);
+            backdrop-filter: blur(18px);
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.15);
+        }
+
+        .main-header.scrolled .logo-icon {
+            width: 52px;
+            height: 52px;
+        }
+
+        /* =====================================================
+           RESPONSIVE - from second.html
+        ===================================================== */
+        @media (max-width: 1150px) {
+            .container {
+                width: min(100% - 50px, 1440px);
+            }
+            .main-nav {
+                gap: 18px;
+            }
+            .main-nav a {
+                font-size: 13px;
+            }
+            .logo-text {
+                font-size: 14px;
+            }
+            .logo-icon {
+                width: 54px;
+                height: 54px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: min(100% - 40px, 1440px);
+            }
+            .main-nav {
+                gap: 12px;
+            }
+            .main-nav a {
+                font-size: 12px;
+            }
+            .logo-text {
+                display: none;
+            }
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .hero-title {
+                font-size: 48px;
+            }
+            .hero-description {
+                font-size: 16px;
+            }
+            .slider-arrow {
+                display: none;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: calc(100% - 30px);
+            }
+            .top-header {
+                height: 54px;
+            }
+            .top-social {
+                width: 32px;
+                height: 32px;
+                font-size: 11px;
+            }
+            .top-tools {
+                gap: 15px;
+            }
+            .main-header {
+                top: 54px;
+                height: 82px;
+            }
+            .main-nav {
+                display: none;
+            }
+            .main-header-inner {
+                justify-content: space-between;
+            }
+            .logo-text {
+                display: block;
+                font-size: 13px;
+            }
+            .logo-icon {
+                width: 48px;
+                height: 48px;
+            }
+            .language {
+                height: 38px;
+            }
+            .hero-slider {
+                min-height: 680px;
+            }
+            .slide-content {
+                width: calc(100% - 30px);
+                padding-top: 120px;
+            }
+            .hero-title {
+                font-size: 38px;
+                letter-spacing: -1px;
+            }
+            .hero-description {
+                font-size: 15px;
+            }
+            .slide-counter {
+                display: none;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .top-socials {
+                gap: 5px;
+            }
+            .top-social {
+                width: 29px;
+                height: 29px;
+            }
+            .logo-text {
+                font-size: 11px;
+            }
+            .flag {
+                width: 18px;
+                height: 18px;
+            }
+            .language {
+                font-size: 12px;
+                padding: 0 8px;
+            }
+            .hero-title {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+<!-- =====================================================
+     TOP HEADER
+
+     LEFT:
+     Facebook / LinkedIn / Telegram / Instagram
+
+     RIGHT:
+     Search / Eye
+===================================================== -->
+
+<div class="top-header" id="topHeader">
+
+    <div class="container top-header-inner">
+
+
+        <!-- SOCIAL MEDIA - LEFT -->
+
+        <div class="top-socials">
+
+            <a href="#" class="top-social">
+                <i class="icon-facebook"></i>
+            </a>
+
+            <a href="#" class="top-social">
+                <i class="icon-in"></i>
+            </a>
+
+            <a href="#" class="top-social">
+                <i class="icon-telegram"></i>
+            </a>
+
+            <a href="#" class="top-social">
+                <i class="icon-instagram"></i>
+            </a>
+
+        </div>
+
+
+        <!-- SEARCH + EYE - RIGHT -->
+
+        <div class="top-tools">
+
+            <button
+                class="header__search js-search search-icon"
+                aria-label="Поиск"
+            >
+                <i class="icon-search"></i>
+            </button>
+
+            <button
+                class="header__eye js-eye eye-icon"
+                aria-label="Версия для слабовидящих"
+            >
+                <i class="icon-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Search Panel -->
+<div class="js-search-content d-none">
+    <div class="header__search-content">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <input type="text" class="input" placeholder="Поиск">
+                <button>
+                    <i class="icon-search"></i>
+                </button>
+           </div>
+        </div>
+    </div>
+</div>
+
+<!-- Eye/Accessibility Panel -->
+<div class="js-eye-content d-none">
+    <div class="header__eye-content">
+        <div class="container full-height">
+            <div class="d-flex align-items-center justify-content-center flex-wrap-md full-height">
+                <div class="d-flex align-items-center mr-45">
+                    <p class="mr-10">Звук:</p>
+                    <button class="header__eye-content_radio js-voice active">
+                        <i class="icon-radio"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center mr-45">
+                    <p class="mr-10">Шрифт:</p>
+                    <button class="header__eye-content_button js-font-size-decrease">
+                        <i class="icon-minus"></i>
+                    </button>
+                    <button class="header__eye-content_button js-font-size-increase">
+                        <i class="icon-plus"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center mr-45">
+                    <p class="mr-10">Вид сайта:</p>
+                    <div class="d-flex align-items-center">
+                        <p class="header__eye-content_color bvi-color bg-blue-light">A</p>
+                        <p class="header__eye-content_color bvi-color bg-silver" data-color="blackAndWhite">A</p>
+                        <p class="header__eye-content_color bvi-color" data-color="blackAndWhiteInvert">A</p>
+                    </div>
+                </div>
+                <button class="btn btn--white js-settings-default">Сбросить настройки</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     MAIN HEADER
+
+     LEFT:
+     LOGO
+
+     CENTER:
+     NAVIGATION
+
+     RIGHT:
+     RU
+===================================================== -->
+
+<header
+    class="main-header"
+    id="mainHeader"
+>
+
+    <div class="container main-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="#" class="logo">
+
+            <div class="logo-icon"></div>
+
+            <div class="logo-text">
+
+                <span>Birinchi</span>
+                <span>Banklararo</span>
+                <span>Depozitariy</span>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <div class="nav-item">
+                <a href="#about" class="nav-link">
+                    О нас
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/page/show/obrashchenie-generalnogo-direktora">Обращение генерального директора</a>
+                    <a href="https://bbd.uz/page/show/istoriya-kompanii">История Компании</a>
+                    <a href="https://bbd.uz/team">Наша команда</a>
+                    <a href="https://bbd.uz/rating">Рейтинги и награды</a>
+                    <a href="https://bbd.uz/certificate">Лицензии и сертификаты</a>
+                    <a href="https://bbd.uz/page/show/missiya-i-tseli">Миссия и цели</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#services" class="nav-link">
+                    Наши услуги
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/page/show/brokerskie-uslugi">Брокерские услуги</a>
+                    <a href="https://bbd.uz/page/show/depozitarnye-uslugi">Депозитарные услуги</a>
+                    <a href="https://bbd.uz/page/show/konsaltingovye-uslugi">Консалтинговые услуги</a>
+                    <a href="https://bbd.uz/page/show/anderaytingovye-uslugi">Андерайтинговые услуги</a>
+                    <a href="https://bbd.uz/page/show/upravlenie-aktivami">Управление Активами</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#clients" class="nav-link">
+                    Клиентам-Инвесторам
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/page/show/reyting-listingovykh-kompaniy-top-10">Рейтинг Листинговых компаний (Топ - 10)</a>
+                    <a href="https://nego.uzse.uz/ru/tenders/active">Пакеты крупным инвесторам</a>
+                    <a href="https://bbd.uz/page/show/pakety-chastnym-investoram">Пакеты частным инвесторам</a>
+                    <a href="https://bbd.uz/analitika">Аналитика</a>
+                    <a href="https://bbd.uz/page/show/kak-stat-investorom-na-fondovom-rynke">Как стать клиентом BBD?</a>
+                    <a href="https://bbd.uz/page/show/obuchenie-treydingu-htc">Обучение Трейдингу HTC</a>
+                    <a href="https://bbd.uz/page/show/riski-i-otvetstvennost">Риски и ответственность</a>
+                    <a href="https://bbd.uz/page/show/grafik-birzhevykh-torgov">График биржевых торгов</a>
+                    <a href="https://bbd.uz/page/show/novichkam">Новичкам</a>
+                    <a href="https://bbd.uz/page/show/chasto-zadavaemye-voprosy">Часто задаваемые вопросы</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#news" class="nav-link">
+                    Новости
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/news/company">Новости компании</a>
+                    <a href="https://bbd.uz/news/stock">Новости Акционерных обществ</a>
+                    <a href="https://bbd.uz/news/media">Публикации в СМИ</a>
+                    <a href="https://bbd.uz/news/ipo-spo">Новости IPO/SPO</a>
+                    <a href="https://bbd.uz/news">Все публикации</a>
+                </div>
+            </div>
+
+            <a href="#contacts">
+                Контакты
+            </a>
+
+        </nav>
+
+
+        <!-- LANGUAGE -->
+
+        <div class="language">
+
+            <span class="flag"></span>
+
+            <span>RU</span>
+
+        </div>
+
+    </div>
+
+</header>
+    
+<main>
+
+        <section
+            class="hero-slider"
+            id="heroSlider"
+        >
+
+            <div class="slides">
+
+
+                <!-- =================================================
+                     SLIDE 1
+                ================================================== -->
+
+                <article class="slide active">
+
+                    <div class="slide-content">
+
+                        <div class="hero-text">
+
+                            <h1 class="hero-title">
+                                Уоррен Баффетт о фондовом рынке
+                            </h1>
+
+                            <p class="hero-description">
+                                Намного лучше купить очень хорошую компанию
+                                по справедливой цене, чем покупать ничем
+                                не примечательную компанию по привлекательной цене.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SLIDE 2
+                ================================================== -->
+
+                <article class="slide">
+
+                    <div class="slide-content">
+
+                        <div class="hero-text">
+
+                            <h1 class="hero-title">
+                                Надёжность финансовой инфраструктуры
+                            </h1>
+
+                            <p class="hero-description">
+                                Современные депозитарные решения для участников
+                                рынка ценных бумаг, инвесторов и финансовых организаций.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     SLIDE 3
+                ================================================== -->
+
+                <article class="slide">
+
+                    <div class="slide-content">
+
+                        <div class="hero-text">
+
+                            <h1 class="hero-title">
+                                Современные решения для рынка капитала
+                            </h1>
+
+                            <p class="hero-description">
+                                Обеспечиваем прозрачность, безопасность и эффективность
+                                операций с финансовыми инструментами.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- PREVIOUS -->
+
+            <button
+                class="slider-arrow prev"
+                id="prevSlide"
+                aria-label="Предыдущий слайд"
+            >
+                ‹
+            </button>
+
+
+            <!-- NEXT -->
+
+            <button
+                class="slider-arrow next"
+                id="nextSlide"
+                aria-label="Следующий слайд"
+            >
+                ›
+            </button>
+
+
+            <!-- DOTS -->
+
+            <div class="slider-controls">
+
+                <button
+                    class="dot active"
+                    data-slide="0"
+                    aria-label="Слайд 1"
+                ></button>
+
+                <button
+                    class="dot"
+                    data-slide="1"
+                    aria-label="Слайд 2"
+                ></button>
+
+                <button
+                    class="dot"
+                    data-slide="2"
+                    aria-label="Слайд 3"
+                ></button>
+
+            </div>
+
+
+            <!-- COUNTER -->
+
+            <div class="slide-counter">
+
+                <span class="current-slide">
+                    01
+                </span>
+
+                <span class="total-slides">
+                    / 03
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    </main>
+
+        <div class="main-about">
+            <div class="container">
+                <div class="main-about__content">
+                    <div class="main-about__content-item wow fadeInUp">
+                        <h1 class="title">Рћ РЅР°СЃ</h1>
+                        <p class="mb-20 text-justify">Birinchi Banklararo Depozitariy РЅР° СЃРµРіРѕРґРЅСЏС€РЅРёР№ РґРµРЅСЊ СЏРІР»СЏРµС‚СЃСЏ РѕРґРЅРѕР№ РёР· СЃС‚Р°СЂРµР№С€РёС… РєРѕРјРїР°РЅРёР№ СЃ Р±РѕРіР°С‚РѕР№ РёСЃС‚РѕСЂРёРµР№ Рё Р±РѕР»СЊС€РёРј РѕРїС‹С‚РѕРј СЂР°Р±РѕС‚С‹ РЅР° С„РѕРЅРґРѕРІРѕРј СЂС‹РЅРєРµ РЈР·Р±РµРєРёСЃС‚Р°РЅР°, РєРѕС‚РѕСЂР°СЏ СЏРІР»СЏРµС‚СЃСЏ РїРѕР»РЅРѕСЃС‚СЊСЋ С‡Р°СЃС‚РЅРѕР№ Рё РЅРµР·Р°РІРёСЃРёРјРѕР№ РєРѕРјРїР°РЅРёРµР№ РѕРєР°Р·С‹РІР°СЋС‰РµР№ РїРѕР»РЅС‹Р№ СЃРїРµРєС‚СЂ РёРЅРІРµСЃС‚РёС†РёРѕРЅРЅРѕ-С„РёРЅР°РЅСЃРѕРІС‹С… СѓСЃР»СѓРі РЅР° СЂС‹РЅРєРµ С†РµРЅРЅС‹С… Р±СѓРјР°Рі.</p>
+                        <p class="mb-30 text-justify">Birinchi Banklararo Depozitariy Р±С‹Р» СЃРѕР·РґР°РЅ РїРѕРґ СЌРіРёРґРѕР№ РђСЃСЃРѕС†РёР°С†РёРё Р‘Р°РЅРєРѕРІ РЈР·Р±РµРєРёСЃС‚Р°РЅР° РІ 1998 РіРѕРґСѓ РІ С„РѕСЂРјРµ РђРєС†РёРѕРЅРµСЂРЅРѕРіРѕ РѕР±С‰РµСЃС‚РІР°.<br> Р’ РЅР°СЃС‚РѕСЏС‰РёР№ РјРѕРјРµРЅС‚ РјС‹ РїСЂРµРґСЃС‚Р°РІР»СЏРµРј С‡Р°СЃС‚РЅС‹Рј, РєРѕСЂРїРѕСЂР°С‚РёРІРЅС‹Рј, РёРЅСЃС‚РёС‚СѓС†РёРѕРЅР°Р»СЊРЅС‹Рј Рё РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рј РёРЅРІРµСЃС‚РѕСЂР°Рј РїРѕР»РЅС‹Р№ СЃРїРµРєС‚СЂ РёРЅРІРµСЃС‚РёС†РёРѕРЅРЅРѕ-С„РёРЅР°РЅСЃРѕРІС‹С… СѓСЃР»СѓРі, С‡С‚Рѕ РІРєР»СЋС‡Р°РµС‚ РІ СЃРµР±СЏ РѕРєР°Р·Р°РЅРёРµ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹С… СѓСЃР»СѓРі Р±СЂРѕРєРµСЂР° РїРѕ РїРѕРєСѓРїРєРµ Рё РїСЂРѕРґР°Р¶Рµ С†РµРЅРЅС‹С… Р±СѓРјР°Рі РЈР·Р±РµРєСЃРєРёС… СЌРјРёС‚РµРЅС‚РѕРІ РЅР° С„РѕРЅРґРѕРІРѕР№ Р±РёСЂР¶Рµ, РѕРєР°Р·Р°РЅРёРµ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹С… СѓСЃР»СѓРі РґРµРїРѕР·РёС‚Р°СЂРёСЏ РїРѕ СѓС‡РµС‚Сѓ Рё СѓРґРѕСЃС‚РѕРІРµСЂРµРЅРёСЋ РїСЂР°РІ РЅР° С†РµРЅРЅС‹Рµ Р±СѓРјР°РіРё, РѕРєР°Р·Р°РЅРёРµ СѓСЃР»СѓРі РёРЅРІРµСЃС‚РёС†РёРѕРЅРЅРѕРіРѕ РєРѕРЅСЃР°Р»С‚РёРЅРіР°.</p>
+						<a href="https://bbd.uz/page/show/obrashchenie-generalnogo-direktora" class="btn">РџРѕРґСЂРѕР±РЅРµРµ</a>
+                    </div>
+                    <div class="main-about__content-item wow fadeInUp" data-wow-delay="0.15s">
+                        <p class="main-about__icons-label">РџРѕРєР°Р·Р°С‚РµР»Рё РєРѕРјРїР°РЅРёРё</p>
+                        <div class="main-about__icons">
+                            <div class="main-about__icons-item">
+                                <img src="images/about1.svg" alt="" style="width:80px;height:80px">
+                                <p class="main-about__icons-title">31 737</p>
+                                <p class="text-14 text-medium">РљР›РР•РќРўРћР’</p>
+                            </div>
+                            <div class="main-about__icons-item">
+                                <img src="images/about2.svg" alt="" style="width:80px;height:80px">
+								<p class="main-about__icons-title">3,5 С‚СЂР»РЅ</p>                            
+								<p class="text-14 text-medium text-center">Р¦Р•РќРќР«РҐ Р‘РЈРњРђР“</p>
+                            </div>
+                            <div class="main-about__icons-item">
+                                <img src="images/abot3.svg" alt="" style="width:80px;height:80px">
+                                <p class="main-about__icons-title">1,8 С‚СЂР»РЅ</p>								
+								<p class="text-14 text-medium">РљР›РР•РќРўРЎРљРР• РђРљРўРР’Р«</p>
+                            </div>
+                            <div class="main-about__icons-item">
+                                <img src="images/money.svg" alt="" style="width:80px;height:80px">
+                                <p class="main-about__icons-title">5,1 С‚СЂР»РЅ </p>
+                                <p class="text-14 text-medium">РћР‘РЄР•Рњ РЎР”Р•Р›РћРљ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-l-y">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <h2 class="title">РќРѕРІРѕСЃС‚Рё</h2>
+                    <a href="https://bbd.uz/news" class="link">Р’СЃРµ РїСѓР±Р»РёРєР°С†РёРё</a>
+                </div>
+                <div class="row">
+                                        <div class="col-md-4 col-sm-6 wow slideInLeft">
+                        <div class="news-card" style="background-image: url('images/1761887969.jpg')">
+							<a href="https://bbd.uz/news/show/uzauto-motors-planiruet-vyplatit-dividendy">
+                                <div class="news-card__content">
+                                    <p class="news-card__title">UzAuto Motors РїР»Р°РЅРёСЂСѓРµС‚ РІС‹РїР»Р°С‚РёС‚СЊ РґРёРІРёРґРµРЅРґС‹</p>
+                                    <div class="news-card__line"></div>
+                                    <p class="news-card__short-text">РќР°Р±Р»СЋРґР°С‚РµР»СЊРЅС‹Р№ СЃРѕРІРµС‚ UzAuto Motors СЂРµРєРѕРјРµРЅРґРѕРІР°Р» РЅР°РїСЂР°РІРёС‚СЊ С‡Р°СЃС‚СЊ РїСЂРёР±С‹Р»РёвЂ¦</p>
+                                    <span class="news-card__date">31 РѕРєС‚СЏР±СЂСЏ 2025</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                    
+                                        <div class="col-md-4 col-sm-6 wow fadeIn">
+                        <div class="news-card" style="background-image: url('images/1748418045.jpg')">
+							<a href="https://bbd.uz/news/show/godovoe-obshchee-sobranie-aktsionerov-akib-ipoteka-bank-sostoitsya-18-iyunya-2025-goda">
+                                <div class="news-card__content">
+                                    <p class="news-card__title">Р“РѕРґРѕРІРѕРµ РѕР±С‰РµРµ СЃРѕР±СЂР°РЅРёРµ Р°РєС†РёРѕРЅРµСЂРѕРІ РђРљРР‘ В«РРїРѕС‚РµРєР°-Р±Р°РЅРєВ» СЃРѕСЃС‚РѕРёС‚СЃСЏ 18 РёСЋРЅСЏ 2025 РіРѕРґР°</p>
+                                    <div class="news-card__line"></div>
+                                    <p class="news-card__short-text">РђРљРР‘ В«РРїРѕС‚РµРєР°-Р±Р°РЅРєВ» СѓРІРµРґРѕРјР»СЏРµС‚ Р°РєС†РёРѕРЅРµСЂРѕРІ Рѕ РїСЂРѕРІРµРґРµРЅРёРё РіРѕРґРѕРІРѕРіРѕ РѕР±С‰РµРіРѕ СЃРѕР±СЂР°РЅРёСЏ 18 РёСЋРЅСЏ 2025 РіРѕРґР° РІ 11:00.</p>
+                                    <span class="news-card__date">28 РјР°СЏ 2025</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                    
+                                        <div class="col-md-4 col-sm-6 wow slideInRight">
+                        <div class="news-card" style="background-image: url('images/1748411314.jpg')">
+							<a href="https://bbd.uz/news/show/napp-vvodit-novye-pravila-protiv-manipulyatsiy-na-fondovom-rynke">
+                                <div class="news-card__content">
+                                    <p class="news-card__title">РќРђРџРџ РІРІРѕРґРёС‚ РЅРѕРІС‹Рµ РїСЂР°РІРёР»Р° РїСЂРѕС‚РёРІ РјР°РЅРёРїСѓР»СЏС†РёР№ РЅР° С„РѕРЅРґРѕРІРѕРј СЂС‹РЅРєРµ</p>
+                                    <div class="news-card__line"></div>
+                                    <p class="news-card__short-text">Р’РІРµРґРµРЅС‹ РЅРѕРІС‹Рµ РїСЂР°РІРёР»Р°, Р·Р°РїСЂРµС‰Р°СЋС‰РёРµ С„РёРєС‚РёРІРЅС‹Рµ СЃРґРµР»РєРё Рё Р»РѕР¶РЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ. РЈС‡Р°СЃС‚РЅРёРєРё СЂС‹РЅРєР° РґРѕР»Р¶РЅС‹ СЃРѕРѕР±С‰Р°С‚СЊ Рѕ РїРѕРґРѕР·СЂРёС‚РµР»СЊРЅС‹С… РґРµР№СЃС‚РІРёСЏС…. Р­С‚Рѕ РїРѕРјРѕР¶РµС‚ Р·Р°С‰РёС‚РёС‚СЊ РёРЅРІРµСЃС‚РѕСЂРѕРІ Рё СЃРґРµР»Р°С‚СЊ СЂС‹РЅРѕРє С‡РµСЃС‚РЅРµРµ.</p>
+                                    <span class="news-card__date">28 РјР°СЏ 2025</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                    
+                                    </div>
+            </div>
+        </div>
+        <div class="main-course m-b-y">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-30 wow slideInLeft">
+                        <div class="main-course__title">
+                            <h3>Р“Р°СЂР°РЅС‚РёР№РЅС‹Р№ С„РѕРЅРґ</h3>
+                            <p>13.02.2026</p>
+                        </div>
+                        <div class="main-course__blog">
+                            <div class="main-course__fund">
+                                <p>UZS</p>
+                                <h3>374,240,047.65</h3>
+                            </div>
+                            <div class="main-course__fund">
+                                <p>USD</p>
+                                <h3>0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+    <div class="main-course__title">
+        <h3>РљСѓСЂСЃ РІР°Р»СЋС‚ Р¦Р‘ Р РЈР·</h3>
+        <p>СЃ 13.02.2026</p>
+    </div>
+    <div class="row">
+          
+            <div class="col-sm-6">
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/usd.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">USD</div>
+                    </div>
+                    <p class="main-course__summ">12275.58</p>
+                </div>
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/eur.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">EUR</div>
+                    </div>
+                    <p class="main-course__summ">14591.98</p>
+                </div>
+                            </div>     
+          
+            <div class="col-sm-6">
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/rub.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">RUB</div>
+                    </div>
+                    <p class="main-course__summ">159.09</p>
+                </div>
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/gbp.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">GBP</div>
+                    </div>
+                    <p class="main-course__summ">16754.94</p>
+                </div>
+                            </div>     
+            </div>
+</div>                </div>
+            </div>
+        </div>
+        <div class="main-company">
+    <div class="js-slider-company">
+                <div class="main-company__item">
+            <p class="text-bold">В«Qo'qon mexanika zavodiВ» AJ</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 930</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 930</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«HamkorbankВ» ATB</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 33</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 37,98</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«O'zmetkombinatВ» AJ</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 44 000</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 45 549</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  13.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«KvartsВ» AJ</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 3 400</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 3 325</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  13.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«QizilqumsementВ» AJ</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 5 600</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 5 699</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«O'zsanoatqurilishbankВ» ATB</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 16,79</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 16</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«O'zRTXBВ» AJ</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 15 999</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 15 000</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">В«Ipoteka-bankВ» ATIB</p>
+            <p>РЎС‚Р°СЂС‚РѕРІР°СЏ С†РµРЅР°: 0,99</p>
+            <p>Р‘Р°Р·РѕРІР°СЏ С†РµРЅР°: 0,97</p>
+            <p>Р”Р°С‚Р° РїРѕСЃР»РµРґРЅРµР№ СЃРґРµР»РєРё:  14.04.2021</p>
+        </div>
+            </div>
+</div>
+        <div class="main-today m-l-y">
+            <div class="container">
+                <div class="text-center">
+                    <h3 class="title mb-0">РЎРµРіРѕРґРЅСЏ РІ РїСЂРѕРґР°Р¶Рµ</h3>
+                </div>
+                <div class="main-today__content">
+                    <div class="js-slider-today">
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«O'zbekiston metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">94</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">48 999,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">4 605 906,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«O'zbekiston metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">1 071</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">43 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">46 053 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«O'zbekiston metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">361</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">5 100,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">1 841 100,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«O'zbekiston metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">505</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">3 600,01 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">1 818 005,05 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«Guliston Ekstrakt-Yog'В» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">2 706</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">357 074,08 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">966 242 460,48 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Guliston Ekstrakt-Yog'В» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">100</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">4 200,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">420 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Mulk-Sarmoya Brokerlik UyiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">1 032</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">475,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">490 200,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Yog'garВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">100</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">1 800,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">180 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Olmaliq kon-metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">60</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">138 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">8 280 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«Olmaliq kon-metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">343</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">13 802,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">4 734 086,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Olmaliq kon-metallurgiya kombinatiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">40</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">11 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">440 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«KAFOLAT sug'urta kompaniyasiВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">90 285 520</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">5,12 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">462 261 862,40 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«KAFOLAT sug'urta kompaniyasiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">1 000 000</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">4,75 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">4 750 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«AgrobankВ» aksiyadorlik tijorat banki</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">415 539</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">755,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">313 731 945,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«AgrobankВ» aksiyadorlik tijorat banki</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">200</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">560,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">112 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«Qashqadaryo parmalash ishlariВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">2 816 110</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">2 000,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">5 632 220 000,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Qashqadaryo parmalash ishlariВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">500</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">750,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">375 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«Qo'qon mexanika zavodiВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">1 550</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">989,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">1 532 950,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Qo'qon mexanika zavodiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">5 030</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">925,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">4 652 750,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«GranitВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">9 120</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">25 000,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">228 000 000,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«GranitВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">500</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">10 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">5 000 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«GranitВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">50</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">7 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">350 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«SredazenergosetproektВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">100</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">3 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">300 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«O'zpartamponajВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">2 000</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">95,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">190 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«ELEKTRQISHLOQQURILISHВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">50</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">7 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">350 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«Minora qurish ekspeditsiyasiВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">200</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">800,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">160 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«O'zbekgeofizikaВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">500</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">600,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">300 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«O'zbekgeofizikaВ» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">160</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">829,99 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">132 798,40 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«O'zbekgeofizikaВ» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">300</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">560,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">168 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+                                            <div class="text-medium text-right">В«TurkistonВ» Xususiy aksiyadorlik tijorat banki</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+                                            <div class="text-medium">75</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+                                            <div class="text-medium">6 000,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">РЎСѓРјРјР°</div>
+                                            <div class="text-medium">450 000,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р­РјРёС‚РµРЅС‚</div>
+										<div class="text-medium text-right">В«TurkistonВ» Xususiy aksiyadorlik tijorat banki</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РљРѕР». Р°РєС†РёР№</div>
+										<div class="text-medium">295</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Р¦РµРЅР° Р·Р° Р°РєС†РёСЋ</div>
+										<div class="text-medium">800,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">РЎСѓРјРјР°</div>
+										<div class="text-medium">236 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                            </div>
+                    <div class="main-today__arrows">
+                        <button class="main-today__arrows-left">
+                            <i class="icon-arrow-left"></i>
+                        </button>
+                        <button class="main-today__arrows-right">
+                            <i class="icon-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-services m-l-y">
+            <div class="container">
+                <div class="main-services__content">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="main-services__item wow slideInLeft" data-wow-delay="0.1s">
+                                <p class="main-services__item-title">Р”РµРїРѕР·РёС‚Р°СЂРЅС‹Рµ СѓСЃР»СѓРіРё</p>
+                                <p class="text-medium">РЎС‚РѕРёРјРѕСЃС‚СЊ РЅР°С€РёС… РґРµРїРѕР·РёС‚Р°СЂРЅС‹С… СѓСЃР»СѓРі СЃС‚СЂРµРјСЏС‚СЃСЏ Рє РЅСѓР»СЋ</p>
+                            </div>
+                            <div class="main-services__item wow slideInLeft" data-wow-delay="0.2s">
+                                <p class="main-services__item-title">Р‘СЂРѕРєРµСЂСЃРєРёРµ СѓСЃР»СѓРіРё</p>
+                                <p class="text-medium">РЈСЃР»СѓРіРё РїРѕ Р±СЂРѕРєРµСЂСЃРєРѕРјСѓ РѕР±СЃР»СѓР¶РёРІР°РЅРёСЋ РѕСЂРёРµРЅС‚РёСЂРѕРІР°РЅС‹ РЅР° РєР°Р¶РґРѕРіРѕ РёР· Р’Р°СЃ</p>
+                            </div>
+                            <div class="main-services__item wow slideInLeft" data-wow-delay="0.3s">
+                                <p class="main-services__item-title">РљРѕРЅСЃР°Р»С‚РёРЅРіРѕРІС‹Рµ СѓСЃР»СѓРіРё</p>
+                                <p class="text-medium">РњС‹ СЂР°Р·РІРёРІР°РµРј Р’Р°С€Сѓ СЃРёСЃС‚РµРјСѓ РєРѕСЂРїРѕСЂР°С‚РёРІРЅРѕРіРѕ СѓРїСЂР°РІР»РµРЅРёСЏ</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-push-1 col-lg-6 col-sm-6">
+                            <img src="images/services.svg" alt="" class="main-services__image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="main-contact wow flipInX" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div>
+                    <h3 class="title title--mb">РљР°Рє РјС‹ РјРѕР¶РµРј Р’Р°Рј РїРѕРјРѕС‡СЊ?</h3>
+                    <p>Р—РІРѕРЅРёС‚Рµ СЃРµР№С‡Р°СЃ РёР»Рё РѕСЃС‚Р°РІСЊС‚Рµ Р·Р°СЏРІРєСѓ РЅР° РѕР±СЂР°С‚РЅС‹Р№ Р·РІРѕРЅРѕРє
+        РІ СѓРґРѕР±РЅРѕРµ Р’Р°Рј РІСЂРµРјСЏ.</p>
+                </div>
+             <a href="https://bbd.uz/contact" class="btn btn--fill">РљРѕРЅС‚Р°РєС‚С‹</a>
+            </div>
+        </div>
+        <div class="text-center m-l-y">
+            
+        </div>
+    </section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <a href="https://bbd.uz" class="footer__logo"></a>
+            <a href="https://my.soliq.uz/searchtin/index?user_type=1" target="_blank" class="text-medium btn  btn--white">РЈР·РЅР°С‚СЊ РРќРќ</a>
+            <div class="footer__info">
+                <div>
+                    <div class="footer__info-item mb-10">
+                        <i class="icon-phone"></i>
+                        <a href="tel:+998712332907">+998 71 233 29 07, </a>
+                        <a href="tel:+998712330652">+998 71 233 06 52</a>
+                    </div>
+                    <div class="footer__info-item mb-10">
+                        <i class="icon-message"></i>
+                        <a href="mailto:info@bbd.uz">info@bbd.uz</a>
+                    </div>
+                    <div class="footer__info-item">
+                        <i class="icon-mark"></i>
+                        <p>100047, РЈР·Р±РµРєРёСЃС‚Р°РЅ Рі. РўР°С€РєРµРЅС‚, СѓР». РСЃС‚РёРєР±РѕР», 15</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer__info-item">
+                <div class="footer__social">
+                    <a href="">
+                        <i class="icon-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="icon-in"></i>
+                    </a>
+                    <a href="https://t.me/bbdbroker" target="_blank">
+						<i class="icon-telegram"></i>
+					</a>
+                    <a href="http://instagram.com/bbd.uz" target="_blank">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__line"></div>
+    <div class="container">
+        <div class="footer__esys">
+            <p>В© 1998 - 2026Р’СЃРµ РїСЂР°РІР° Р·Р°С‰РёС‰РµРЅС‹. <br> РџСЂРё РїРµСЂРµРїРµС‡Р°С‚РєРµ РјР°С‚РµСЂРёР°Р»РѕРІ СЃР°Р№С‚Р° СЃСЃС‹Р»РєР° РЅР° РІРµР±-СЃР°Р№С‚ РѕР±СЏР·Р°С‚РµР»СЊРЅР°.</p>
+            <a href="https://esys.uz" target="_blank" class="footer__esys-logo">
+                <p>Р Р°Р·СЂР°Р±РѕС‚Р°РЅРѕ РІ</p>
+                <img src="images/esys.svg" alt="">
+            </a>    
+        </div>
+    </div>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/responsivevoice.min.js"></script>
+<script src="js/js.cookie.min.js"></script>
+<script src="js/jquery.hoverIntent.min.js"></script>
+<script src="js/bvi.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.js-slider-images').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            asNavFor: '.js-slider-text'
+        });
+        $('.js-slider-text').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:false,
+            fade:true,
+            speed: 1000,
+            autoplay: true,
+            asNavFor: '.js-slider-images'
+        });
+
+        $('.js-slider-company').slick({
+            arrows: false,
+            dots: false,
+            centerPadding: '75px',
+            focusOnSelect: true,
+            speed: 5000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            centerMode: true,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            infinite: true,
+            initialSlide: 1,
+            buttons: false
+        });
+        $('.js-slider-partner').slick({
+            dots: false,
+            centerPadding: '90px',
+            autoplay: true,
+            centerMode: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            prevArrow: $('.main-partner__arrows-left'),
+            nextArrow: $('.main-partner__arrows-right'),
+            responsive: [
+                    {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 4,
+                        centerPadding: '125px',
+                    }
+                    },
+                    {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        centerPadding: '125px',
+                    }
+                    },
+                    {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        centerPadding: '70px',
+                    }
+                    },
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        centerPadding: '25px',
+                    }
+                    },
+                    {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        centerPadding: '25px',
+                    }
+                    }
+                ]
+        });
+
+        $('.js-slider-today').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+            centerMode: true,
+            variableWidth: true,
+            centerPadding: '0px',
+            prevArrow: $('.main-today__arrows-left'),
+            nextArrow: $('.main-today__arrows-right'),
+            responsive: [
+                    {
+                    breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            variableWidth: false,
+                            centerMode: false,
+                            centerPadding: '0px',
+                        }
+                    },
+                ]
+
+        }); 
+        
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160808134-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160808134-1');
+</script>
+
+<script>
+    $(document).ready(function() {
+        $.bvi({});
+        wow = new WOW(
+        {
+            animateClass: 'animated',
+            offset:       70,
+            callback:     function(box) {
+            console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+            }
+        }
+        );
+        wow.init();
+        $('.js-search').click(function () {
+            if ( $('.js-search-content').first().is( ":hidden" ) ) {
+                $('.js-eye').removeClass('active')
+                $(this).addClass('active')
+                $('.js-eye-content').slideUp(300);
+                $('.js-search-content').slideDown(300);
+            } else {
+                $(this).removeClass('active')
+                $('.js-search-content').slideUp(300);
+            }
+        });
+        $('.js-eye').click(function () {
+            if ( $('.js-eye-content').first().is( ":hidden" ) ) {
+                $('.js-search').removeClass('active')
+                $(this).addClass('active')
+                $('.js-search-content').slideUp(300);
+                $('.js-eye-content').slideDown(300);
+            } else {
+                $(this).removeClass('active')
+                $('.js-eye-content').slideUp(300);
+            }
+        });
+
+        $('.js-hamburger').click(function () {
+            if ( $('.hamburger__content').first().is( ":hidden" ) ) {
+                 $('.js-search-content').slideUp(300);
+                 $('.js-eye-content').slideUp(300);
+                 $('.js-search').removeClass('active')
+                 $('.js-eye').removeClass('active')
+                 $('body').addClass('o-hidden')
+                 $('.hamburger__content').slideDown(300);
+            } else {
+                $('body').removeClass('o-hidden')
+                $('.hamburger__content').slideUp(300);
+            }
+        });
+
+        // Modern scroll effect for header (new header classes)
+        $(window).on('scroll', function() {
+            if ($(window).scrollTop() > 50) {
+                $('.top-header').addClass('scrolled');
+                $('.main-header').addClass('scrolled');
+            } else {
+                $('.top-header').removeClass('scrolled');
+                $('.main-header').removeClass('scrolled');
+            }
+        });
+
+        // Scroll down indicator
+        $('.js-scroll-down').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $('.main-about').offset().top - 20
+            }, 800);
+        });
+
+    });
+</script>
+
+<!-- Hero Slider & Header Scroll Scripts (from second.html) -->
+<script>
+    /* =====================================================
+       SLIDER
+    ===================================================== */
+
+    const slides = document.querySelectorAll(".slide");
+
+    const dots = document.querySelectorAll(".dot");
+
+    const prevButton =
+        document.getElementById("prevSlide");
+
+    const nextButton =
+        document.getElementById("nextSlide");
+
+    const currentSlideNumber =
+        document.querySelector(".current-slide");
+
+
+    let currentSlide = 0;
+
+    let sliderInterval;
+
+
+    /* =====================================================
+       SHOW SLIDE
+    ===================================================== */
+
+    function showSlide(index) {
+
+        slides.forEach((slide, i) => {
+
+            slide.classList.remove("active");
+
+            dots[i].classList.remove("active");
+
+        });
+
+
+        slides[index].classList.add("active");
+
+        dots[index].classList.add("active");
+
+
+        currentSlideNumber.textContent =
+            String(index + 1).padStart(2, "0");
+    }
+
+
+    /* =====================================================
+       NEXT
+    ===================================================== */
+
+    function nextSlide() {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+    }
+
+
+    /* =====================================================
+       PREVIOUS
+    ===================================================== */
+
+    function previousSlide() {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        showSlide(currentSlide);
+    }
+
+
+    /* =====================================================
+       AUTOPLAY
+    ===================================================== */
+
+    function startAutoPlay() {
+
+        sliderInterval = setInterval(() => {
+
+            nextSlide();
+
+        }, 6000);
+
+    }
+
+
+    function resetAutoPlay() {
+
+        clearInterval(sliderInterval);
+
+        startAutoPlay();
+
+    }
+
+
+    /* =====================================================
+       ARROWS
+    ===================================================== */
+
+    nextButton.addEventListener(
+        "click",
+        () => {
+
+            nextSlide();
+
+            resetAutoPlay();
+
+        }
+    );
+
+
+    prevButton.addEventListener(
+        "click",
+        () => {
+
+            previousSlide();
+
+            resetAutoPlay();
+
+        }
+    );
+
+
+    /* =====================================================
+       DOTS
+    ===================================================== */
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener(
+            "click",
+            () => {
+
+                currentSlide = index;
+
+                showSlide(currentSlide);
+
+                resetAutoPlay();
+
+            }
+        );
+
+    });
+
+
+    /* Start */
+
+    startAutoPlay();
+</script>
+</body></html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,3222 @@
+﻿<!DOCTYPE html><html lang="ru"><head>	  																		
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="csrf-token" content="wdHtgloLgI1WTlZW9DNIHqAzlLSyYRm2D31f9dlL">
+<meta name="description" content="Депозитарии, Посреднические услуги при купле-продаже товаров, ценных бумаг, валюты и сдача в наем без выраженной специализации, Ценные бумаги, Финансовые организации">
+<meta name="keywords" content="Депозитарии, Посреднические услуги при купле-продаже товаров, ценных бумаг, валюты и сдача в наем без выраженной специализации, Ценные бумаги, Финансовые организации">
+
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+<title>Birinchi Banklararo Depozitariy - Первый Межбанковский Депозитарий</title>
+<link rel="stylesheet" href="css/bvi.css" type="text/css">
+<link rel="stylesheet" href="css/bvi-font.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&family=Space+Mono:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.min.css">
+<link rel="stylesheet" href="css/modern-design.css">
+<link rel="stylesheet" href="css/hero.css">
+
+    <style>
+        /* =====================================================
+           ROOT (from second.html)
+        ===================================================== */
+        :root {
+            --primary: #263f87;
+            --primary-dark: #17285f;
+            --blue: #4e76e8;
+            --white: #ffffff;
+            --text: #172033;
+            --gray: #667085;
+            --top-bg: rgba(7, 16, 34, 0.82);
+            --main-bg: rgba(7, 16, 34, 0.72);
+            --border: rgba(255, 255, 255, 0.14);
+        }
+
+        /* =====================================================
+           ICON FONT (icomoon) - from second.html
+        ===================================================== */
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot');
+            src: url('fonts/icomoon.eot#iefix') format('embedded-opentype'),
+                 url('fonts/icomoon.ttf') format('truetype'),
+                 url('fonts/icomoon.woff') format('woff'),
+                 url('images/icomoon.svg#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        [class^="icon-"], [class*=" icon-"] {
+            font-family: 'icomoon' !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-facebook:before { content: "\e904"; }
+        .icon-in:before { content: "\e905"; }
+        .icon-instagram:before { content: "\e906"; }
+        .icon-telegram:before { content: "\e90c"; }
+        .icon-search:before { content: "\e90a"; }
+        .icon-eye:before { content: "\e902"; }
+
+        /* =====================================================
+           CONTAINER - from second.html
+        ===================================================== */
+        .container {
+            width: min(1440px, calc(100% - 80px));
+            margin: 0 auto;
+        }
+
+        /* =====================================================
+           TOP HEADER - from second.html
+        ===================================================== */
+        .top-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 62px;
+            z-index: 100;
+            color: white;
+            background: var(--top-bg);
+            border-top: 1px solid rgba(255,255,255,.10);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+            transition: .3s ease;
+        }
+
+        .top-header-inner,
+        .main-header-inner {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* kill the bootstrap clearfix pseudo-elements: inside a flex row they
+           become phantom items and knock the content out of alignment */
+        .top-header-inner::before,
+        .top-header-inner::after,
+        .main-header-inner::before,
+        .main-header-inner::after {
+            content: none;
+            display: none;
+        }
+
+        .top-header-inner {
+            justify-content: space-between;
+        }
+
+        .top-socials {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: auto;
+        }
+
+        .top-social {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,.42);
+            border-radius: 50%;
+            color: white;
+            font-size: 16px;
+            font-weight: normal;
+            transition: .25s ease;
+        }
+
+        .top-social:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .top-tools {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: auto;
+        }
+
+        .top-tools button {
+            border: none;
+            background: transparent;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .search-icon,
+        .eye-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,.42);
+            border-radius: 50%;
+            background: transparent;
+            color: white;
+            opacity: .92;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .search-icon { font-size: 15px; }
+        .eye-icon    { font-size: 17px; }
+
+        .search-icon:hover,
+        .eye-icon:hover,
+        .search-icon.active,
+        .eye-icon.active {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           MAIN HEADER - from second.html
+        ===================================================== */
+        .main-header {
+            position: absolute;
+            top: 62px;
+            left: 0;
+            width: 100%;
+            height: 102px;
+            z-index: 100;
+            color: white;
+            background: var(--main-bg);
+            border-bottom: 1px solid rgba(255,255,255,.10);
+            backdrop-filter: blur(12px);
+            transition:
+                background .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 61px;
+            height: 61px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(255,255,255,.85);
+        }
+
+        .logo-icon::before {
+            content: "";
+            width: 26px;
+            height: 36px;
+            background: white;
+            border-radius: 1px 16px 16px 1px;
+        }
+
+        .logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 27px;
+            height: 36px;
+            left: 12px;
+            background: rgba(255,255,255,.85);
+            clip-path: polygon(
+                0 0,
+                55% 0,
+                55% 100%,
+                0 100%
+            );
+        }
+
+        .logo-text {
+            font-size: 17px;
+            line-height: 1.08;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .logo-text span {
+            display: block;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 31px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-nav a {
+            position: relative;
+            color: rgba(255,255,255,.84);
+            font-size: 15px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: .25s ease;
+        }
+
+        .main-nav a:hover {
+            color: white;
+        }
+
+        .main-nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -13px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: .25s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-caret {
+            width: 6px;
+            height: 6px;
+            flex-shrink: 0;
+            margin-top: -3px;
+            border-right: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(45deg);
+            transition:
+                transform .25s ease,
+                margin-top .25s ease;
+        }
+
+        .nav-item:hover .nav-link .nav-caret,
+        .nav-item:focus-within .nav-link .nav-caret {
+            margin-top: 2px;
+            transform: rotate(225deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 24px);
+            left: -14px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow:
+                0 24px 60px rgba(7,16,34,.28),
+                0 2px 10px rgba(7,16,34,.10);
+            border: 1px solid rgba(39,59,137,.08);
+            padding: 10px;
+            min-width: 280px;
+            max-width: 360px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition:
+                opacity .22s ease,
+                transform .3s cubic-bezier(.22,.61,.36,1),
+                visibility .3s;
+            z-index: 300;
+        }
+
+        /* invisible bridge across the gap so hover is not lost */
+        .dropdown-menu::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -26px;
+            height: 26px;
+        }
+
+        .nav-item:hover .dropdown-menu,
+        .nav-item:focus-within .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        /* small arrow pointing back at the nav item */
+        .dropdown-menu::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 30px;
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-left: 1px solid rgba(39,59,137,.08);
+            border-top: 1px solid rgba(39,59,137,.08);
+            border-radius: 3px 0 0 0;
+            transform: rotate(45deg);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 14px;
+            color: #24325c;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.35;
+            white-space: normal;
+            border: none;
+            border-radius: 10px;
+            transition:
+                background .2s ease,
+                color .2s ease,
+                transform .2s ease;
+        }
+
+        .dropdown-menu a + a {
+            margin-top: 2px;
+        }
+
+        .dropdown-menu a::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(39,59,137,.25);
+            transition: .2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: linear-gradient(90deg, rgba(39,59,137,.09), rgba(0,162,224,.07));
+            color: var(--primary);
+            transform: translateX(3px);
+        }
+
+        .dropdown-menu a:hover::before {
+            background: #00a2e0;
+            transform: scale(1.4);
+        }
+
+        .dropdown-menu a::after {
+            content: none;
+        }
+
+        /* =====================================================
+           LANGUAGE SWITCHER (UI only - no localization)
+        ===================================================== */
+        .langswitch {
+            position: relative;
+            flex-shrink: 0;
+            margin-left: 28px;
+        }
+
+        .langswitch__btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            height: 42px;
+            padding: 0 12px 0 8px;
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: 999px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .6px;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .langswitch__btn:hover,
+        .langswitch:hover .langswitch__btn,
+        .langswitch.is-open .langswitch__btn {
+            background: rgba(255,255,255,.20);
+            border-color: rgba(255,255,255,.42);
+        }
+
+        .langswitch__flag {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 0 1px rgba(255,255,255,.30);
+        }
+
+        .flag-ru { background-image: url("images/ru-flag.svg"); }
+        .flag-en { background-image: url("images/en-flag.svg"); }
+        .flag-uz { background-image: url("images/uz-flag.svg"); }
+
+        .langswitch__caret {
+            width: 6px;
+            height: 6px;
+            flex-shrink: 0;
+            margin-top: -3px;
+            border-right: 1.5px solid currentColor;
+            border-bottom: 1.5px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform .25s ease, margin .25s ease;
+        }
+
+        /* the menu opens on hover too, so the caret has to follow the hover */
+        .langswitch:hover .langswitch__caret,
+        .langswitch.is-open .langswitch__caret {
+            margin-top: 2px;
+            transform: rotate(225deg);
+        }
+
+        .langswitch__menu {
+            position: absolute;
+            top: calc(100% + 14px);
+            right: 0;
+            min-width: 108px;
+            margin: 0;
+            padding: 6px;
+            list-style: none;
+            background: #ffffff;
+            border: 1px solid rgba(39,59,137,.08);
+            border-radius: 14px;
+            box-shadow:
+                0 20px 46px rgba(7,16,34,.26),
+                0 2px 8px rgba(7,16,34,.10);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(8px);
+            transition:
+                opacity .2s ease,
+                transform .28s cubic-bezier(.22,.61,.36,1),
+                visibility .28s;
+            z-index: 400;
+        }
+
+        /* invisible bridge across the gap so hover is not lost */
+        .langswitch__menu::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -16px;
+            height: 16px;
+        }
+
+        .langswitch__menu::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            right: 20px;
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-left: 1px solid rgba(39,59,137,.08);
+            border-top: 1px solid rgba(39,59,137,.08);
+            border-radius: 3px 0 0 0;
+            transform: rotate(45deg);
+        }
+
+        .langswitch:hover .langswitch__menu,
+        .langswitch.is-open .langswitch__menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        /* after picking a language the pointer is still over the switcher -
+           keep it shut until the pointer leaves */
+        .langswitch.is-dismissed .langswitch__menu {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(8px);
+        }
+
+        .langswitch.is-dismissed .langswitch__caret {
+            margin-top: -3px;
+            transform: rotate(45deg);
+        }
+
+        .langswitch__option {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 10px;
+            background: transparent;
+            border: none;
+            border-radius: 10px;
+            color: #24325c;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .6px;
+            text-align: left;
+            cursor: pointer;
+            transition:
+                background .2s ease,
+                color .2s ease;
+        }
+
+        .langswitch__menu li + li .langswitch__option {
+            margin-top: 2px;
+        }
+
+        .langswitch__option .langswitch__flag {
+            width: 22px;
+            height: 22px;
+            box-shadow: 0 0 0 1px rgba(39,59,137,.15);
+        }
+
+        .langswitch__option:hover {
+            background: rgba(39,59,137,.07);
+            color: var(--primary);
+        }
+
+        .langswitch__option.is-active {
+            background: linear-gradient(90deg, rgba(39,59,137,.10), rgba(0,162,224,.08));
+            color: var(--primary);
+        }
+
+        /* =====================================================
+           ACCESSIBILITY (BVI) COLOUR MODES
+
+           bvi.css puts a CSS filter on the .bvi-body wrapper. A filtered
+           element becomes the containing block for its position:fixed
+           descendants, which silently un-sticks the header. The filter is
+           moved up to <html> instead - same visual result, header keeps
+           working. data-bvi-color is mirrored onto <html> in JS, with a
+           :has() fallback.
+        ===================================================== */
+        html body .bvi-body[data-bvi-color='blackAndWhite'],
+        html body .bvi-body[data-bvi-color='blackAndWhiteInvert'] {
+            -webkit-filter: none !important;
+            filter: none !important;
+        }
+
+        html[data-bvi-color='blackAndWhite'],
+        html:has(.bvi-body[data-bvi-color='blackAndWhite']) {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        html[data-bvi-color='blackAndWhiteInvert'],
+        html:has(.bvi-body[data-bvi-color='blackAndWhiteInvert']) {
+            -webkit-filter: grayscale(100%) invert(100%);
+            filter: grayscale(100%) invert(100%);
+        }
+
+        /* =====================================================
+           SEARCH / EYE PANELS - must sit ABOVE the headers
+        ===================================================== */
+        .js-search-content,
+        .js-eye-content {
+            position: fixed;
+            top: 164px;
+            left: 0;
+            width: 100%;
+            z-index: 1200;
+            overflow: hidden;
+        }
+
+        .header__search-content,
+        .header__eye-content {
+            height: auto;
+            min-height: 84px;
+            padding: 18px 0;
+            background: rgba(12,25,55,.97);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-top: 1px solid rgba(255,255,255,.10);
+            border-bottom: 1px solid rgba(255,255,255,.14);
+            box-shadow: 0 18px 40px rgba(0,0,0,.28);
+            color: #fff;
+        }
+
+        .header__search-content .container > .d-flex {
+            width: 100%;
+            gap: 12px;
+        }
+
+        .header__search-content .input {
+            flex: 1;
+            height: 48px;
+            padding: 0 18px;
+            background: rgba(255,255,255,.10);
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            outline: none;
+            transition: .25s ease;
+        }
+
+        .header__search-content .input::placeholder {
+            color: rgba(255,255,255,.60);
+        }
+
+        .header__search-content .input:focus {
+            background: rgba(255,255,255,.16);
+            border-color: rgba(255,255,255,.50);
+        }
+
+        .header__search-content button {
+            height: 48px;
+            min-width: 48px;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .header__search-content button:hover {
+            background: #00a2e0;
+            color: #fff;
+        }
+
+        .header__eye-content .btn--white {
+            padding: 10px 18px;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .js-search-content,
+            .js-eye-content {
+                top: 136px;
+            }
+            .header__search-content,
+            .header__eye-content {
+                padding: 14px 0;
+            }
+            .header__search-content .input {
+                height: 44px;
+            }
+            .header__search-content button {
+                height: 44px;
+                min-width: 44px;
+            }
+        }
+
+        /* =====================================================
+           SCROLLED HEADER - from second.html
+        ===================================================== */
+        /* the top bar is NOT sticky - it scrolls away with the page. Once the
+           whole header block has left the viewport the main header comes back
+           as a floating rounded bar, animated in so the switch is not a jump. */
+        .main-header.scrolled {
+            position: fixed;
+            top: 14px;
+            left: 20px;
+            right: 20px;
+            width: auto;
+            max-width: 1440px;
+            margin: 0 auto;
+            height: 76px;
+            border-radius: 18px;
+            /* geometry is set in one go - only opacity/transform animate */
+            transition: none;
+            border: 1px solid rgba(255,255,255,.10);
+            background: rgba(10,20,46,.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow:
+                0 20px 50px rgba(5,12,30,.42),
+                0 2px 10px rgba(5,12,30,.28);
+            animation: headerDrop .42s cubic-bezier(.22,.61,.36,1) both;
+        }
+
+        .main-header.scrolled.is-leaving {
+            animation: headerLift .28s ease both;
+        }
+
+        @keyframes headerDrop {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -130%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes headerLift {
+            from {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+            to {
+                opacity: 0;
+                transform: translate3d(0, -130%, 0);
+            }
+        }
+
+        /* the logo resize would otherwise animate against the drop-in */
+        .main-header.scrolled .logo,
+        .main-header.scrolled .logo-icon {
+            transition: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .main-header.scrolled,
+            .main-header.scrolled.is-leaving {
+                animation-duration: .01ms;
+            }
+        }
+
+        /* pull the row in a little so it is not flush with the rounded edge */
+        .main-header.scrolled .main-header-inner {
+            width: min(1400px, calc(100% - 44px));
+        }
+
+        .main-header.scrolled .logo-icon {
+            width: 52px;
+            height: 52px;
+        }
+
+        /* =====================================================
+           SECTION RHYTHM
+
+           The page alternates between the hero's deep navy and clean
+           white, so every band belongs to the same family as the header:
+
+             hero (dark) - about (light) - rates (dark) - today (light)
+             - services (dark) - contact (light) - footer (dark)
+        ===================================================== */
+        :root {
+            --band-light: #ffffff;
+            --ink: #0f1a38;
+            --ink-soft: #4d5978;
+            --accent: #00a2e0;
+            --band-edge: rgba(255,255,255,.12);
+        }
+
+        .band--light {
+            background: var(--band-light);
+            padding: 96px 0 104px;
+        }
+
+        /* in-page nav targets have to clear the floating header */
+        #about,
+        #news,
+        #services,
+        #contacts {
+            scroll-margin-top: 110px;
+        }
+
+        /* ---------- dark bands, same palette as the header ---------- */
+
+        /* news, rates and the ticker sit back to back, so they share one flat
+           navy and read as a single band instead of three seams */
+        .band--dark,
+        .main-course,
+        .main-company {
+            position: relative;
+            color: #fff;
+            background: #0b1530;
+        }
+
+        .band--dark::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 420px;
+            pointer-events: none;
+            background: radial-gradient(900px 420px at 18% 0%, rgba(0,162,224,.16), transparent 65%);
+        }
+
+        .band--dark > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-services {
+            position: relative;
+            color: #fff;
+            background:
+                radial-gradient(900px 380px at 15% -20%, rgba(0,162,224,.18), transparent 62%),
+                linear-gradient(180deg, #0b1530 0%, #13224d 55%, #0b1530 100%);
+        }
+
+        /* ---------- NEWS - opening of the dark band ---------- */
+        .band--dark {
+            padding: 100px 0 84px;
+        }
+
+        .band--dark .title {
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: -.02em;
+        }
+
+        .band--dark .link {
+            color: var(--accent);
+            font-weight: 600;
+            transition: color .25s ease;
+        }
+
+        .band--dark .link:hover {
+            color: #fff;
+        }
+
+        .band--dark .d-flex.justify-content-between {
+            margin-bottom: 34px;
+            align-items: baseline;
+        }
+
+        .news-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.10);
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+        /* the tiles carry white-ish logos as often as photographs, so the
+           scrim has to stay heavy at the top as well */
+        .news-card:after {
+            background: linear-gradient(180deg, rgba(6,14,32,.68) 0%, rgba(6,14,32,.88) 100%);
+        }
+
+        .news-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,.26);
+            box-shadow: 0 24px 50px rgba(5,12,30,.50);
+        }
+
+        .news-card__line {
+            background: var(--accent);
+            width: 44px;
+        }
+
+        .news-card__date {
+            color: rgba(255,255,255,.62);
+        }
+
+        /* ---------- shared section headings ---------- */
+        .main-about .title,
+        .main-today .title,
+        .main-course__title h3 {
+            font-weight: 800;
+            letter-spacing: -.02em;
+            line-height: 1.1;
+        }
+
+        /* =====================================================
+           ABOUT - light band
+        ===================================================== */
+        .main-about {
+            background: var(--band-light);
+            padding: 118px 0 126px;
+        }
+
+        /* styles.min.css wraps this row in a white card with a drop shadow -
+           on a white band that reads as a stray outline */
+        .main-about__content {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* the page is banded now, so nothing should show through between them */
+        body {
+            background: var(--band-light);
+        }
+
+        .band--light + .text-center.m-l-y,
+        .main-services + .band--light ~ .text-center.m-l-y {
+            margin: 0 !important;
+            height: 0;
+        }
+
+        .main-about .title {
+            position: relative;
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+            color: var(--ink);
+        }
+
+        /* the same cyan-to-blue accent the header uses for its active states */
+        .main-about .title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 64px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--accent), #4e76e8);
+        }
+
+        .main-about p {
+            color: var(--ink-soft);
+            line-height: 1.85;
+        }
+
+        .main-about .btn {
+            background: linear-gradient(135deg, #17285f 0%, #263f87 100%);
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 30px rgba(23,40,95,.26);
+        }
+
+        .main-about .btn:hover {
+            background: linear-gradient(135deg, #00a2e0 0%, #4e76e8 100%);
+            color: #fff;
+            box-shadow: 0 16px 34px rgba(0,162,224,.32);
+        }
+
+        /* the figures card is the header island in miniature */
+        .main-about__content-item:last-child {
+            background: linear-gradient(160deg, #17285f 0%, #0a142e 100%);
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 18px;
+            box-shadow:
+                0 24px 60px rgba(7,16,34,.28),
+                0 2px 10px rgba(7,16,34,.14);
+            overflow: hidden;
+        }
+
+        .main-about__content-item:last-child::before {
+            content: "";
+            position: absolute;
+            left: 26px;
+            right: 26px;
+            top: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .main-about p.main-about__icons-label {
+            color: rgba(255,255,255,.60);
+            border-bottom-color: var(--band-edge);
+        }
+
+        .main-about__icons-item {
+            border-bottom-color: rgba(255,255,255,.09);
+        }
+
+        /* cross-hairs left over from the original 2x2 icon grid */
+        .main-about__icons::before,
+        .main-about__icons::after {
+            content: none;
+        }
+
+        .main-about p.main-about__icons-title {
+            color: #fff;
+        }
+
+        .main-about__icons .text-14 {
+            color: rgba(151,206,235,.72);
+        }
+
+        /* =====================================================
+           RATES + TICKER - dark band
+        ===================================================== */
+        .main-course {
+            margin: 0 !important;
+            padding: 26px 0 44px;
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        .main-course__title h3 {
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .main-course__title p {
+            color: rgba(255,255,255,.48);
+        }
+
+        .main-course__blog {
+            background: rgba(255,255,255,.06);
+            border: 1px solid var(--band-edge);
+            border-radius: 14px;
+            box-shadow: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: .25s ease;
+        }
+
+        .main-course__blog:hover {
+            background: rgba(255,255,255,.10);
+            border-color: rgba(255,255,255,.22);
+            transform: translateY(-2px);
+        }
+
+        .main-course__fund h3,
+        .main-course__summ {
+            color: #fff;
+        }
+
+        .main-course__fund p,
+        .main-course__name {
+            color: rgba(255,255,255,.55);
+        }
+
+        /* the ticker continues the same band instead of starting a new one */
+        .main-company {
+            background: #0b1530;
+            border-top: 1px solid rgba(255,255,255,.10);
+            border-bottom: 1px solid rgba(255,255,255,.10);
+            padding: 34px 0;
+        }
+
+        /* =====================================================
+           TODAY - light band
+        ===================================================== */
+        .main-today {
+            margin: 0 !important;
+            padding: 100px 0 96px;
+            background: var(--band-light);
+        }
+
+        .main-today .title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 22px;
+            color: var(--ink);
+        }
+
+        .main-today .title::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 64px;
+            height: 4px;
+            margin-left: -32px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--accent), #4e76e8);
+        }
+
+        /* the slider's edge fades were mixed for the old grey backdrop */
+        .main-today__content:after,
+        .main-today__content:before {
+            background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .main-today__item {
+            border-radius: 16px;
+            border: 1px solid rgba(15,26,56,.07);
+        }
+
+        .main-today__content .slick-current {
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(15,26,56,.14);
+        }
+
+        /* =====================================================
+           SERVICES - dark band
+        ===================================================== */
+        .main-services {
+            margin: 0 !important;
+        }
+
+        /* =====================================================
+           CONTACT - light band
+        ===================================================== */
+        .band--light .main-contact {
+            border-radius: 18px;
+            border: 1px solid rgba(15,26,56,.07);
+            box-shadow: 0 22px 55px rgba(15,26,56,.10);
+            padding: 38px 42px;
+        }
+
+        .band--light .main-contact .title {
+            color: var(--ink);
+        }
+
+        .band--light .main-contact p {
+            color: var(--ink-soft);
+        }
+
+        /* =====================================================
+           FOOTER - closes on the header's navy
+        ===================================================== */
+        .footer {
+            background: linear-gradient(180deg, #0b1530 0%, #070f24 100%);
+        }
+
+        @media (max-width: 992px) {
+            .main-about       { padding: 74px 0 78px; }
+            .main-course      { padding: 22px 0 34px; }
+            .band--dark       { padding: 70px 0 60px; }
+            .main-today       { padding: 70px 0 66px; }
+            .band--light      { padding: 66px 0 72px; }
+            .main-course__title h3 { font-size: 24px; }
+        }
+
+        @media (max-width: 700px) {
+            .band--light .main-contact {
+                padding: 28px 22px;
+                border-radius: 14px;
+            }
+        }
+
+        /* =====================================================
+           RESPONSIVE - from second.html
+        ===================================================== */
+        @media (max-width: 1150px) {
+            .container {
+                width: min(100% - 50px, 1440px);
+            }
+            .main-nav {
+                gap: 18px;
+            }
+            .main-nav a {
+                font-size: 13px;
+            }
+            .logo-text {
+                font-size: 14px;
+            }
+            .logo-icon {
+                width: 54px;
+                height: 54px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: min(100% - 40px, 1440px);
+            }
+            .main-nav {
+                gap: 12px;
+            }
+            .main-nav a {
+                font-size: 12px;
+            }
+            .logo-text {
+                display: none;
+            }
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: calc(100% - 30px);
+            }
+            .top-header {
+                height: 54px;
+            }
+            .top-social {
+                width: 32px;
+                height: 32px;
+                font-size: 11px;
+            }
+            .top-tools {
+                gap: 15px;
+            }
+            .main-header {
+                top: 54px;
+                height: 82px;
+            }
+            .main-header.scrolled {
+                top: 8px;
+                left: 10px;
+                right: 10px;
+                width: auto;
+                height: 68px;
+                border-radius: 14px;
+            }
+            .main-header.scrolled .main-header-inner {
+                width: calc(100% - 24px);
+            }
+            .main-nav {
+                display: none;
+            }
+            .main-header-inner {
+                justify-content: space-between;
+            }
+            .logo-text {
+                display: block;
+                font-size: 13px;
+            }
+            .logo-icon {
+                width: 48px;
+                height: 48px;
+            }
+            .langswitch {
+                margin-left: 12px;
+            }
+            .langswitch__btn {
+                height: 38px;
+                padding: 0 12px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .top-socials {
+                gap: 5px;
+            }
+            .top-social {
+                width: 29px;
+                height: 29px;
+            }
+            .logo-text {
+                font-size: 11px;
+            }
+            .langswitch__flag {
+                width: 18px;
+                height: 18px;
+            }
+            .langswitch__btn {
+                font-size: 12px;
+                padding: 0 10px;
+                gap: 7px;
+            }
+            .langswitch__menu {
+                min-width: 190px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+<!-- =====================================================
+     TOP HEADER
+
+     LEFT:
+     Facebook / LinkedIn / Telegram / Instagram
+
+     RIGHT:
+     Search / Eye
+===================================================== -->
+
+<div class="top-header" id="topHeader">
+
+    <div class="container top-header-inner">
+
+
+        <!-- SOCIAL MEDIA - LEFT -->
+
+        <div class="top-socials">
+
+            <a href="#" class="top-social">
+                <i class="icon-facebook"></i>
+            </a>
+
+            <a href="#" class="top-social">
+                <i class="icon-in"></i>
+            </a>
+
+            <a href="#" class="top-social">
+                <i class="icon-telegram"></i>
+            </a>
+
+            <a href="#" class="top-social">
+                <i class="icon-instagram"></i>
+            </a>
+
+        </div>
+
+
+        <!-- SEARCH + EYE - RIGHT -->
+
+        <div class="top-tools">
+
+            <button
+                class="header__search js-search search-icon"
+                aria-label="Поиск"
+            >
+                <i class="icon-search"></i>
+            </button>
+
+            <button
+                class="header__eye js-eye eye-icon"
+                aria-label="Версия для слабовидящих"
+            >
+                <i class="icon-eye"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Search Panel -->
+<div class="js-search-content d-none">
+    <div class="header__search-content">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <input type="text" class="input" placeholder="Поиск">
+                <button>
+                    <i class="icon-search"></i>
+                </button>
+           </div>
+        </div>
+    </div>
+</div>
+
+<!-- Eye/Accessibility Panel -->
+<div class="js-eye-content d-none">
+    <div class="header__eye-content">
+        <div class="container full-height">
+            <div class="d-flex align-items-center justify-content-center flex-wrap-md full-height">
+                <div class="d-flex align-items-center mr-45">
+                    <p class="mr-10">Звук:</p>
+                    <button class="header__eye-content_radio js-voice active">
+                        <i class="icon-radio"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center mr-45">
+                    <p class="mr-10">Шрифт:</p>
+                    <button class="header__eye-content_button js-font-size-decrease">
+                        <i class="icon-minus"></i>
+                    </button>
+                    <button class="header__eye-content_button js-font-size-increase">
+                        <i class="icon-plus"></i>
+                    </button>
+                </div>
+                <div class="d-flex align-items-center mr-45">
+                    <p class="mr-10">Вид сайта:</p>
+                    <div class="d-flex align-items-center">
+                        <p class="header__eye-content_color bvi-color bg-blue-light">A</p>
+                        <p class="header__eye-content_color bvi-color bg-silver" data-color="blackAndWhite">A</p>
+                        <p class="header__eye-content_color bvi-color" data-color="blackAndWhiteInvert">A</p>
+                    </div>
+                </div>
+                <button class="btn btn--white js-settings-default">Сбросить настройки</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     MAIN HEADER
+
+     LEFT:
+     LOGO
+
+     CENTER:
+     NAVIGATION
+
+     RIGHT:
+     RU
+===================================================== -->
+
+<header
+    class="main-header"
+    id="mainHeader"
+>
+
+    <div class="container main-header-inner">
+
+
+        <!-- LOGO -->
+
+        <a href="#" class="logo">
+
+            <div class="logo-icon"></div>
+
+            <div class="logo-text">
+
+                <span>Birinchi</span>
+                <span>Banklararo</span>
+                <span>Depozitariy</span>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="main-nav">
+
+            <div class="nav-item">
+                <a href="#about" class="nav-link">
+                    О нас
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/page/show/obrashchenie-generalnogo-direktora">Обращение генерального директора</a>
+                    <a href="https://bbd.uz/page/show/istoriya-kompanii">История Компании</a>
+                    <a href="https://bbd.uz/team">Наша команда</a>
+                    <a href="https://bbd.uz/rating">Рейтинги и награды</a>
+                    <a href="https://bbd.uz/certificate">Лицензии и сертификаты</a>
+                    <a href="https://bbd.uz/page/show/missiya-i-tseli">Миссия и цели</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#services" class="nav-link">
+                    Наши услуги
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/page/show/brokerskie-uslugi">Брокерские услуги</a>
+                    <a href="https://bbd.uz/page/show/depozitarnye-uslugi">Депозитарные услуги</a>
+                    <a href="https://bbd.uz/page/show/konsaltingovye-uslugi">Консалтинговые услуги</a>
+                    <a href="https://bbd.uz/page/show/anderaytingovye-uslugi">Андерайтинговые услуги</a>
+                    <a href="https://bbd.uz/page/show/upravlenie-aktivami">Управление Активами</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#clients" class="nav-link">
+                    Клиентам-Инвесторам
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/page/show/reyting-listingovykh-kompaniy-top-10">Рейтинг Листинговых компаний (Топ - 10)</a>
+                    <a href="https://nego.uzse.uz/ru/tenders/active">Пакеты крупным инвесторам</a>
+                    <a href="https://bbd.uz/page/show/pakety-chastnym-investoram">Пакеты частным инвесторам</a>
+                    <a href="https://bbd.uz/analitika">Аналитика</a>
+                    <a href="https://bbd.uz/page/show/kak-stat-investorom-na-fondovom-rynke">Как стать клиентом BBD?</a>
+                    <a href="https://bbd.uz/page/show/obuchenie-treydingu-htc">Обучение Трейдингу HTC</a>
+                    <a href="https://bbd.uz/page/show/riski-i-otvetstvennost">Риски и ответственность</a>
+                    <a href="https://bbd.uz/page/show/grafik-birzhevykh-torgov">График биржевых торгов</a>
+                    <a href="https://bbd.uz/page/show/novichkam">Новичкам</a>
+                    <a href="https://bbd.uz/page/show/chasto-zadavaemye-voprosy">Часто задаваемые вопросы</a>
+                </div>
+            </div>
+
+            <div class="nav-item">
+                <a href="#news" class="nav-link">
+                    Новости
+                    <span class="nav-caret"></span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="https://bbd.uz/news/company">Новости компании</a>
+                    <a href="https://bbd.uz/news/stock">Новости Акционерных обществ</a>
+                    <a href="https://bbd.uz/news/media">Публикации в СМИ</a>
+                    <a href="https://bbd.uz/news/ipo-spo">Новости IPO/SPO</a>
+                    <a href="https://bbd.uz/news">Все публикации</a>
+                </div>
+            </div>
+
+            <a href="#contacts">
+                Контакты
+            </a>
+
+        </nav>
+
+
+        <!-- LANGUAGE (UI only - switching does not translate the page) -->
+
+        <div class="langswitch" id="langSwitcher">
+
+            <button
+                class="langswitch__btn"
+                type="button"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+            >
+                <span class="langswitch__flag flag-ru"></span>
+                <span class="langswitch__code">RU</span>
+                <span class="langswitch__caret"></span>
+            </button>
+
+            <ul class="langswitch__menu" role="listbox">
+
+                <li>
+                    <button
+                        type="button"
+                        class="langswitch__option is-active"
+                        role="option"
+                        aria-selected="true"
+                        data-lang="ru"
+                        data-code="RU"
+                    >
+                        <span class="langswitch__flag flag-ru"></span>
+                        <span class="langswitch__label">RU</span>
+                    </button>
+                </li>
+
+                <li>
+                    <button
+                        type="button"
+                        class="langswitch__option"
+                        role="option"
+                        aria-selected="false"
+                        data-lang="en"
+                        data-code="EN"
+                    >
+                        <span class="langswitch__flag flag-en"></span>
+                        <span class="langswitch__label">EN</span>
+                    </button>
+                </li>
+
+                <li>
+                    <button
+                        type="button"
+                        class="langswitch__option"
+                        role="option"
+                        aria-selected="false"
+                        data-lang="uz"
+                        data-code="UZ"
+                    >
+                        <span class="langswitch__flag flag-uz"></span>
+                        <span class="langswitch__label">UZ</span>
+                    </button>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</header>
+    
+<main>
+
+        <section class="hero" id="hero">
+
+            <!-- ===================================================
+                 EDITORIAL COLUMN
+            ==================================================== -->
+            <div class="hero__editorial">
+
+                <p class="hero__kicker hero__fade hero__fade--1">
+                    Депозитарий · Ташкент · с 1998 года
+                </p>
+
+                <h1 class="hero__title">
+                    <span class="hero__line"><span>Надёжность</span></span>
+                    <span class="hero__line"><span><em>финансовой</em></span></span>
+                    <span class="hero__line"><span>инфраструктуры</span></span>
+                </h1>
+
+                <p class="hero__lead hero__fade hero__fade--6">
+                    Депозитарные, брокерские и консалтинговые решения для участников
+                    рынка ценных бумаг, инвесторов и финансовых организаций Узбекистана.
+                </p>
+
+                <ul class="hero__markers hero__fade hero__fade--2">
+                    <li class="hero__marker">Основан в 1998 году</li>
+                    <li class="hero__marker">Ассоциация банков Узбекистана</li>
+                    <li class="hero__marker">Депозитарий · Брокеридж · Консалтинг</li>
+                </ul>
+
+                <div class="hero__actions hero__fade hero__fade--3">
+
+                    <a
+                        class="hero-btn hero-btn--solid"
+                        href="https://bbd.uz/page/show/kak-stat-investorom-na-fondovom-rynke"
+                    >
+                        <span>Стать клиентом</span>
+                        <svg class="hero-btn__arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
+                                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <a class="hero-btn hero-btn--line" href="#services">
+                        <span>Наши услуги</span>
+                    </a>
+
+                </div>
+
+                <!-- ---------------------------------------------------
+                     STATS — structural, on the page rules
+
+                     The year-on-year deltas below are PLACEHOLDERS.
+                     Replace them with real figures or delete the
+                     .stat__delta lines.
+                ---------------------------------------------------- -->
+                <div class="hero__stats hero__fade hero__fade--4">
+
+                    <div class="stat">
+                        <span class="stat__delta">+14,2% <span>за год</span></span>
+                        <span class="stat__value" data-count-to="31737">0</span>
+                        <span class="stat__label">Клиентов</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat__delta">+8,6% <span>за год</span></span>
+                        <span class="stat__value" data-count-to="3.5"
+                              data-decimals="1" data-suffix=" трлн">0</span>
+                        <span class="stat__label">Ценных бумаг</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat__delta">+11,3% <span>за год</span></span>
+                        <span class="stat__value" data-count-to="1.8"
+                              data-decimals="1" data-suffix=" трлн">0</span>
+                        <span class="stat__label">Активы клиентов</span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat__delta">+9,4% <span>за год</span></span>
+                        <span class="stat__value" data-count-to="5.1"
+                              data-decimals="1" data-suffix=" трлн">0</span>
+                        <span class="stat__label">Объём сделок</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ===================================================
+                 TERMINAL COLUMN
+                 built into the grid, full height, 1px rule on the left
+            ==================================================== -->
+            <aside class="hero__terminal hero__fade hero__fade--5" id="heroTerminal"
+                   aria-label="Финансовый терминал">
+
+                <header class="terminal__head">
+                    <span class="terminal__name">Терминал BBD</span>
+                    <time class="terminal__stamp" datetime="2026-02-13">13.02.2026</time>
+                </header>
+
+                <div class="terminal__tabs" role="tablist" aria-label="Разделы терминала">
+                    <button type="button" class="terminal__tab is-active" role="tab"
+                            aria-selected="true" tabindex="0" data-tab="rates">Курсы ЦБ</button>
+                    <button type="button" class="terminal__tab" role="tab"
+                            aria-selected="false" tabindex="-1" data-tab="clearing">Клиринг</button>
+                    <button type="button" class="terminal__tab" role="tab"
+                            aria-selected="false" tabindex="-1" data-tab="status">Статус</button>
+                </div>
+
+                <div class="terminal__body">
+
+                    <!-- ---------- rates ---------- -->
+                    <div class="terminal__panel is-active" data-panel="rates" role="tabpanel">
+                        <ul class="rate-list">
+                            <li>
+                                <button type="button" class="rate is-active" aria-pressed="true">
+                                    <span class="rate__code">USD</span>
+                                    <span class="rate__name">Доллар США</span>
+                                    <span class="rate__value">12 275,58</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="rate" aria-pressed="false">
+                                    <span class="rate__code">EUR</span>
+                                    <span class="rate__name">Евро</span>
+                                    <span class="rate__value">14 591,98</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="rate" aria-pressed="false">
+                                    <span class="rate__code">RUB</span>
+                                    <span class="rate__name">Российский рубль</span>
+                                    <span class="rate__value">159,09</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="rate" aria-pressed="false">
+                                    <span class="rate__code">GBP</span>
+                                    <span class="rate__name">Фунт стерлингов</span>
+                                    <span class="rate__value">16 754,94</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ---------- clearing (placeholder figures) ---------- -->
+                    <div class="terminal__panel" data-panel="clearing" role="tabpanel">
+                        <dl class="clearing">
+                            <div class="clearing__row">
+                                <dt>Операций за сессию</dt>
+                                <dd>1 284</dd>
+                            </div>
+                            <div class="clearing__row">
+                                <dt>Объём клиринга</dt>
+                                <dd>84,2 <small>МЛРД UZS</small></dd>
+                            </div>
+                            <div class="clearing__row">
+                                <dt>Расчётный цикл</dt>
+                                <dd>T+0</dd>
+                            </div>
+                            <div class="clearing__row">
+                                <dt>Неисполненные сделки</dt>
+                                <dd>0</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- ---------- status ---------- -->
+                    <div class="terminal__panel" data-panel="status" role="tabpanel">
+                        <ul class="status-list">
+                            <li class="status-row">
+                                Депозитарный учёт
+                                <span class="status-row__state">Норма</span>
+                            </li>
+                            <li class="status-row">
+                                Биржевые расчёты
+                                <span class="status-row__state">Норма</span>
+                            </li>
+                            <li class="status-row">
+                                Электронный документооборот
+                                <span class="status-row__state">Норма</span>
+                            </li>
+                            <li class="status-row">
+                                Торговая сессия
+                                <span class="status-row__time">10:00 — 15:00</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- ---------- shared chart ---------- -->
+                    <figure class="terminal__chart">
+                        <figcaption class="terminal__chart-head">
+                            <span id="chartCaption">USD / UZS · 16 дней</span>
+                            <span class="terminal__chart-value" id="chartReadout">—</span>
+                        </figcaption>
+                        <svg viewBox="0 0 400 96" preserveAspectRatio="none"
+                             role="img" aria-label="Динамика выбранного показателя">
+                            <line class="chart__base" x1="0" y1="95" x2="400" y2="95"/>
+                            <path class="chart__fill" id="chartFill" d=""/>
+                            <path class="chart__line" id="chartLine" d=""/>
+                            <circle class="chart__node" id="chartNode" r="3" cx="0" cy="0"/>
+                        </svg>
+                    </figure>
+
+                    <p class="terminal__foot">Источник: Центральный банк Республики Узбекистан</p>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ===================================================
+                 TICKER TAPE — closes the hero on a hard rule
+            ==================================================== -->
+            <div class="hero__tape">
+
+                <span class="tape__label">Рынок</span>
+
+                <div class="tape__window">
+                    <div class="tape__track" id="heroTape">
+                        <span class="tape__item"><b>USD</b><i>12 275,58</i> UZS</span>
+                        <span class="tape__item"><b>EUR</b><i>14 591,98</i> UZS</span>
+                        <span class="tape__item"><b>RUB</b><i>159,09</i> UZS</span>
+                        <span class="tape__item"><b>GBP</b><i>16 754,94</i> UZS</span>
+                        <span class="tape__item"><b>ЦБ РУз</b> курс на <i>13.02.2026</i></span>
+                        <span class="tape__item"><b>Сессия</b> <i>10:00 — 15:00</i></span>
+                        <span class="tape__item"><b>Расчёты</b> T+0</span>
+                        <span class="tape__item"><b>Депозитарий</b> учёт и хранение ценных бумаг</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="main-about" id="about">
+            <div class="container">
+                <div class="main-about__content">
+                    <div class="main-about__content-item wow fadeInUp">
+                        <h2 class="title">О нас</h2>
+                        <p class="mb-20 text-justify">Birinchi Banklararo Depozitariy на сегодняшний день является одной из старейших компаний с богатой историей и большим опытом работы на фондовом рынке Узбекистана, которая является полностью частной и независимой компанией оказывающей полный спектр инвестиционно-финансовых услуг на рынке ценных бумаг.</p>
+                        <p class="mb-30 text-justify">Birinchi Banklararo Depozitariy был создан под эгидой Ассоциации Банков Узбекистана в 1998 году в форме Акционерного общества.<br> В настоящий момент мы представляем частным, корпоративным, институциональным и международным инвесторам полный спектр инвестиционно-финансовых услуг, что включает в себя оказание профессиональных услуг брокера по покупке и продаже ценных бумаг Узбекских эмитентов на фондовой бирже, оказание профессиональных услуг депозитария по учету и удостоверению прав на ценные бумаги, оказание услуг инвестиционного консалтинга.</p>
+						<a href="https://bbd.uz/page/show/obrashchenie-generalnogo-direktora" class="btn">Подробнее</a>
+                    </div>
+                    <div class="main-about__content-item wow fadeInUp" data-wow-delay="0.15s">
+                        <p class="main-about__icons-label">Показатели компании</p>
+                        <div class="main-about__icons">
+                            <div class="main-about__icons-item">
+                                <img src="images/about1.svg" alt="" style="width:80px;height:80px">
+                                <p class="main-about__icons-title">31 737</p>
+                                <p class="text-14 text-medium">КЛИЕНТОВ</p>
+                            </div>
+                            <div class="main-about__icons-item">
+                                <img src="images/about2.svg" alt="" style="width:80px;height:80px">
+								<p class="main-about__icons-title">3,5 трлн</p>                            
+								<p class="text-14 text-medium text-center">ЦЕННЫХ БУМАГ</p>
+                            </div>
+                            <div class="main-about__icons-item">
+                                <img src="images/abot3.svg" alt="" style="width:80px;height:80px">
+                                <p class="main-about__icons-title">1,8 трлн</p>								
+								<p class="text-14 text-medium">КЛИЕНТСКИЕ АКТИВЫ</p>
+                            </div>
+                            <div class="main-about__icons-item">
+                                <img src="images/money.svg" alt="" style="width:80px;height:80px">
+                                <p class="main-about__icons-title">5,1 трлн </p>
+                                <p class="text-14 text-medium">ОБЪЕМ СДЕЛОК</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-l-y band band--dark" id="news">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+                    <h2 class="title">Новости</h2>
+                    <a href="https://bbd.uz/news" class="link">Все публикации</a>
+                </div>
+                <div class="row">
+                                        <div class="col-md-4 col-sm-6 wow slideInLeft">
+                        <div class="news-card" style="background-image: url('images/1761887969.jpg')">
+							<a href="https://bbd.uz/news/show/uzauto-motors-planiruet-vyplatit-dividendy">
+                                <div class="news-card__content">
+                                    <p class="news-card__title">UzAuto Motors планирует выплатить дивиденды</p>
+                                    <div class="news-card__line"></div>
+                                    <p class="news-card__short-text">Наблюдательный совет UzAuto Motors рекомендовал направить часть прибыли…</p>
+                                    <span class="news-card__date">31 октября 2025</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                    
+                                        <div class="col-md-4 col-sm-6 wow fadeIn">
+                        <div class="news-card" style="background-image: url('images/1748418045.jpg')">
+							<a href="https://bbd.uz/news/show/godovoe-obshchee-sobranie-aktsionerov-akib-ipoteka-bank-sostoitsya-18-iyunya-2025-goda">
+                                <div class="news-card__content">
+                                    <p class="news-card__title">Годовое общее собрание акционеров АКИБ «Ипотека-банк» состоится 18 июня 2025 года</p>
+                                    <div class="news-card__line"></div>
+                                    <p class="news-card__short-text">АКИБ «Ипотека-банк» уведомляет акционеров о проведении годового общего собрания 18 июня 2025 года в 11:00.</p>
+                                    <span class="news-card__date">28 мая 2025</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                    
+                                        <div class="col-md-4 col-sm-6 wow slideInRight">
+                        <div class="news-card" style="background-image: url('images/1748411314.jpg')">
+							<a href="https://bbd.uz/news/show/napp-vvodit-novye-pravila-protiv-manipulyatsiy-na-fondovom-rynke">
+                                <div class="news-card__content">
+                                    <p class="news-card__title">НАПП вводит новые правила против манипуляций на фондовом рынке</p>
+                                    <div class="news-card__line"></div>
+                                    <p class="news-card__short-text">Введены новые правила, запрещающие фиктивные сделки и ложную информацию. Участники рынка должны сообщать о подозрительных действиях. Это поможет защитить инвесторов и сделать рынок честнее.</p>
+                                    <span class="news-card__date">28 мая 2025</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>                    
+                                    </div>
+            </div>
+        </div>
+        <div class="main-course m-b-y">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-30 wow slideInLeft">
+                        <div class="main-course__title">
+                            <h3>Гарантийный фонд</h3>
+                            <p>13.02.2026</p>
+                        </div>
+                        <div class="main-course__blog">
+                            <div class="main-course__fund">
+                                <p>UZS</p>
+                                <h3>374,240,047.65</h3>
+                            </div>
+                            <div class="main-course__fund">
+                                <p>USD</p>
+                                <h3>0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+    <div class="main-course__title">
+        <h3>Курс валют ЦБ РУз</h3>
+        <p>с 13.02.2026</p>
+    </div>
+    <div class="row">
+          
+            <div class="col-sm-6">
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/usd.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">USD</div>
+                    </div>
+                    <p class="main-course__summ">12275.58</p>
+                </div>
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/eur.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">EUR</div>
+                    </div>
+                    <p class="main-course__summ">14591.98</p>
+                </div>
+                            </div>     
+          
+            <div class="col-sm-6">
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/rub.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">RUB</div>
+                    </div>
+                    <p class="main-course__summ">159.09</p>
+                </div>
+                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="d-flex align-items-center">
+                        <img src="images/gbp.svg" alt="" class="main-course__image">
+                        <div class="main-course__name">GBP</div>
+                    </div>
+                    <p class="main-course__summ">16754.94</p>
+                </div>
+                            </div>     
+            </div>
+</div>                </div>
+            </div>
+        </div>
+        <div class="main-company">
+    <div class="js-slider-company">
+                <div class="main-company__item">
+            <p class="text-bold">«Qo'qon mexanika zavodi» AJ</p>
+            <p>Стартовая цена: 930</p>
+            <p>Базовая цена: 930</p>
+            <p>Дата последней сделки:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«Hamkorbank» ATB</p>
+            <p>Стартовая цена: 33</p>
+            <p>Базовая цена: 37,98</p>
+            <p>Дата последней сделки:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«O'zmetkombinat» AJ</p>
+            <p>Стартовая цена: 44 000</p>
+            <p>Базовая цена: 45 549</p>
+            <p>Дата последней сделки:  13.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«Kvarts» AJ</p>
+            <p>Стартовая цена: 3 400</p>
+            <p>Базовая цена: 3 325</p>
+            <p>Дата последней сделки:  13.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«Qizilqumsement» AJ</p>
+            <p>Стартовая цена: 5 600</p>
+            <p>Базовая цена: 5 699</p>
+            <p>Дата последней сделки:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«O'zsanoatqurilishbank» ATB</p>
+            <p>Стартовая цена: 16,79</p>
+            <p>Базовая цена: 16</p>
+            <p>Дата последней сделки:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«O'zRTXB» AJ</p>
+            <p>Стартовая цена: 15 999</p>
+            <p>Базовая цена: 15 000</p>
+            <p>Дата последней сделки:  14.04.2021</p>
+        </div>
+                <div class="main-company__item">
+            <p class="text-bold">«Ipoteka-bank» ATIB</p>
+            <p>Стартовая цена: 0,99</p>
+            <p>Базовая цена: 0,97</p>
+            <p>Дата последней сделки:  14.04.2021</p>
+        </div>
+            </div>
+</div>
+        <div class="main-today m-l-y">
+            <div class="container">
+                <div class="text-center">
+                    <h3 class="title mb-0">Сегодня в продаже</h3>
+                </div>
+                <div class="main-today__content">
+                    <div class="js-slider-today">
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«O'zbekiston metallurgiya kombinati» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">94</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">48 999,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">4 605 906,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«O'zbekiston metallurgiya kombinati» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">1 071</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">43 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">46 053 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«O'zbekiston metallurgiya kombinati» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">361</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">5 100,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">1 841 100,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«O'zbekiston metallurgiya kombinati» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">505</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">3 600,01 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">1 818 005,05 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Guliston Ekstrakt-Yog'» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">2 706</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">357 074,08 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">966 242 460,48 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Guliston Ekstrakt-Yog'» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">100</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">4 200,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">420 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Mulk-Sarmoya Brokerlik Uyi» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">1 032</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">475,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">490 200,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Yog'gar» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">100</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">1 800,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">180 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Olmaliq kon-metallurgiya kombinati» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">60</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">138 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">8 280 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Olmaliq kon-metallurgiya kombinati» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">343</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">13 802,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">4 734 086,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Olmaliq kon-metallurgiya kombinati» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">40</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">11 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">440 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«KAFOLAT sug'urta kompaniyasi» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">90 285 520</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">5,12 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">462 261 862,40 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«KAFOLAT sug'urta kompaniyasi» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">1 000 000</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">4,75 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">4 750 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Agrobank» aksiyadorlik tijorat banki</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">415 539</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">755,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">313 731 945,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Agrobank» aksiyadorlik tijorat banki</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">200</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">560,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">112 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Qashqadaryo parmalash ishlari» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">2 816 110</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">2 000,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">5 632 220 000,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Qashqadaryo parmalash ishlari» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">500</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">750,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">375 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Qo'qon mexanika zavodi» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">1 550</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">989,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">1 532 950,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Qo'qon mexanika zavodi» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">5 030</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">925,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">4 652 750,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Granit» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">9 120</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">25 000,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">228 000 000,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Granit» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">500</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">10 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">5 000 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Granit» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">50</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">7 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">350 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Sredazenergosetproekt» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">100</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">3 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">300 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«O'zpartamponaj» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">2 000</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">95,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">190 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«ELEKTRQISHLOQQURILISH» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">50</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">7 000,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">350 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Minora qurish ekspeditsiyasi» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">200</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">800,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">160 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                 
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«O'zbekgeofizika» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">500</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">600,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">300 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«O'zbekgeofizika» aksiyadorlik jamiyati</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">160</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">829,99 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">132 798,40 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«O'zbekgeofizika» aksiyadorlik jamiyati</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">300</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">560,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">168 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                                                                    <div>
+                                    <div class="main-today__item">
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Эмитент</div>
+                                            <div class="text-medium text-right">«Turkiston» Xususiy aksiyadorlik tijorat banki</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Кол. акций</div>
+                                            <div class="text-medium">75</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Цена за акцию</div>
+                                            <div class="text-medium">6 000,00 UZS</div>
+                                        </div>
+                                        <div class="main-today__item-info">
+                                            <div class="main-today__item-title">Сумма</div>
+                                            <div class="text-medium">450 000,00 UZS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                         
+                            <div>
+								<div class="main-today__item">
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Эмитент</div>
+										<div class="text-medium text-right">«Turkiston» Xususiy aksiyadorlik tijorat banki</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Кол. акций</div>
+										<div class="text-medium">295</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Цена за акцию</div>
+										<div class="text-medium">800,00 UZS</div>
+									</div>
+									<div class="main-today__item-info">
+										<div class="main-today__item-title">Сумма</div>
+										<div class="text-medium">236 000,00 UZS</div>
+									</div>
+								</div>
+                            </div>
+                               
+                                            </div>
+                    <div class="main-today__arrows">
+                        <button class="main-today__arrows-left">
+                            <i class="icon-arrow-left"></i>
+                        </button>
+                        <button class="main-today__arrows-right">
+                            <i class="icon-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-services m-l-y" id="services">
+            <div class="container">
+                <div class="main-services__content">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                            <div class="main-services__item wow slideInLeft" data-wow-delay="0.1s">
+                                <p class="main-services__item-title">Депозитарные услуги</p>
+                                <p class="text-medium">Стоимость наших депозитарных услуг стремятся к нулю</p>
+                            </div>
+                            <div class="main-services__item wow slideInLeft" data-wow-delay="0.2s">
+                                <p class="main-services__item-title">Брокерские услуги</p>
+                                <p class="text-medium">Услуги по брокерскому обслуживанию ориентированы на каждого из Вас</p>
+                            </div>
+                            <div class="main-services__item wow slideInLeft" data-wow-delay="0.3s">
+                                <p class="main-services__item-title">Консалтинговые услуги</p>
+                                <p class="text-medium">Мы развиваем Вашу систему корпоративного управления</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-push-1 col-lg-6 col-sm-6">
+                            <img src="images/services.svg" alt="" class="main-services__image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="band band--light" id="contacts">
+        <div class="container">
+            <div class="main-contact wow flipInX" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div>
+                    <h3 class="title title--mb">Как мы можем Вам помочь?</h3>
+                    <p>Звоните сейчас или оставьте заявку на обратный звонок
+        в удобное Вам время.</p>
+                </div>
+             <a href="https://bbd.uz/contact" class="btn btn--fill">Контакты</a>
+            </div>
+        </div>
+        </div>
+        <div class="text-center m-l-y">
+            
+        </div>
+
+    </main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <a href="https://bbd.uz" class="footer__logo"></a>
+            <a href="https://my.soliq.uz/searchtin/index?user_type=1" target="_blank" class="text-medium btn  btn--white">Узнать ИНН</a>
+            <div class="footer__info">
+                <div>
+                    <div class="footer__info-item mb-10">
+                        <i class="icon-phone"></i>
+                        <a href="tel:+998712332907">+998 71 233 29 07, </a>
+                        <a href="tel:+998712330652">+998 71 233 06 52</a>
+                    </div>
+                    <div class="footer__info-item mb-10">
+                        <i class="icon-message"></i>
+                        <a href="mailto:info@bbd.uz">info@bbd.uz</a>
+                    </div>
+                    <div class="footer__info-item">
+                        <i class="icon-mark"></i>
+                        <p>100047, Узбекистан г. Ташкент, ул. Истикбол, 15</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="footer__info-item">
+                <div class="footer__social">
+                    <a href="">
+                        <i class="icon-facebook"></i>
+                    </a>
+                    <a href="">
+                        <i class="icon-in"></i>
+                    </a>
+                    <a href="https://t.me/bbdbroker" target="_blank">
+						<i class="icon-telegram"></i>
+					</a>
+                    <a href="http://instagram.com/bbd.uz" target="_blank">
+                        <i class="icon-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__line"></div>
+    <div class="container">
+        <div class="footer__esys">
+            <p>© 1998 - 2026Все права защищены. <br> При перепечатке материалов сайта ссылка на веб-сайт обязательна.</p>
+            <a href="https://esys.uz" target="_blank" class="footer__esys-logo">
+                <p>Разработано в</p>
+                <img src="images/esys.svg" alt="">
+            </a>    
+        </div>
+    </div>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/responsivevoice.min.js"></script>
+<script src="js/js.cookie.min.js"></script>
+<script src="js/jquery.hoverIntent.min.js"></script>
+<script src="js/bvi.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.js-slider-images').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:true,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            asNavFor: '.js-slider-text'
+        });
+        $('.js-slider-text').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots:false,
+            fade:true,
+            speed: 1000,
+            autoplay: true,
+            asNavFor: '.js-slider-images'
+        });
+
+        $('.js-slider-company').slick({
+            arrows: false,
+            dots: false,
+            centerPadding: '75px',
+            focusOnSelect: true,
+            speed: 5000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            centerMode: true,
+            cssEase: 'linear',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            infinite: true,
+            initialSlide: 1,
+            buttons: false
+        });
+        $('.js-slider-partner').slick({
+            dots: false,
+            centerPadding: '90px',
+            autoplay: true,
+            centerMode: true,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            prevArrow: $('.main-partner__arrows-left'),
+            nextArrow: $('.main-partner__arrows-right'),
+            responsive: [
+                    {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 4,
+                        centerPadding: '125px',
+                    }
+                    },
+                    {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        centerPadding: '125px',
+                    }
+                    },
+                    {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 3,
+                        centerPadding: '70px',
+                    }
+                    },
+                    {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        centerPadding: '25px',
+                    }
+                    },
+                    {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        centerPadding: '25px',
+                    }
+                    }
+                ]
+        });
+
+        $('.js-slider-today').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+            centerMode: true,
+            variableWidth: true,
+            centerPadding: '0px',
+            prevArrow: $('.main-today__arrows-left'),
+            nextArrow: $('.main-today__arrows-right'),
+            responsive: [
+                    {
+                    breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            variableWidth: false,
+                            centerMode: false,
+                            centerPadding: '0px',
+                        }
+                    },
+                ]
+
+        }); 
+        
+    });
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160808134-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160808134-1');
+</script>
+
+<script>
+    $(document).ready(function() {
+        $.bvi({});
+        wow = new WOW(
+        {
+            animateClass: 'animated',
+            offset:       70,
+            callback:     function(box) {
+            console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+            }
+        }
+        );
+        wow.init();
+        /* defined by the standalone header script at the end of the page, so
+           that a failure in any plugin above cannot take the header with it */
+        function positionHeaderPanels() {
+            if (window.positionHeaderPanels) window.positionHeaderPanels();
+        }
+
+        function closeHeaderPanels() {
+            $('.js-search-content, .js-eye-content').slideUp(200);
+            $('.js-search, .js-eye').removeClass('active');
+        }
+
+        positionHeaderPanels();
+        $(window).on('scroll resize', positionHeaderPanels);
+
+        $('.js-search').click(function (e) {
+            e.stopPropagation();
+            positionHeaderPanels();
+            if ( $('.js-search-content').first().is( ":hidden" ) ) {
+                $('.js-eye').removeClass('active')
+                $(this).addClass('active')
+                $('.js-eye-content').slideUp(300);
+                $('.js-search-content').slideDown(300, function () {
+                    $('.js-search-content .input').trigger('focus');
+                });
+            } else {
+                $(this).removeClass('active')
+                $('.js-search-content').slideUp(300);
+            }
+        });
+
+        $('.js-eye').click(function (e) {
+            e.stopPropagation();
+            positionHeaderPanels();
+            if ( $('.js-eye-content').first().is( ":hidden" ) ) {
+                $('.js-search').removeClass('active')
+                $(this).addClass('active')
+                $('.js-search-content').slideUp(300);
+                $('.js-eye-content').slideDown(300);
+            } else {
+                $(this).removeClass('active')
+                $('.js-eye-content').slideUp(300);
+            }
+        });
+
+        /* click outside or Esc closes the panels */
+        $(document).on('click', function (e) {
+            if ($(e.target).closest('.js-search-content, .js-eye-content, .js-search, .js-eye').length) return;
+            closeHeaderPanels();
+        });
+
+        $(document).on('keydown', function (e) {
+            if (e.key === 'Escape' || e.keyCode === 27) closeHeaderPanels();
+        });
+
+        $('.js-hamburger').click(function () {
+            if ( $('.hamburger__content').first().is( ":hidden" ) ) {
+                 $('.js-search-content').slideUp(300);
+                 $('.js-eye-content').slideUp(300);
+                 $('.js-search').removeClass('active')
+                 $('.js-eye').removeClass('active')
+                 $('body').addClass('o-hidden')
+                 $('.hamburger__content').slideDown(300);
+            } else {
+                $('body').removeClass('o-hidden')
+                $('.hamburger__content').slideUp(300);
+            }
+        });
+
+
+        // Scroll down indicator
+        $('.js-scroll-down').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $('.main-about').offset().top - 20
+            }, 800);
+        });
+
+    });
+</script>
+
+<!-- Hero: ambient field, market card, counters, tilt -->
+<script src="js/hero.js"></script>
+
+<!-- Language switcher (UI only - no translation is performed) -->
+<script>
+    (function () {
+        var sw = document.getElementById('langSwitcher');
+        if (!sw) return;
+
+        var btn     = sw.querySelector('.langswitch__btn');
+        var flag    = btn.querySelector('.langswitch__flag');
+        var code    = btn.querySelector('.langswitch__code');
+        var options = sw.querySelectorAll('.langswitch__option');
+
+        function close() {
+            sw.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var open = sw.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        /* the menu also opens on hover, so a plain close() would be undone by
+           the pointer still resting on the switcher */
+        function dismiss() {
+            close();
+            sw.classList.add('is-dismissed');
+        }
+
+        sw.addEventListener('mouseleave', function () {
+            sw.classList.remove('is-dismissed');
+        });
+
+        Array.prototype.forEach.call(options, function (opt) {
+            opt.addEventListener('click', function (e) {
+                e.stopPropagation();
+
+                Array.prototype.forEach.call(options, function (o) {
+                    o.classList.remove('is-active');
+                    o.setAttribute('aria-selected', 'false');
+                });
+
+                opt.classList.add('is-active');
+                opt.setAttribute('aria-selected', 'true');
+
+                /* visual state only - nothing is translated here */
+                flag.className = 'langswitch__flag flag-' + opt.getAttribute('data-lang');
+                code.textContent = opt.getAttribute('data-code');
+
+                dismiss();
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!sw.contains(e.target)) close();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' || e.keyCode === 27) close();
+        });
+    })();
+</script>
+
+
+<!-- Sticky header + accessibility-mode guard.
+     Deliberately standalone and jQuery-free: if any plugin above throws, the
+     header must still pin itself. -->
+<script>
+    (function () {
+        var topHeader  = document.getElementById('topHeader');
+        var mainHeader = document.getElementById('mainHeader');
+        if (!mainHeader) return;
+
+        /* keep the search / eye panels glued to the bottom of the header */
+        window.positionHeaderPanels = function () {
+            var bottom = Math.max(0, mainHeader.getBoundingClientRect().bottom);
+            var panels = document.querySelectorAll('.js-search-content, .js-eye-content');
+            for (var i = 0; i < panels.length; i++) {
+                panels[i].style.top = bottom + 'px';
+            }
+        };
+
+        /* The header block scrolls away with the page. Once it has fully left
+           the viewport the header returns as a floating bar, animated in and
+           out, so pinning never reads as a jump. */
+        var pinned = false;
+
+        function pinPoint() {
+            /* bottom edge of the header block in its resting position */
+            if (mainHeader.className.indexOf('scrolled') !== -1) return pinPoint.cached || 164;
+            pinPoint.cached = mainHeader.offsetTop + mainHeader.offsetHeight;
+            return pinPoint.cached;
+        }
+
+        function update() {
+            var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+            /* a dead band around the pin point stops the bar from flickering
+               in and out while the user hovers around that scroll position */
+            if (!pinned && y >= pinPoint() + 30) {
+                pinned = true;
+                mainHeader.classList.remove('is-leaving');
+                mainHeader.classList.add('scrolled');
+            } else if (pinned && y < pinPoint()) {
+                pinned = false;
+                mainHeader.classList.add('is-leaving');
+            }
+
+            window.positionHeaderPanels();
+        }
+
+        /* drop the fixed bar only once its exit animation has played out */
+        mainHeader.addEventListener('animationend', function (e) {
+            /* animationend bubbles - ignore anything a child animated */
+            if (e.target !== mainHeader) return;
+
+            if (mainHeader.classList.contains('is-leaving')) {
+                mainHeader.classList.remove('is-leaving');
+                mainHeader.classList.remove('scrolled');
+            }
+            window.positionHeaderPanels();
+        });
+
+        /* bvi puts a CSS filter on .bvi-body, which would trap the fixed
+           header inside it. The stylesheet moves that filter up to <html>;
+           this mirrors the attribute so it works without :has() too. */
+        function mirrorBviColour() {
+            var wrap = document.querySelector('.bvi-body');
+            var mode = wrap ? wrap.getAttribute('data-bvi-color') : null;
+
+            if (mode) {
+                document.documentElement.setAttribute('data-bvi-color', mode);
+            } else {
+                document.documentElement.removeAttribute('data-bvi-color');
+            }
+        }
+
+        function watchBvi() {
+            var wrap = document.querySelector('.bvi-body');
+            if (!wrap || !window.MutationObserver) return;
+
+            new MutationObserver(mirrorBviColour).observe(wrap, {
+                attributes: true,
+                attributeFilter: ['data-bvi-color']
+            });
+        }
+
+        function refresh() {
+            update();
+            mirrorBviColour();
+            watchBvi();
+        }
+
+        update();
+        mirrorBviColour();
+
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        window.addEventListener('load', refresh);
+        document.addEventListener('DOMContentLoaded', refresh);
+
+        mainHeader.addEventListener('transitionend', function () {
+            window.positionHeaderPanels();
+        });
+    })();
+</script>
+
+</body></html>
+
+
+
+
+
+
+
+
