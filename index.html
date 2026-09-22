@@ -169,7 +169,17 @@
            On top of the row's own 10px gap that made the search-to-eye gap
            32px against 10px from the eye to the language switch, so the
            three controls were visibly unevenly spaced. The row's gap is
-           the only thing that should set this. */
+           the only thing that should set this.
+
+           This used to reset only .header-tools' direct children, which
+           was every tool-btn back when they sat straight in the row. The
+           search and eye buttons now sit one level deeper, each inside
+           its own .header-tool-pop (so their popover can anchor to them),
+           which took them out of reach of a `>` selector and let the
+           22px margin back in unopposed. Targeting .tool-btn itself
+           instead of "direct child of .header-tools" keeps the reset
+           working regardless of how deep a button sits. */
+        .header-tools .tool-btn,
         .header-tools > * {
             margin-left: 0;
             margin-right: 0;
@@ -190,7 +200,7 @@
            lockup and is used as drawn. */
         .logo img {
             display: block;
-            width: 142px;
+            width: 124px;
             height: auto;
         }
 
@@ -615,100 +625,295 @@
         }
 
         /* =====================================================
-           SEARCH / EYE PANELS - must sit ABOVE the headers
+           SEARCH / ACCESSIBILITY POPOVERS
+
+           These used to be full-width bands fixed under the header,
+           JS-positioned on every scroll/resize (window.positionHeaderPanels)
+           because they lived outside .header-tools in the markup. They are
+           now children of a .header-tool-pop wrapper next to their own
+           icon, so plain position:absolute anchors them - same card,
+           border, shadow and arrow as .dropdown-menu / .langswitch__menu
+           above, so all three header popovers read as one component
+           instead of two languages.
+
+           positionHeaderPanels() (defined further down the page) is now a
+           no-op kept only so the existing scroll/resize/animationend
+           callers have nothing to break on.
         ===================================================== */
-        .js-search-content,
-        .js-eye-content {
-            position: fixed;
-            top: 164px;
-            left: 0;
-            width: 100%;
-            z-index: 1200;
-            overflow: hidden;
+        .header-tool-pop {
+            position: relative;
         }
 
-        .header__search-content,
-        .header__eye-content {
-            height: auto;
-            min-height: 84px;
-            padding: 18px 0;
-            background: rgba(12,25,55,.97);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-top: 1px solid rgba(255,255,255,.10);
-            border-bottom: 1px solid rgba(255,255,255,.14);
-            box-shadow: 0 18px 40px rgba(0,0,0,.28);
-            color: #fff;
+        .header-popover {
+            position: absolute;
+            top: calc(100% + 14px);
+            right: 0;
+            background: #ffffff;
+            border: 1px solid rgba(39,59,137,.08);
+            border-radius: 14px;
+            box-shadow:
+                0 20px 46px rgba(7,16,34,.26),
+                0 2px 8px rgba(7,16,34,.10);
+            z-index: 300;
+            color: var(--text);
         }
 
-        .header__search-content .container > .d-flex {
-            width: 100%;
-            gap: 12px;
+        .header-popover::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            right: 20px;
+            width: 12px;
+            height: 12px;
+            background: #ffffff;
+            border-left: 1px solid rgba(39,59,137,.08);
+            border-top: 1px solid rgba(39,59,137,.08);
+            border-radius: 3px 0 0 0;
+            transform: rotate(45deg);
         }
 
-        .header__search-content .input {
+        /* ---------- search ---------- */
+        .header-popover--search {
+            width: min(320px, 86vw);
+            padding: 10px;
+        }
+
+        .header-popover--search .d-flex {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-popover--search .input {
             flex: 1;
-            height: 48px;
-            padding: 0 18px;
-            background: rgba(255,255,255,.10);
-            border: 1px solid rgba(255,255,255,.22);
-            border-radius: 10px;
-            color: #fff;
-            font-size: 15px;
-            font-weight: 500;
+            min-width: 0;
+            height: 46px;
+            padding: 0 16px;
+            background: #f1f5fc;
+            border: 1px solid rgba(39,59,137,.10);
+            border-radius: 999px;
+            color: var(--text);
+            font-size: 14px;
+            font-family: inherit;
             outline: none;
-            transition: .25s ease;
+            transition: .2s ease;
         }
 
-        .header__search-content .input::placeholder {
-            color: rgba(255,255,255,.60);
+        .header-popover--search .input::placeholder {
+            color: var(--gray);
         }
 
-        .header__search-content .input:focus {
-            background: rgba(255,255,255,.16);
-            border-color: rgba(255,255,255,.50);
+        .header-popover--search .input:focus {
+            background: #fff;
+            border-color: var(--primary);
         }
 
-        .header__search-content button {
-            height: 48px;
-            min-width: 48px;
-            margin-left: 0;
+        .header-popover--search button {
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #fff;
-            color: var(--primary);
+            background: var(--primary);
+            color: #fff;
             border: none;
-            border-radius: 10px;
+            border-radius: 50%;
             cursor: pointer;
-            transition: .25s ease;
+            font-size: 15px;
+            transition: background-color .2s ease;
         }
 
-        .header__search-content button:hover {
-            background: #00a2e0;
+        .header-popover--search button:hover {
+            background: var(--accent);
+        }
+
+        /* ---------- accessibility ---------- */
+        .header-popover--eye {
+            width: min(300px, 88vw);
+            padding: 14px 16px;
+        }
+
+        .header-popover__title {
+            margin: 0 0 10px;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        .a11y-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(39,59,137,.08);
+        }
+
+        .a11y-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .a11y-row__label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .a11y-row__label i {
+            font-size: 15px;
+            color: var(--primary);
+        }
+
+        /* sound toggle - restyles the existing .js-voice button into a
+           switch; bvi.js still just adds/removes .active on click */
+        .header__eye-content_radio {
+            position: relative;
+            width: 40px;
+            height: 24px;
+            flex-shrink: 0;
+            border: none;
+            border-radius: 999px;
+            background: var(--primary);
+            cursor: pointer;
+            transition: background-color .2s ease;
+        }
+
+        .header__eye-content_radio i {
+            display: none;
+        }
+
+        .header__eye-content_radio::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(15,26,56,.25);
+            transition: left .2s ease, right .2s ease;
+        }
+
+        .header__eye-content_radio.active {
+            background: rgba(39,59,137,.14);
+        }
+
+        .header__eye-content_radio.active::after {
+            left: 19px;
+        }
+
+        /* font-size stepper */
+        .a11y-stepper {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(39,59,137,.10);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .header__eye-content_button {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            border: none;
+            background: #f1f5fc;
+            color: var(--text);
+            font-size: 12px;
+            cursor: pointer;
+            transition: background-color .2s ease, color .2s ease;
+        }
+
+        .header__eye-content_button + .header__eye-content_button {
+            border-left: 1px solid rgba(39,59,137,.10);
+        }
+
+        .header__eye-content_button:hover,
+        .header__eye-content_button.active {
+            background: var(--primary);
             color: #fff;
         }
 
-        .header__eye-content .btn--white {
-            padding: 10px 18px;
-            border-radius: 10px;
+        /* colour-scheme swatches */
+        .a11y-swatches {
+            display: flex;
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .header__eye-content_color {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            border-radius: 8px;
+            border: 1.5px solid rgba(39,59,137,.14);
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: outline-color .2s ease;
+        }
+
+        .header__eye-content_color.bg-blue-light {
+            background: #e7f1fc;
+            border-color: #bcdcf5;
+            color: var(--primary);
+        }
+
+        .header__eye-content_color.bg-silver {
+            background: #e9e9ec;
+            color: #333;
+        }
+
+        .header__eye-content_color:not(.bg-blue-light):not(.bg-silver) {
+            background: #14151b;
+            color: #fff;
+            border-color: #14151b;
+        }
+
+        .header__eye-content_color.active {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .header-popover__reset {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+            padding: 9px;
+            background: transparent;
+            border: 1px solid rgba(39,59,137,.14);
+            border-radius: 999px;
+            color: var(--gray);
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s ease, color .2s ease;
+        }
+
+        .header-popover__reset:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         @media (max-width: 700px) {
-            .js-search-content,
-            .js-eye-content {
-                top: 136px;
-            }
-            .header__search-content,
-            .header__eye-content {
-                padding: 14px 0;
-            }
-            .header__search-content .input {
-                height: 44px;
-            }
-            .header__search-content button {
-                height: 44px;
-                min-width: 44px;
+            .header-popover {
+                right: -8px;
             }
         }
 
@@ -801,7 +1006,7 @@
         }
 
         .main-header.scrolled .logo img {
-            width: 158px;
+            width: 112px;
         }
 
         /* pinned, the bar is itself a capsule - so the nav gives up its own
@@ -1106,31 +1311,20 @@
 
         /* =====================================================
            RATES + TICKER - soft band
+
+           .main-course, .main-course__title and the guarantee-fund /
+           currency panel styling now live entirely in modern-design.css
+           (.finance-grid, .finance-panel, .fund-stat, .currency-item),
+           which is the one place they should be defined. This file used
+           to carry three
+           overlapping generations of rules for the same classes - a
+           Bootstrap-grid version, a "cards in two columns" version, and
+           the current one - and the older two kept winning the cascade
+           because this inline block loads after modern-design.css,
+           which silently overrode the padding and centred the section
+           title instead of letting it sit next to its icon. Removed
+           rather than patched over, to stop that from recurring.
         ===================================================== */
-        .main-course {
-            margin: 0 !important;
-            padding: 26px 0 44px;
-            border-top: 1px solid var(--ink-line-soft);
-        }
-
-        .main-course__title h3 {
-            color: var(--ink);
-            font-size: 30px;
-        }
-
-        .main-course__title p {
-            color: var(--ink-soft);
-        }
-
-        .main-course__fund h3,
-        .main-course__summ {
-            color: var(--ink);
-        }
-
-        .main-course__fund p,
-        .main-course__name {
-            color: var(--ink-soft);
-        }
 
         /* the ticker continues the same band instead of starting a new one */
         .main-company {
@@ -1184,23 +1378,11 @@
             box-shadow: 0 24px 60px rgba(15,26,56,.14);
         }
 
-        /* =====================================================
-           CONTACT - light band
-        ===================================================== */
-        .band--light .main-contact {
-            border-radius: 18px;
-            border: 1px solid rgba(15,26,56,.07);
-            box-shadow: 0 22px 55px rgba(15,26,56,.10);
-            padding: 38px 42px;
-        }
-
-        .band--light .main-contact .title {
-            color: var(--ink);
-        }
-
-        .band--light .main-contact p {
-            color: var(--ink-soft);
-        }
+        /* The .band--light .main-contact rules that used to live here are
+           gone - see the "CLOSING PANEL - fourth pass" comment further
+           down, which is now the only definition of this component. This
+           was the first of three overlapping copies that kept springing
+           the shadow back after later edits tried to remove it. */
 
         /* =====================================================
            FOOTER - closes on the header's navy
@@ -1211,11 +1393,9 @@
 
         @media (max-width: 992px) {
             .main-about       { padding: 74px 0 78px; }
-            .main-course      { padding: 22px 0 34px; }
             .band--soft       { padding: 70px 0 60px; }
             .main-today       { padding: 70px 0 66px; }
             .band--light      { padding: 66px 0 72px; }
-            .main-course__title h3 { font-size: 24px; }
         }
 
         @media (max-width: 700px) {
@@ -1236,7 +1416,13 @@
                 padding: 9px 14px;
                 font-size: 13px;
             }
-            .logo img { width: 168px; }
+            /* these three breakpoints used to grow the logo to 168/150px
+               before shrinking it again at 700/450px - larger than the
+               142px base it stepped down from, imported wholesale from
+               a different template's numbers ("from second.html" above)
+               without reconciling them against this page's own logo
+               size. Rescaled so it steps down monotonically instead. */
+            .logo img { width: 118px; }
         }
 
         @media (max-width: 1040px) {
@@ -1247,7 +1433,7 @@
                 padding: 8px 11px;
                 font-size: 12px;
             }
-            .logo img { width: 150px; }
+            .logo img { width: 112px; }
             .tool-btn {
                 width: 38px;
                 height: 38px;
@@ -1281,7 +1467,7 @@
                 grid-template-columns: auto 1fr;
                 gap: 12px;
             }
-            .logo img { width: 132px; }
+            .logo img { width: 104px; }
             .header-tools {
                 gap: 8px;
             }
@@ -1293,7 +1479,7 @@
         }
 
         @media (max-width: 450px) {
-            .logo img { width: 116px; }
+            .logo img { width: 92px; }
             .header-tools {
                 gap: 6px;
             }
@@ -1453,8 +1639,6 @@
            digits change width.
         ===================================================== */
         .main-about__icons-title,
-        .main-course__summ,
-        .main-course__fund h3,
         .main-today__item-info .text-medium,
         .main-company__item p,
         .svc__index {
@@ -1578,143 +1762,14 @@
             border-bottom: 1px solid var(--band-edge);
         }
 
-        /* =====================================================
-           RATES — read as instruments, not as list rows
-
-           Guarantee fund and CBU rates are the only live numbers
-           above the fold after the hero. They get a card each, the
-           code and the figure on one baseline, and the figure right
-           aligned so four of them stack into a readable column.
-        ===================================================== */
-        .main-course__title {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 16px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--ink-line);
-        }
-
-        .main-course__title h3 {
-            margin: 0;
-            font-size: 21px;
-            font-weight: 800;
-            letter-spacing: -.02em;
-        }
-
-        /* the as-of date is a stamp on the figures below it, not a
-           subtitle - it gets the chip treatment and the mono face the
-           figures use */
-        .main-course__title p {
-            margin: 0;
-            padding: 5px 12px;
-            border-radius: 999px;
-            background: rgba(15,26,56,.05);
-            font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-            font-size: 11.5px;
-            font-weight: 700;
-            letter-spacing: .02em;
-            color: var(--ink-soft);
-            white-space: nowrap;
-        }
-
-        /* On the soft band these are white cards again, which is what the
-           template shipped - but with a hairline and a light shadow doing
-           the lifting rather than the heavy drop shadow it came with. The
-           backdrop blur goes with the translucency: there is nothing
-           behind a solid card to blur, and it was costing a filter pass
-           on four cards for no visible effect. */
-        .main-course__blog {
-            padding: 16px 20px;
-            border: 1px solid var(--ink-line);
-            border-radius: 14px;
-            background: #fff;
-            box-shadow: 0 2px 6px rgba(15,26,56,.05);
-            transition:
-                box-shadow .28s ease,
-                border-color .28s ease,
-                transform .28s cubic-bezier(.22,.61,.36,1);
-        }
-
-        .main-course__blog:hover {
-            border-color: rgba(0,162,224,.45);
-            box-shadow: 0 14px 30px rgba(15,26,56,.10);
-            transform: translateY(-2px);
-        }
-
-        /* the guarantee fund card holds two figures stacked */
-        .main-course .col-md-4 .main-course__blog {
-            display: grid;
-            gap: 14px;
-        }
-
-        .main-course__fund {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 14px;
-        }
-
-        .main-course__fund + .main-course__fund {
-            padding-top: 14px;
-            border-top: 1px solid var(--ink-line-soft);
-        }
-
-        .main-course__fund p {
-            margin: 0;
-            font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: .08em;
-            color: var(--ink-soft);
-        }
-
-        /* Space Mono, like the about panel and the hero: these are the
-           only figures on the page that were still set in Montserrat, so
-           the guarantee fund and the CBU rates read as body copy that
-           happened to contain numbers rather than as instruments. */
-        .main-course__fund h3 {
-            margin: 0;
-            font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: -.02em;
-            color: var(--ink);
-        }
-
-        .main-course__image {
-            width: 26px;
-            height: 26px;
-            margin-right: 12px;
-            border-radius: 50%;
-            /* the flag PNGs inside these SVGs have hard square edges */
-            object-fit: cover;
-            box-shadow: 0 0 0 1px rgba(15,26,56,.12);
-        }
-
-        .main-course__name {
-            font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-            font-size: 12.5px;
-            font-weight: 700;
-            letter-spacing: .06em;
-            color: var(--ink-soft);
-        }
-
-        .main-course__summ {
-            margin: 0;
-            font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: -.02em;
-            color: var(--ink);
-        }
-
-        /* stagger the four rate cards instead of firing them together */
-        .main-course .col-sm-6:first-child .main-course__blog:nth-child(1) { animation-delay: .05s !important; }
-        .main-course .col-sm-6:first-child .main-course__blog:nth-child(2) { animation-delay: .12s !important; }
-        .main-course .col-sm-6:last-child  .main-course__blog:nth-child(1) { animation-delay: .19s !important; }
-        .main-course .col-sm-6:last-child  .main-course__blog:nth-child(2) { animation-delay: .26s !important; }
+        /* .main-course__title's layout, colours and the date-chip now
+           live in modern-design.css next to the icon badge they sit
+           beside. This was a second, older definition - baseline
+           alignment with justify-content:space-between, written before
+           the icon existed - that kept winning the cascade because this
+           inline block loads after modern-design.css, which is what
+           stranded the heading in the middle of the row instead of next
+           to its icon. */
 
         /* =====================================================
            TICKER — let it run off the edges
@@ -2067,31 +2122,13 @@
            bottom cards without saying anything about a depositary.
            Removed rather than dimmed further. */
 
-        /* =====================================================
-           READING PROGRESS
-
-           The page is long and the header hides itself on the way
-           down, so there is no other cue for how much is left.
-        ===================================================== */
-        .readbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            z-index: 200;
-            background: transparent;
-            pointer-events: none;
-        }
-
-        .readbar__fill {
-            display: block;
-            height: 100%;
-            transform: scaleX(0);
-            transform-origin: left center;
-            background: linear-gradient(90deg, var(--accent), #4e76e8);
-            will-change: transform;
-        }
+        /* The fixed reading-progress line that used to sit here (.readbar /
+           .readbar__fill, a 3px bar across the very top of the viewport
+           that filled in as the page scrolled) is removed - it read as a
+           stray line drifting under the header rather than a legible
+           progress cue. js/sections.js's "READBAR + TOTOP" scroll
+           handler still runs the back-to-top button, just without the
+           bar half of it. */
 
         /* =====================================================
            BACK TO TOP
@@ -2152,10 +2189,8 @@
             html { scroll-behavior: auto; }
 
             .totop,
-            .readbar__fill,
             .svc,
             .svc__go,
-            .main-course__blog,
             .main-today__item {
                 transition: none !important;
             }
@@ -2183,7 +2218,6 @@
             .main-services { padding: 76px 0 82px; }
             .services__head { margin-bottom: 34px; }
 
-            .main-course__title h3 { font-size: 18px; }
             .main-company::before,
             .main-company::after { width: 70px; }
         }
@@ -2217,9 +2251,6 @@
                 gap: 4px;
             }
             .main-today__item-info .text-medium { text-align: left; }
-
-            .main-course__blog { padding: 14px 16px; }
-            .main-course__summ { font-size: 16px; }
 
             .totop { right: 16px; bottom: 16px; width: 42px; height: 42px; }
         }
@@ -2405,7 +2436,7 @@
         .mobnav {
             position: fixed;
             inset: 0;
-            z-index: 300;   /* over the header capsule and the readbar */
+            z-index: 300;   /* over the header capsule */
         }
 
         .mobnav[hidden] { display: none; }
@@ -2986,178 +3017,179 @@
 
 
         /* =====================================================
-           CLOSING PANEL - redesigned
+           CLOSING PANEL - fourth pass
 
-           Was a pale card with the copy at one end and the buttons at
-           the other, and a phone number and email address in between
-           that the footer already carries three lines further down.
+           History: started as a pale card with copy at one end and
+           buttons at the other, plus a duplicate phone/email the
+           footer already carries. That became a centred navy plate to
+           pair with the about section's figures panel. Two later
+           passes tried to soften that plate's shadow and glow, and
+           neither one actually reached the page: a second <style>
+           block further down (the "de-weighting pass", search
+           ".main-contact" there) redefined this selector's radius and
+           shadow one more time and, loading after this block, kept
+           winning the cascade regardless of what changed here.
 
-           Now it is a navy plate on the white band - the same move as
-           the figures panel in the about section, which makes the two
-           read as a pair of bookends rather than two unrelated cards.
-           The composition is centred, because with the duplicated
-           contact row gone there is not enough left in it to justify
-           a two-column split: the same content spread across 1120px
-           was what left the hole in the middle.
+           Rebuilt from the ground up instead of softened again: back
+           to the light, hairline-bordered card the finance card above
+           it already uses (thin border, no drop shadow, restrained
+           type), and back to the original split composition - an icon,
+           left-aligned copy, a vertical hairline, the two actions
+           beside it - rather than everything centred under one big
+           headline. The other two definitions of .band--light
+           .main-contact are removed so this is the only one left.
         ===================================================== */
         .band--light .main-contact {
             position: relative;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
-            text-align: center;
-            gap: 0;
+            gap: 28px;
             width: 100%;
-            max-width: 940px;
+            max-width: 1040px;
             margin-left: auto;
             margin-right: auto;
-            /* styles.min.css does not put this element in border-box, so
-               a bare max-width would cap the content box and add the side
-               padding on top of it */
             box-sizing: border-box;
-            padding: 66px 56px 68px;
-            border: 1px solid rgba(255,255,255,.10);
-            border-radius: 24px;
-            overflow: hidden;
-            background:
-                radial-gradient(720px 320px at 50% -10%, rgba(0,162,224,.22), transparent 68%),
-                linear-gradient(158deg, var(--navy-600) 0%, var(--navy-800) 62%, var(--navy-900) 100%);
-            box-shadow: 0 34px 76px rgba(12,24,58,.26);
+            padding: 40px 44px;
+            background: var(--band-light, #ffffff);
+            border: 1px solid var(--ink-line, rgba(15,26,56,.08));
+            border-radius: 20px;
         }
 
-        /* a hairline of accent along the top edge, as on the about panel */
-        .band--light .main-contact::before {
-            content: "";
-            position: absolute;
-            left: 18%;
-            right: 18%;
-            top: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        .main-contact__icon {
+            flex: 0 0 auto;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--ink-line, rgba(15,26,56,.14));
+            color: var(--primary);
         }
 
-        /* .main-contact div - the template centres and margins every div
-           inside this panel, which the actions row does not want */
-        .band--light .main-contact div {
-            text-align: center;
-            margin-bottom: 0;
+        .main-contact__copy {
+            min-width: 0;
         }
 
         .main-contact__eyebrow {
-            margin: 0 0 18px;
-            font-size: 11.5px;
+            margin: 0 0 8px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: .2em;
+            letter-spacing: .14em;
             text-transform: uppercase;
-            color: rgba(127,212,247,.90);
+            color: var(--ink-soft);
         }
 
         .band--light .main-contact .title {
-            margin: 0 0 16px;
-            max-width: 22ch;
-            color: #fff;
-            font-size: clamp(28px, 3.2vw, 42px);
+            margin: 0 0 8px;
+            max-width: none;
+            color: var(--ink);
+            font-size: 23px;
             font-weight: 800;
-            line-height: 1.12;
-            letter-spacing: -.025em;
+            line-height: 1.25;
+            letter-spacing: -.01em;
         }
 
-        .band--light .main-contact p {
+        .band--light .main-contact p:not(.main-contact__eyebrow) {
             margin: 0;
             max-width: 46ch;
-            font-size: 16.5px;
-            line-height: 1.62;
-            color: rgba(206,222,255,.74);
+            font-size: 14.5px;
+            line-height: 1.55;
+            color: var(--ink-soft);
         }
 
         .main-contact__actions {
+            flex: 0 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
-            margin-top: 38px;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+            padding-left: 28px;
+            border-left: 1px solid var(--ink-line-soft, rgba(15,26,56,.08));
         }
 
-        /* the template's .btn is a 4px-radius outline in #273B89, which is
-           invisible on navy - this is a solid cyan pill instead, matching
-           the drawer's call button and the hero's actions */
         .band--light .main-contact .btn--fill {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            height: 54px;
-            padding: 0 40px;
+            height: 46px;
+            padding: 0 26px;
             border: 0;
             border-radius: 999px;
-            background: var(--accent);
-            color: #06182c;
-            font-size: 15.5px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 13.5px;
             font-weight: 700;
             white-space: nowrap;
-            transition:
-                background-color .25s ease,
-                transform .28s cubic-bezier(.22,.61,.36,1),
-                box-shadow .28s ease;
+            transition: background-color .2s ease;
         }
 
         .band--light .main-contact .btn--fill:hover {
-            background: #34bef0;
-            color: #06182c;
-            transform: translateY(-2px);
-            box-shadow: 0 16px 34px -12px rgba(0,162,224,.66);
+            background: var(--accent);
         }
 
         .main-contact__tg {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            height: 54px;
-            padding: 0 32px;
-            border: 1px solid rgba(255,255,255,.22);
+            gap: 8px;
+            height: 46px;
+            padding: 0 22px;
+            border: 1px solid var(--ink-line, rgba(15,26,56,.14));
             border-radius: 999px;
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 600;
-            color: rgba(255,255,255,.88);
+            color: var(--ink);
             white-space: nowrap;
-            transition:
-                border-color .25s ease,
-                background-color .25s ease,
-                color .25s ease,
-                transform .28s cubic-bezier(.22,.61,.36,1);
+            transition: border-color .2s ease, color .2s ease;
         }
 
         .main-contact__tg:hover {
-            border-color: rgba(255,255,255,.42);
-            background: rgba(255,255,255,.08);
-            color: #fff;
-            transform: translateY(-2px);
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .main-contact__tg i {
-            font-size: 15px;
+            font-size: 13px;
             color: var(--accent);
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 860px) {
             .band--light .main-contact {
-                padding: 52px 34px 54px;
+                grid-template-columns: 1fr;
+                justify-items: center;
+                text-align: center;
+                padding: 32px 26px;
+                gap: 18px;
                 max-width: 100%;
+            }
+            .band--light .main-contact .title {
+                max-width: 100%;
+            }
+            .band--light .main-contact p:not(.main-contact__eyebrow) {
+                max-width: 100%;
+            }
+            .main-contact__actions {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                border-left: none;
+                padding-left: 0;
+                padding-top: 22px;
+                border-top: 1px solid var(--ink-line-soft, rgba(15,26,56,.08));
             }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 480px) {
             .band--light .main-contact {
-                padding: 44px 22px 46px;
-                border-radius: 20px;
+                padding: 26px 20px;
+                border-radius: 16px;
             }
-            .band--light .main-contact .title { max-width: 100%; }
             .main-contact__actions {
-                width: 100%;
                 flex-direction: column;
                 align-items: stretch;
-                margin-top: 30px;
             }
             .band--light .main-contact .btn--fill,
             .main-contact__tg {
@@ -3828,55 +3860,13 @@
 
      RIGHT:
      Search / Eye
+
+     The search box and the accessibility panel used to live here as
+     full-width bands pinned under the header (see git history). They are
+     now anchored popovers next to their own toolbar icon, in
+     .header-tools below, the same pattern already used by the language
+     switcher.
 ===================================================== -->
-
-<!-- Search Panel -->
-<div class="js-search-content d-none">
-    <div class="header__search-content">
-        <div class="container">
-            <div class="d-flex align-items-center">
-                <input type="text" class="input" placeholder="Поиск">
-                <button>
-                    <i class="icon-search"></i>
-                </button>
-           </div>
-        </div>
-    </div>
-</div>
-
-<!-- Eye/Accessibility Panel -->
-<div class="js-eye-content d-none">
-    <div class="header__eye-content">
-        <div class="container full-height">
-            <div class="d-flex align-items-center justify-content-center flex-wrap-md full-height">
-                <div class="d-flex align-items-center mr-45">
-                    <p class="mr-10">Звук:</p>
-                    <button class="header__eye-content_radio js-voice active">
-                        <i class="icon-radio"></i>
-                    </button>
-                </div>
-                <div class="d-flex align-items-center mr-45">
-                    <p class="mr-10">Шрифт:</p>
-                    <button class="header__eye-content_button js-font-size-decrease">
-                        <i class="icon-minus"></i>
-                    </button>
-                    <button class="header__eye-content_button js-font-size-increase">
-                        <i class="icon-plus"></i>
-                    </button>
-                </div>
-                <div class="d-flex align-items-center mr-45">
-                    <p class="mr-10">Вид сайта:</p>
-                    <div class="d-flex align-items-center">
-                        <p class="header__eye-content_color bvi-color bg-blue-light">A</p>
-                        <p class="header__eye-content_color bvi-color bg-silver" data-color="blackAndWhite">A</p>
-                        <p class="header__eye-content_color bvi-color" data-color="blackAndWhiteInvert">A</p>
-                    </div>
-                </div>
-                <button class="btn btn--white js-settings-default">Сбросить настройки</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <!-- =====================================================
@@ -3984,21 +3974,81 @@
 
         <div class="header-tools">
 
-        <button
-            class="header__search js-search tool-btn"
-            type="button"
-            aria-label="Поиск"
-        >
-            <i class="icon-search"></i>
-        </button>
+        <div class="header-tool-pop">
+            <button
+                class="header__search js-search tool-btn"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="Поиск"
+            >
+                <i class="icon-search"></i>
+            </button>
 
-        <button
-            class="header__eye js-eye tool-btn"
-            type="button"
-            aria-label="Версия для слабовидящих"
-        >
-            <i class="icon-eye"></i>
-        </button>
+            <div class="js-search-content header-popover header-popover--search d-none">
+                <div class="d-flex align-items-center">
+                    <input type="text" class="input" placeholder="Поиск">
+                    <button type="button" aria-label="Найти">
+                        <i class="icon-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-tool-pop">
+            <button
+                class="header__eye js-eye tool-btn"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-label="Версия для слабовидящих"
+            >
+                <i class="icon-eye"></i>
+            </button>
+
+            <div class="js-eye-content header-popover header-popover--eye d-none">
+                <p class="header-popover__title">Специальные возможности</p>
+
+                <div class="a11y-row">
+                    <span class="a11y-row__label">
+                        <i class="icon-radio" aria-hidden="true"></i>
+                        Озвучивать текст
+                    </span>
+                    <button class="header__eye-content_radio js-voice active" type="button" aria-label="Синтез речи выбранного текста">
+                        <i class="icon-radio"></i>
+                    </button>
+                </div>
+
+                <div class="a11y-row">
+                    <span class="a11y-row__label">
+                        <i class="icon-plus" aria-hidden="true"></i>
+                        Размер шрифта
+                    </span>
+                    <div class="a11y-stepper">
+                        <button class="header__eye-content_button js-font-size-decrease" type="button" aria-label="Уменьшить шрифт">
+                            <i class="icon-minus"></i>
+                        </button>
+                        <button class="header__eye-content_button js-font-size-increase" type="button" aria-label="Увеличить шрифт">
+                            <i class="icon-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="a11y-row">
+                    <span class="a11y-row__label">
+                        <i class="icon-eye" aria-hidden="true"></i>
+                        Цветовая схема
+                    </span>
+                    <div class="a11y-swatches">
+                        <button class="header__eye-content_color bvi-color bg-blue-light active" type="button" aria-label="Обычная версия сайта">A</button>
+                        <button class="header__eye-content_color bvi-color bg-silver" data-color="blackAndWhite" type="button" aria-label="Чёрно-белая версия сайта">A</button>
+                        <button class="header__eye-content_color bvi-color" data-color="blackAndWhiteInvert" type="button" aria-label="Версия сайта с инверсией цвета">A</button>
+                    </div>
+                </div>
+
+                <button class="btn btn--white js-settings-default header-popover__reset" type="button">Сбросить настройки</button>
+            </div>
+        </div>
 
         <div class="langswitch" id="langSwitcher">
 
@@ -4444,116 +4494,139 @@
         </div>
         <div class="main-course m-b-y">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-30 wow slideInLeft">
+                <div class="finance-grid">
+                    <div class="finance-panel finance-panel--fund">
                         <div class="main-course__title">
+                            <span class="main-course__icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.5L4.5 5.5V11c0 5.2 3.2 9.8 7.5 11 4.3-1.2 7.5-5.8 7.5-11V5.5L12 2.5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                    <path d="M8.75 12.25l2.25 2.25 4.25-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
                             <h3>Гарантийный фонд</h3>
                             <p>13.02.2026</p>
                         </div>
-                        <div class="main-course__blog">
-                            <div class="main-course__fund">
-                                <p>UZS</p>
-                                <h3>374,240,047.65</h3>
+                        <div class="fund-stats">
+                            <div class="fund-stat">
+                                <span class="fund-stat__label">UZS</span>
+                                <span class="fund-stat__value">374,240,047.65</span>
                             </div>
-                            <div class="main-course__fund">
-                                <p>USD</p>
-                                <h3>0</h3>
+                            <div class="fund-stat">
+                                <span class="fund-stat__label">USD</span>
+                                <span class="fund-stat__value">0</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
-    <div class="main-course__title">
-        <h3>Курс валют ЦБ РУз</h3>
-        <p>с 13.02.2026</p>
-    </div>
-    <div class="row">
-          
-            <div class="col-sm-6">
-                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center">
-                        <img src="images/usd.svg" alt="" class="main-course__image">
-                        <div class="main-course__name">USD</div>
+                    <div class="finance-panel finance-panel--rates">
+                        <div class="main-course__title">
+                            <span class="main-course__icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 7h13M17 7l-3.5-3.5M17 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M20 17H7M7 17l3.5-3.5M7 17l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <h3>Курс валют ЦБ РУз</h3>
+                            <p>с 13.02.2026</p>
+                        </div>
+                        <div class="currency-grid">
+                            <div class="currency-item">
+                                <span class="currency-item__flag"><img src="images/usd.svg" alt="USD"></span>
+                                <span class="currency-item__info">
+                                    <span class="currency-item__code">USD</span>
+                                    <span class="currency-item__full">Доллар США</span>
+                                </span>
+                                <span class="currency-item__value">
+                                    <span class="currency-item__num">12 275.58</span>
+                                    <span class="currency-item__unit">UZS</span>
+                                </span>
+                            </div>
+                            <div class="currency-item">
+                                <span class="currency-item__flag"><img src="images/eur.svg" alt="EUR"></span>
+                                <span class="currency-item__info">
+                                    <span class="currency-item__code">EUR</span>
+                                    <span class="currency-item__full">Евро</span>
+                                </span>
+                                <span class="currency-item__value">
+                                    <span class="currency-item__num">14 591.98</span>
+                                    <span class="currency-item__unit">UZS</span>
+                                </span>
+                            </div>
+                            <div class="currency-item">
+                                <span class="currency-item__flag"><img src="images/rub.svg" alt="RUB"></span>
+                                <span class="currency-item__info">
+                                    <span class="currency-item__code">RUB</span>
+                                    <span class="currency-item__full">Российский рубль</span>
+                                </span>
+                                <span class="currency-item__value">
+                                    <span class="currency-item__num">159.09</span>
+                                    <span class="currency-item__unit">UZS</span>
+                                </span>
+                            </div>
+                            <div class="currency-item">
+                                <span class="currency-item__flag"><img src="images/gbp.svg" alt="GBP"></span>
+                                <span class="currency-item__info">
+                                    <span class="currency-item__code">GBP</span>
+                                    <span class="currency-item__full">Фунт стерлингов</span>
+                                </span>
+                                <span class="currency-item__value">
+                                    <span class="currency-item__num">16 754.94</span>
+                                    <span class="currency-item__unit">UZS</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="main-course__summ">12275.58</p>
                 </div>
-                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center">
-                        <img src="images/eur.svg" alt="" class="main-course__image">
-                        <div class="main-course__name">EUR</div>
-                    </div>
-                    <p class="main-course__summ">14591.98</p>
-                </div>
-                            </div>     
-          
-            <div class="col-sm-6">
-                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center">
-                        <img src="images/rub.svg" alt="" class="main-course__image">
-                        <div class="main-course__name">RUB</div>
-                    </div>
-                    <p class="main-course__summ">159.09</p>
-                </div>
-                                <div class="main-course__blog d-flex align-items-center justify-content-between mb-10 wow flipInY" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center">
-                        <img src="images/gbp.svg" alt="" class="main-course__image">
-                        <div class="main-course__name">GBP</div>
-                    </div>
-                    <p class="main-course__summ">16754.94</p>
-                </div>
-                            </div>     
-            </div>
-</div>                </div>
             </div>
         </div>
         <div class="main-company">
     <div class="js-slider-company">
                 <div class="main-company__item">
             <p class="text-bold">«Qo'qon mexanika zavodi» AJ</p>
-            <p>Стартовая цена: 930</p>
-            <p>Базовая цена: 930</p>
-            <p>Дата последней сделки:  14.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>930</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>930</b></div>
+            <div class="main-company__date">Последняя сделка: 14.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«Hamkorbank» ATB</p>
-            <p>Стартовая цена: 33</p>
-            <p>Базовая цена: 37,98</p>
-            <p>Дата последней сделки:  14.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>33</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>37,98</b></div>
+            <div class="main-company__date">Последняя сделка: 14.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«O'zmetkombinat» AJ</p>
-            <p>Стартовая цена: 44 000</p>
-            <p>Базовая цена: 45 549</p>
-            <p>Дата последней сделки:  13.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>44 000</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>45 549</b></div>
+            <div class="main-company__date">Последняя сделка: 13.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«Kvarts» AJ</p>
-            <p>Стартовая цена: 3 400</p>
-            <p>Базовая цена: 3 325</p>
-            <p>Дата последней сделки:  13.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>3 400</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>3 325</b></div>
+            <div class="main-company__date">Последняя сделка: 13.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«Qizilqumsement» AJ</p>
-            <p>Стартовая цена: 5 600</p>
-            <p>Базовая цена: 5 699</p>
-            <p>Дата последней сделки:  14.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>5 600</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>5 699</b></div>
+            <div class="main-company__date">Последняя сделка: 14.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«O'zsanoatqurilishbank» ATB</p>
-            <p>Стартовая цена: 16,79</p>
-            <p>Базовая цена: 16</p>
-            <p>Дата последней сделки:  14.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>16,79</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>16</b></div>
+            <div class="main-company__date">Последняя сделка: 14.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«O'zRTXB» AJ</p>
-            <p>Стартовая цена: 15 999</p>
-            <p>Базовая цена: 15 000</p>
-            <p>Дата последней сделки:  14.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>15 999</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>15 000</b></div>
+            <div class="main-company__date">Последняя сделка: 14.04.2021</div>
         </div>
                 <div class="main-company__item">
             <p class="text-bold">«Ipoteka-bank» ATIB</p>
-            <p>Стартовая цена: 0,99</p>
-            <p>Базовая цена: 0,97</p>
-            <p>Дата последней сделки:  14.04.2021</p>
+            <div class="main-company__row"><span>Стартовая цена</span><b>0,99</b></div>
+            <div class="main-company__row"><span>Базовая цена</span><b>0,97</b></div>
+            <div class="main-company__date">Последняя сделка: 14.04.2021</div>
         </div>
             </div>
 </div>
@@ -5285,13 +5358,20 @@
         </div>
         <div class="band band--light" id="contacts">
         <div class="container">
-            <div class="main-contact wow flipInX" data-wow-duration="1s" data-wow-delay="0.3s">
+            <div class="main-contact wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
 
-                <p class="main-contact__eyebrow">Связаться с нами</p>
+                <div class="main-contact__icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8c-1.1 0-2.15-.2-3.1-.6L5 20l1.1-3.6C4.8 15.1 4 13.6 4 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+                        <path d="M8.5 11h7M8.5 14h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                    </svg>
+                </div>
 
-                <h3 class="title title--mb">Как мы можем Вам помочь?</h3>
-
-                <p>Звоните сейчас или оставьте заявку на обратный звонок в удобное Вам время.</p>
+                <div class="main-contact__copy">
+                    <p class="main-contact__eyebrow">Связаться с нами</p>
+                    <h3 class="title title--mb">Как мы можем Вам помочь?</h3>
+                    <p>Звоните сейчас или оставьте заявку на обратный звонок в удобное Вам время.</p>
+                </div>
 
                 <div class="main-contact__actions">
                     <a href="https://bbd.uz/contact" class="btn btn--fill">Контакты</a>
@@ -5391,9 +5471,6 @@
     </div>
 
 </footer>
-
-<!-- reading progress for a long page -->
-<div class="readbar" aria-hidden="true"><span class="readbar__fill"></span></div>
 
 <!-- back to top -->
 <button type="button" class="totop" id="toTop" aria-label="Наверх">
@@ -5555,7 +5632,7 @@
 
         function closeHeaderPanels() {
             $('.js-search-content, .js-eye-content').slideUp(200);
-            $('.js-search, .js-eye').removeClass('active');
+            $('.js-search, .js-eye').removeClass('active').attr('aria-expanded', 'false');
         }
 
         positionHeaderPanels();
@@ -5565,14 +5642,14 @@
             e.stopPropagation();
             positionHeaderPanels();
             if ( $('.js-search-content').first().is( ":hidden" ) ) {
-                $('.js-eye').removeClass('active')
-                $(this).addClass('active')
+                $('.js-eye').removeClass('active').attr('aria-expanded', 'false');
+                $(this).addClass('active').attr('aria-expanded', 'true');
                 $('.js-eye-content').slideUp(300);
                 $('.js-search-content').slideDown(300, function () {
                     $('.js-search-content .input').trigger('focus');
                 });
             } else {
-                $(this).removeClass('active')
+                $(this).removeClass('active').attr('aria-expanded', 'false');
                 $('.js-search-content').slideUp(300);
             }
         });
@@ -5581,12 +5658,12 @@
             e.stopPropagation();
             positionHeaderPanels();
             if ( $('.js-eye-content').first().is( ":hidden" ) ) {
-                $('.js-search').removeClass('active')
-                $(this).addClass('active')
+                $('.js-search').removeClass('active').attr('aria-expanded', 'false');
+                $(this).addClass('active').attr('aria-expanded', 'true');
                 $('.js-search-content').slideUp(300);
                 $('.js-eye-content').slideDown(300);
             } else {
-                $(this).removeClass('active')
+                $(this).removeClass('active').attr('aria-expanded', 'false');
                 $('.js-eye-content').slideUp(300);
             }
         });
@@ -5697,14 +5774,14 @@
         var mainHeader = document.getElementById('mainHeader');
         if (!mainHeader) return;
 
-        /* keep the search / eye panels glued to the bottom of the header */
-        window.positionHeaderPanels = function () {
-            var bottom = Math.max(0, mainHeader.getBoundingClientRect().bottom);
-            var panels = document.querySelectorAll('.js-search-content, .js-eye-content');
-            for (var i = 0; i < panels.length; i++) {
-                panels[i].style.top = bottom + 'px';
-            }
-        };
+        /* The search / eye panels used to be full-width bands outside
+           .header-tools, glued to the bottom of the header by setting an
+           inline `top` on every scroll/resize. They are now small popovers
+           anchored with plain CSS (position:absolute on .header-tool-pop),
+           same as the language switcher, so no JS positioning is needed.
+           This stays as a no-op stub only because scroll/resize/
+           animationend handlers below still call it. */
+        window.positionHeaderPanels = function () {};
 
         /* The header block scrolls away with the page. Once it has fully left
            the viewport the header returns as a floating bar, animated in and
@@ -5806,6 +5883,144 @@
         });
     })();
 </script>
+
+<style>
+/* =====================================================
+   De-weighting pass
+
+   The finance card, ticker and carousel were first rebuilt with
+   gradient icon badges, saturated shadows, hover-lift animation
+   and colored pill chips - a heavier, more "SaaS dashboard"
+   style than the rest of this redesign carries. This project's
+   own tokens (:root, near the hero) already document the
+   opposite intent: dark, saturated surfaces were deliberately
+   reduced to three bands (hero/services/footer) because a long
+   run of them "made the page feel heavy," and the about
+   section's figures card explicitly trades a hard shadow for a
+   one-step tint plus a thin border. Everything below follows
+   that same rule for the sections it touches: flat surfaces,
+   hairline dividers, --ink/--ink-soft text, at most the
+   existing --card-shadow, no gradients and no hover chrome.
+   Header, hero and footer are untouched.
+===================================================== */
+
+/* --- TODAY carousel --- */
+.main-today__content .slick-slide {
+    transition: opacity .35s ease;
+}
+
+/* peeking side slides show only a cropped fragment (numbers with
+   no label, or a label with no number) - a soft dim reads as an
+   out-of-focus preview instead of broken content, without going
+   dark enough to itself become a heavy effect */
+.main-today__content .slick-slide:not(.slick-current) {
+    opacity: .6;
+}
+
+.main-today__content .slick-slide:not(.slick-current) .main-today__item {
+    box-shadow: none;
+}
+
+.main-today__content .slick-current .main-today__item,
+.main-today__content .slick-current {
+    box-shadow: var(--card-shadow, 0 18px 44px rgba(15,26,56,.09), 0 2px 6px rgba(15,26,56,.05)) !important;
+}
+
+.main-today__arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 32px;
+}
+
+/* plain glyph buttons, matching the live site's bare "‹ ›" - no
+   circle, no border, no shadow */
+.main-today__arrows button {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--ink-soft, #4d5978);
+    font-size: 20px;
+    box-shadow: none;
+    transition: color .2s ease;
+}
+
+.main-today__arrows button:hover {
+    background: transparent;
+    color: var(--ink, #0f1a38);
+    transform: none;
+    box-shadow: none;
+}
+
+/* --- TICKER cards: clear label / value hierarchy, flat surface --- */
+.main-company__item {
+    width: 300px;
+    padding: 18px 20px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--ink-line, rgba(15, 26, 56, 0.10));
+    background: var(--band-light, #ffffff);
+    box-shadow: none;
+}
+
+.main-company__item p.text-bold {
+    margin: 0 0 12px !important;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--ink-line-soft, rgba(15, 26, 56, 0.06));
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--ink, #0f1a38);
+    line-height: 1.35;
+    white-space: normal;
+}
+
+.main-company__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 13px;
+}
+
+.main-company__row span {
+    color: var(--ink-soft, #4d5978);
+    font-weight: 500;
+}
+
+.main-company__row b {
+    color: var(--ink, #0f1a38);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+.main-company__date {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--ink-line-soft, rgba(15, 26, 56, 0.06));
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--ink-soft, #4d5978);
+}
+
+/* The .main-contact overrides that used to live here (radius, shadow,
+   the ::before glow, a hover shadow on .btn--fill) are gone. This was
+   the third of three overlapping definitions of .band--light
+   .main-contact - loading last in the document, it kept winning the
+   cascade over every earlier attempt to lighten this panel, which is
+   why those attempts never visibly took effect. The only remaining
+   definition is the "CLOSING PANEL - fourth pass" block in the main
+   <style> block above, and it no longer uses a shadow or a glow at
+   all, so there is nothing left here to turn down. */
+</style>
 
 </body></html>
 

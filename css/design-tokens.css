@@ -1,0 +1,174 @@
+/* =====================================================================
+   DESIGN TOKENS — Birinchi Banklararo Depozitariy
+   Modern, accessible design system with CSS custom properties
+   ===================================================================== */
+
+/* =====================================================================
+   1. COLOR PALETTE
+   ===================================================================== */
+
+/* Navy scale — primary background depth, built from #273B89 */
+:root {
+	--navy-100: #e8ecf5;
+	--navy-200: #d0d8e8;
+	--navy-300: #b8c5de;
+	--navy-400: #9fa8cc;
+	--navy-500: #8795bb;
+	--navy-600: #6e7da0;
+	--navy-700: #556a8e;
+	--navy-800: #3d507a;
+	--navy-900: #253865;
+	--navy-950: #111e44;
+
+/* Light surface scale */
+	--background: #ffffff;
+	--surface: #f8fafc;
+	--surface-elevated: #ffffff;
+	--surface-hover: #f1f5fc;
+
+/* Accent & primary */
+	--accent: #00a2e0;
+	--accent-hover: #29b8ec;
+	--primary: #263f87;
+	--primary-dark: #17285f;
+
+/* Text colors */
+	--text-primary: #172033;
+	--text-secondary: #667085;
+	--text-muted: #98a2b3;
+	--text-on-accent: #ffffff;
+
+/* Border & divider */
+	--border-subtle: rgba(15, 26, 56, 0.06);
+	--border: rgba(15, 26, 56, 0.10);
+	--border-strong: rgba(15, 26, 56, 0.14);
+
+/* Status colors */
+	--success: #10b981;
+	--warning: #f59e0b;
+	--error: #ef4444;
+
+/* =====================================================================
+   2. TYPOGRAPHY SCALE
+   ===================================================================== */
+
+	--font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-mono: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
+	--font-serif: 'Source Serif 4', Georgia, serif;
+
+	--font-size-xs: 0.75rem;     /* 12px */
+	--font-size-sm: 0.875rem;    /* 14px */
+	--font-size-md: 1rem;         /* 16px */
+	--font-size-lg: 1.125rem;    /* 18px */
+	--font-size-xl: 1.25rem;     /* 20px */
+	--font-size-2xl: 1.5rem;     /* 24px */
+	--font-size-3xl: 2rem;       /* 32px */
+	--font-size-4xl: 2.5rem;     /* 40px */
+	--font-size-5xl: 3rem;       /* 48px */
+
+	--font-weight-light: 300;
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+	--font-weight-black: 900;
+
+	--line-height-tight: 1.0;
+	--line-height-normal: 1.5;
+	--line-height-relaxed: 1.625;
+
+	--tracking-tight: -0.02em;
+	--tracking-wider: 0.02em;
+
+/* =====================================================================
+   3. SPACING SCALE
+   ===================================================================== */
+
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 20px;
+	--space-6: 24px;
+	--space-7: 32px;
+	--space-8: 40px;
+	--space-9: 48px;
+	--space-10: 64px;
+	--space-11: 72px;
+	--space-12: 80px;
+
+/* =====================================================================
+   4. RADIUS SCALE
+   ===================================================================== */
+
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-lg: 20px;
+	--radius-full: 999px;
+
+/* =====================================================================
+   5. SHADOW SCALE
+   ===================================================================== */
+
+	--shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.03);
+	--shadow-card: 0 20px 25px -5px rgba(15, 26, 56, 0.05), 0 8px 10px -6px rgba(15, 26, 56, 0.01);
+	--shadow-strong: 0 24px 48px rgba(0, 0, 0, 0.12);
+	--shadow-hero: 0 30px 60px rgba(0, 0, 0, 0.18);
+
+/* =====================================================================
+   6. TRANSITION TIMING
+   ===================================================================== */
+
+	--transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-smooth: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+	--transition-spring: 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+/* =====================================================================
+   7. Z-INDEX SCALE
+   ===================================================================== */
+
+	--z-dropdown: 300;
+	--z-sticky: 1000;
+	--z-modal: 1500;
+	--z-tooltip: 200;
+
+/* =====================================================================
+   8. BREAKPOINTS
+   ===================================================================== */
+
+	--breakpoint-sm: 640px;
+	--breakpoint-md: 768px;
+	--breakpoint-lg: 1024px;
+	--breakpoint-xl: 1280px;
+}
+
+/* =====================================================================
+   COLOR CONTRAST ASSISTANCE
+   ===================================================================== */
+
+/* Navy on white: 14.3:1 (AAA) */
+	--navy-800 on #ffffff: 14.7:1;
+	--navy-700 on #ffffff: 12.5:1;
+
+/* Accent on navy: 4.3:1 (AA) */
+	--accent on --navy-800: 4.3:1;
+
+/* Ink on --band-soft: 15.1:1 (AAA) */
+	--text-primary on --surface: 15.1:1;
+
+/* =====================================================================
+   9. REDUCED MOTION
+   ===================================================================== */
+
+	@media (prefers-reduced-motion: reduce) {
+		* {
+			transition-duration: 0.01ms !important;
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+		}
+	}

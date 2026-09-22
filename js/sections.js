@@ -165,32 +165,28 @@
 
 
     /* =================================================================
-       4. READBAR + 5. TOTOP
+       4. TOTOP
 
-       One scroll listener for both, rAF-throttled and passive.
+       Used to pair with a fixed reading-progress bar (readbar__fill)
+       that filled in across the top of the viewport as the page
+       scrolled, sharing this one scroll listener. The bar is gone - it
+       read as a stray line rather than a legible progress cue - so this
+       now only toggles the back-to-top button.
        ================================================================= */
     (function chrome() {
-        var fill  = document.querySelector('.readbar__fill');
         var toTop = document.getElementById('toTop');
-        if (!fill && !toTop) return;
+        if (!toTop) return;
 
         var queued = false;
 
         function paint() {
             queued = false;
 
-            var doc    = document.documentElement;
-            var scroll = window.pageYOffset || doc.scrollTop || 0;
-            var range  = (doc.scrollHeight - window.innerHeight) || 1;
-            var pct    = Math.min(1, Math.max(0, scroll / range));
+            var scroll = window.pageYOffset || document.documentElement.scrollTop || 0;
 
-            if (fill) fill.style.transform = 'scaleX(' + pct + ')';
-
-            if (toTop) {
-                /* one full screen down is the point where going back by
-                   hand starts to cost something */
-                toTop.classList.toggle('is-on', scroll > window.innerHeight);
-            }
+            /* one full screen down is the point where going back by
+               hand starts to cost something */
+            toTop.classList.toggle('is-on', scroll > window.innerHeight);
         }
 
         function onScroll() {
@@ -203,14 +199,12 @@
         window.addEventListener('resize', onScroll);
         paint();
 
-        if (toTop) {
-            toTop.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: reduced ? 'auto' : 'smooth'
-                });
+        toTop.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: reduced ? 'auto' : 'smooth'
             });
-        }
+        });
     })();
 
 })();
