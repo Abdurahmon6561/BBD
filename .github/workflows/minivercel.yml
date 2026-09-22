@@ -1,0 +1,102 @@
+# Managed by MiniVercel. Regenerated whenever builds are re-enabled.
+# Deploys bbd from the dist/ directory on every push to main.
+name: Deploy to MiniVercel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: minivercel-bbd
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Every step below tees into one log file. The final step ships its tail
+      # to MiniVercel whether the build succeeded or failed.
+      - name: Install dependencies
+        run: |
+          set -o pipefail
+          if [ -f package-lock.json ]; then
+            npm ci --no-audit --no-fund 2>&1 | tee -a "$RUNNER_TEMP/minivercel.log"
+          else
+            npm install --no-audit --no-fund 2>&1 | tee -a "$RUNNER_TEMP/minivercel.log"
+          fi
+
+      - name: Build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee -a "$RUNNER_TEMP/minivercel.log"
+
+      - name: Package dist
+        run: |
+          set -o pipefail
+          if [ ! -f "dist/index.html" ]; then
+            echo "No index.html in dist/ after the build. Check that your build command writes there." | tee -a "$RUNNER_TEMP/minivercel.log"
+            echo "::error::No index.html in dist/ after the build."
+            exit 1
+          fi
+          cd "dist" && zip -qr "$RUNNER_TEMP/site.zip" .
+
+      - name: Upload to MiniVercel
+        id: upload
+        env:
+          DEPLOY_TOKEN: ${{ secrets.MINIVERCEL_TOKEN }}
+        run: |
+          set -o pipefail
+          if [ -z "$DEPLOY_TOKEN" ]; then
+            echo "::error::MINIVERCEL_TOKEN is not set. Re-enable builds in MiniVercel."
+            exit 1
+          fi
+          response=$(curl -f -sS -X POST "https://api.getdropbin.xyz/api/deployments" -H "Authorization: Bearer $DEPLOY_TOKEN" -H "X-Commit-Sha: ${{ github.sha }}" -F "file=@$RUNNER_TEMP/site.zip")
+          printf '%s\n' "$response" | head -c 2000 | tee -a "$RUNNER_TEMP/minivercel.log"
+          # jq is preinstalled on GitHub-hosted runners. The fallback splits on
+          # commas first so that a greedy `.*` cannot run past the deployment's
+          # own "id" and pick up the nested project's instead.
+          deployment_id=$(printf '%s' "$response" | jq -r '.id // empty' 2>/dev/null || true)
+          if [ -z "$deployment_id" ]; then
+            deployment_id=$(printf '%s' "$response" | tr ',' '\n' | sed -n 's/.*"id"[[:space:]]*:[[:space:]]*"\([0-9a-fA-F-]\{36\}\)".*/\1/p' | head -n 1)
+          fi
+          echo "deployment_id=$deployment_id" >> "$GITHUB_OUTPUT"
+
+      # `always()`: a build log matters most precisely when the steps above
+      # failed. `|| true` and the early exits: losing a log must never turn a
+      # successful deploy into a red run.
+      - name: Send build log to MiniVercel
+        if: always()
+        env:
+          DEPLOY_TOKEN: ${{ secrets.MINIVERCEL_TOKEN }}
+          DEPLOYMENT_ID: ${{ steps.upload.outputs.deployment_id }}
+          UPLOAD_OUTCOME: ${{ steps.upload.outcome }}
+        run: |
+          if [ -z "$DEPLOY_TOKEN" ]; then
+            exit 0
+          fi
+          if [ ! -f "$RUNNER_TEMP/minivercel.log" ]; then
+            echo "The workflow produced no output before it failed." > "$RUNNER_TEMP/minivercel.log"
+          fi
+          tail -n 200 "$RUNNER_TEMP/minivercel.log" > "$RUNNER_TEMP/minivercel.tail"
+          if [ -n "$DEPLOYMENT_ID" ]; then
+            target="https://api.getdropbin.xyz/api/deployments/$DEPLOYMENT_ID/logs"
+          elif [ "$UPLOAD_OUTCOME" = "success" ]; then
+            # The deploy worked; only the id could not be read back. Reporting a
+            # build failure here would put a red row against a live deployment.
+            echo "Deployed, but the deployment id could not be parsed; skipping log upload."
+            exit 0
+          else
+            # The build never reached the upload step, so there is no deployment
+            # row anywhere. Create one, carrying this log, or the failed push is
+            # invisible in the dashboard.
+            target="https://api.getdropbin.xyz/api/deployments/build-failed"
+          fi
+          curl -sS -X POST "$target" -H "Authorization: Bearer $DEPLOY_TOKEN" -H "Content-Type: text/plain; charset=utf-8" -H "X-Commit-Sha: ${{ github.sha }}" --data-binary "@$RUNNER_TEMP/minivercel.tail" || true
